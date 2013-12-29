@@ -1,0 +1,195 @@
+#nav li.logout {
+	float:right;
+	margin:0;
+}
+#nav li.logout a{
+	background-position:100% -120px;
+}
+#nav li.logout a span{
+	background-position:0 -80px;
+	padding:9px 7px 0 17px;
+}
+#nav li.logout a:hover{
+	background-position:100% -280px;
+}
+#nav li.logout a:hover span{
+	background-position:0 -240px;
+}
+#nav li.logout i {
+	background:url(/images/logout.png) no-repeat 0 2px;
+	width:18px;
+	height:31px;
+	display:inline-block;
+	vertical-align:top;
+	margin: 0 0 0 10px;
+}
+#buy-popup .popup-frame{
+	padding: 21px 20px 52px;
+}
+
+#buy-popup .btn-holder{
+	padding: 0 0 0 0px;
+}
+#buy-popup .btn-holder .green-btn {
+	margin: 0 5px 0 0;
+}
+#buy-popup .btn-holder .red-btn {
+    margin: 0 5px 0 0;
+}
+.cook-sign {
+    margin: 40px 0 0;
+}
+.cook-sign .img-holder{
+    width: 150px;
+    float: left;
+    padding: 0 20px 0 0;
+}
+.shef-block {
+    float:left;
+    width: 170px;
+}
+.category-header {
+    width: 940px;
+    height: 257px;
+    background:url(/images/cat_header.png?v=1) no-repeat 0 2px;
+    margin: 0 0 10px;
+}
+.category-text{
+    font-style: italic;
+    padding: 25px;
+    width: 570px;
+    font-size: 15px;
+    height: 95px;
+}
+.category-header ul{
+    padding: 0 0 0 80px;
+    margin: 4px 0 0 0;
+}
+.category-header ul li{
+    list-style: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px;
+}
+.recipe-list .news-label {
+    position: absolute;
+    background: url(/images/news-label-red.png) no-repeat;
+    width: 69px;
+    height: 69px;
+    text-indent: -9999px;
+    overflow: hidden;
+    z-index: 15;
+    top: -7px;
+    left: -7px;
+    }
+.content-frame  .news-label {
+    position: absolute;
+    background: url(/images/news-label-red.png) no-repeat;
+    width: 69px;
+    height: 69px;
+    text-indent: -9999px;
+    overflow: hidden;
+    z-index: 15;
+    top: -7px;
+    left: -7px;
+}
+.promo-list .watch-ico {
+    background: url(/images/watch-ico.png) no-repeat;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -15px;
+    right: -28px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+#newyear-popup .popup {
+    position: absolute;
+    left: 38%;
+    top: 105px;
+    margin-left: -130px;
+    width: 340px;
+}
+#newyear-popup .popup .close {
+    top: 57px;
+    right: -346px;
+}
+#newyear-popup .preorder {
+    font: 18px/21px Georgia, Georgia, serif;
+
+
+    top: 415px;
+    right: -213px;
+    position: absolute;
+    /*width: 18px;
+    height: 18px;*/
+    overflow: hidden;
+    text-decoration: none;
+    /*text-indent: -9999px;*/
+}
+#newyear-popup .preorder a {
+    float: left;
+    background: url(/images/red-btn-ny.png) no-repeat 100% -40px;
+    height: 40px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+}
+#newyear-popup .preorder a span {
+    float: left;
+    cursor: pointer;
+    height: 31px;
+    background: url(/images/red-btn-ny.png) no-repeat;
+    padding: 9px 13px 0 17px;
+}
+.new-year .logo {
+    background: url(/images/logo_ny.png) no-repeat;
+    width: 167px;
+    height: 134px;
+}
+.new-year #nav li a {
+    background:url(/images/nav-bg-ny.png) no-repeat 100% -40px;
+
+}
+.new-year #nav li a span {
+    background: url(/images/nav-bg-ny.png) no-repeat;
+}
+
+.new-year #nav li a:hover {
+    background-position:100% -200px;
+}
+.new-year #nav li a:hover span{
+    background-position:0 -160px;
+}
+
+.new-year #nav li.logout {
+        float:right;
+        margin:0;
+    }
+.new-year #nav li.logout a, .new-year #nav li.login a{
+    background-position:100% -120px!important;
+}
+.new-year #nav li.logout a span, .new-year #nav li.login a span{
+    background-position:0 -80px!important;
+    padding:9px 7px 0 17px!important;
+}
+.new-year #nav li.logout a:hover, .new-year #nav li.login a:hover{
+    background-position:100% -280px!important;
+}
+.new-year #nav li.logout a:hover span, .new-year #nav li.login a:hover span{
+    background-position:0 -240px!important;
+}
+
+.new-year #nav .redmenu {
+    background: url(/images/red-btn-ny.png) no-repeat 100% -40px;
+}
+.new-year #nav .redmenu span {
+    background: url(/images/red-btn-ny.png) no-repeat;
+}
+.new-year #nav .redmenu:hover {
+    background-position:100% -120px;
+}
+.new-year #nav .redmenu:hover span{
+    background-position:0 -80px;
+}

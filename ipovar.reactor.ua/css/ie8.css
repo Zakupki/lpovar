@@ -1,0 +1,7 @@
+.sidebar-box,
+.content-box,
+.video-box,
+.reviews-list .text,
+.recipe-list > li{
+	box-shadow:0 1px 1px 0 #d0d0d0;
+}
