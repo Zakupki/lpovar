@@ -135,7 +135,7 @@ class Dishtype extends BaseActiveRecord
         WHERE  gs_dishtype.status=1
         GROUP BY gs_dishtype.id
         ORDER BY gs_dishtype.sort
-        LIMIT 0,6';
+        LIMIT 0,5';
         $command=$connection->createCommand($sql);
         $rows=$command->queryAll();
         if($rows)

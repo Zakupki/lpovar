@@ -202,7 +202,6 @@
 							<li><a href="/howitworks/">Как это работает</a></li>
 							<li><a href="/site/delivery/">Оплата и доставка</a></li>
 							<li><a href="/site/team/">Команда</a></li>
-							<li><a href="/action/">Акции</a></li>
 						</ul>
 					</li>
 					<li>
@@ -210,7 +209,7 @@
 							<li><a href="/site/faq/">Частые вопросы</a></li>
 							<li><a href="/press/">Пресса о нас</a></li>
 							<li><a href="/site/contacts/">Контакты</a></li>
-							<li><a href="/dish/">Архив меню</a></li>
+                            <li><a href="/action/">Акции</a></li>
 						</ul>
 					</li>
 				</ul>
