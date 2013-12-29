@@ -128,14 +128,14 @@ class Dishtype extends BaseActiveRecord
           CONCAT("/",gs_file.path,"/",gs_file.`file`) AS image
         FROM
           gs_dishtype
-          INNER JOIN `gs_dish`
+          LEFT JOIN `gs_dish`
           ON gs_dish.`dishtype_id`=gs_dishtype.id AND gs_dish.status=1
           LEFT JOIN gs_file
           ON gs_file.id=gs_dishtype.`image_id`
         WHERE  gs_dishtype.status=1
         GROUP BY gs_dishtype.id
         ORDER BY gs_dishtype.sort
-        LIMIT 0,5';
+        LIMIT 0,6';
         $command=$connection->createCommand($sql);
         $rows=$command->queryAll();
         if($rows)
