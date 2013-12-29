@@ -1,0 +1,24 @@
+.recipe-gallery-holder .switcher .switcher-box{
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+}
+.recipe-gallery-holder:hover  .switcher .switcher-box{
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+	
+}
+.popup-holder .bg{
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+}
+.popup .popup-stroke{
+	filter: alpha(opacity=20);
+	-moz-opacity: 0.2;
+	opacity: 0.2;
+}
+.popup-frame.pie_first-child + * {
+	filter: alpha(opacity=20);
+}

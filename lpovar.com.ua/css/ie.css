@@ -1,0 +1,65 @@
+#nav li{
+	display:inline;
+	zoom:1;
+}
+.header-holder {
+	zoom:1;
+}
+.promo-gallery-holder .switcher ul li{
+	display:inline;
+	zoom:1;
+}
+.sidebar-box,
+.content-box,
+.video-box,
+.reviews-list .text,
+.recipe-list > li{
+	box-shadow:0 1px 1px 0 #d0d0d0;
+}
+.recipe-gallery-holder .switcher .switcher-box,
+.recipe-gallery-holder .switcher ul li{
+	display:inline;
+	zoom:1;
+}
+#footer .social-list li{
+	display:inline;
+	zoom:1;
+}
+.paging li{
+	display:inline;
+	zoom:1;
+}
+.paging li {
+	after: '.';
+}
+.btn-holder.center .green-btn,
+.btn-holder.center .green-btn span{
+	display:inline;
+	zoom:1;
+}
+.recipe-list li .recipe-gallery-holder .switcher * {
+	zoom:1;
+}
+.team-list li{
+	display:inline;
+	zoom:1;
+}
+.items li{
+	display:inline;
+	zoom:1;
+}
+.menu-list > li{
+	display:inline;
+	zoom:1;
+}
+.promo-list li{
+	display:inline;
+	zoom:1;
+}
+.promo-list .img-holder {
+	display:inline;
+	zoom:1;
+}
+.total-box .price{
+	display:inline;
+}

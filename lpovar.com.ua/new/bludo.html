@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Личный повар</title>
+	<link rel="stylesheet" href="css/all.css" type="text/css" />
+	<link rel="stylesheet" href="css/opacity.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.fancybox-thumbs.css" type="text/css" />
+	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen"/><![endif]-->
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
+	<script type="text/javascript" src="js/clear-form-fields.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+	<!--[if lt IE 9]><script type="text/javascript" src="js/pie.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery.pseudo.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-thumbs.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".fancybox-thumb").fancybox({
+				prevEffect	: 'none',
+				nextEffect	: 'none',
+				helpers	: {
+					title	: {
+						type: 'outside'
+					},
+					thumbs	: {
+						width	: 50,
+						height	: 50
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="wrapper-holder">
+	<div id="wrapper"><!--wrapper start-->
+		<div class="header-holder small">
+			<div id="header"><!--header start-->
+				<div class="row">
+					<h1 class="logo"><a href="#">Личный повар</a></h1>
+					<div class="head-contacts">
+						<p>c 10.00 до 20.00 ежедневно</p>
+						<div class="phone"><span>(050)</span> 595-25-25</div>
+						<div class="free-delivery">Бесплатная доставка <em class="ico-holder"><img src="images/ico15.png" width="20" height="20" alt="image description" /></em></div>
+					</div>
+					<a href="#" class="delivery-box">
+						<strong>Доставка</strong>
+						<span>продуктов с рецептами</span>
+						<em class="deco"></em>
+					</a>
+				</div>
+				<ul id="nav">
+					<li><a href="#"><span>Наше меню</span></a></li>
+					<li><a href="#"><span>Как это работает</span></a></li>
+					<li><a href="#"><span>Оплата и доставка</span></a></li>
+					<li><a href="#"><span>Команда</span></a></li>
+					<li class="login"><a href="#"><span>Войти<i></i></span></a></li>
+				</ul>
+				<ul class="tisers-list catalog">
+					<li>
+						<a href="#">
+							<span class="img-holder">
+								<img src="images/ico16.png" width="67" height="58" alt="image description" />
+							</span>
+							<span class="text">Супы</span>
+							<em class="num">25 наборов</em>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="img-holder">
+								<img src="images/ico17.png" width="71" height="50" alt="image description" />
+							</span>
+							<span class="text">Салаты</span>
+							<em class="num">25 наборов</em>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="img-holder">
+								<img src="images/ico18.png" width="69" height="58" alt="image description" />
+							</span>
+							<span class="text">Мясо</span>
+							<em class="num">25 наборов</em>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="text">Рыба</span>
+							<em class="num">25 наборов</em>
+							<span class="img-holder">
+								<img src="images/ico19.png" width="58" height="54" alt="image description" />
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="text">Вегетарианское</span>
+							<em class="num">25 наборов</em>
+							<span class="img-holder">
+								<img src="images/ico20.png" width="63" height="59" alt="image description" />
+							</span>
+						</a>
+					</li>
+					<li class="last">
+						<a href="#">
+							<span class="text">Десерты 
+и напитки</span>
+							<span class="img-holder">
+								<img src="images/ico21.png" width="52" height="76" alt="image description" />
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div><!--header end-->
+		</div>
+		<div id="main"><!--main start-->
+			<div class="aside">
+				<div class="price-title">Цена одной порции</div>
+				<div class="price">
+					<div class="num">180</div>
+					<div class="currency">
+						<span>00</span>
+						<i>грн</i>
+					</div>
+				</div>
+				<ul class="num-list">
+					<li class="active"><a href="#">
+						<span class="text">для</span>
+						<span class="num">2</span>
+						<span class="text">чел.</span>
+					</a></li>
+					<li><a href="#">
+						<span class="text">для</span>
+						<span class="num">4</span>
+						<span class="text">чел.</span>
+					</a></li>
+					<li><a href="#">
+						<span class="text">для</span>
+						<span class="num">6</span>
+						<span class="text">чел.</span>
+					</a></li>
+					<li><a href="#">
+						<span class="text">для</span>
+						<span class="num">10</span>
+						<span class="text">чел.</span>
+					</a></li>
+				</ul>
+				<div class="btn-holder">
+					<a href="#" class="buy-btn"><span>
+						<strong>Купить</strong>
+						<em>2 порции</em>
+					</span></a>
+				</div>
+				<div class="total">
+					<div class="title">Итого к оплате</div>
+					<strong>234.00</strong> грн.
+				</div>
+			</div>
+			<div class="content-frame">
+				<div class="content-box">
+					<div class="item-box">
+						<div class="item-head">
+							<div class="complexity">
+								<p>Уровень <br />сложности</p>
+								<div class="stars">
+									<strong><span style="width:66%;"></span></strong>
+								</div>
+							</div>
+							<ul class="ingredients-list">
+								<li><img src="images/img11.png" width="55" height="44" alt="image description" /></li>
+							</ul>
+							<div class="title">Телятина в гранатовом соусе с мексиканским очень вкусным салатом</div>
+						</div>
+						<div class="visual-frame">
+							<div class="img-holder left">
+								<span class="label">Мы привозим</span>
+								<a href="#"><img src="images/img45.png" width="372" height="320" alt="image description" /></a>
+							</div>
+							<div class="img-holder right">
+								<span class="label">Вы готовите</span>
+								<a href="#"><img src="images/img45.png" width="372" height="320" alt="image description" /></a>
+							</div>
+						</div>
+						<ul class="items">
+							<li>
+								<div class="img-holder">
+									<img src="images/img46.jpg" width="165" height="110" alt="image description" />
+								</div>
+								<div class="text">
+									<div class="num">30</div>
+									минут на приготовление
+								</div>
+							</li>
+							<li>
+								<div class="img-holder">
+									<img src="images/img47.jpg" width="165" height="110" alt="image description" />
+								</div>
+								<div class="text">
+									<div class="num">12</div>
+									простых шагов
+								</div>
+							</li>
+							<li>
+								<div class="img-holder">
+									<img src="images/img48.jpg" width="165" height="110" alt="image description" />
+								</div>
+								<div class="text">
+									<div class="num">1</div>
+									сковорода
+								</div>
+							</li>
+							<li>
+								<div class="img-holder">
+									<img src="images/img49.jpg" width="165" height="110" alt="image description" />
+								</div>
+								<div class="text">
+									<div class="num">1</div>
+									дуршлак
+								</div>
+							</li>
+						</ul>
+						<div class="info-frame-box">
+							<div class="recipe-text">
+								<p>Изысканное ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно нежным вкусом Изысканное ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно </p>
+							</div>
+							<div class="menu-list box">
+								<ul class="ingredients">
+									<li>
+										<div class="photo-box">
+											<a class="fancybox-thumb photo" rel="fancybox-thumb" href="http://farm9.staticflickr.com/8199/8189621031_79897f58d2_b.jpg" title="Great Tit in flight (nichollwilliams)"></a>
+										</div>
+										<div class="name"><a href="#">Телятина в гранатовом соусе и ...</a></div>
+										<div class="weight">50 гр.</div>
+									</li>
+									<li class="even">
+										<div class="photo-box">
+											<span class="nophoto"></span>
+										</div>
+										<div class="name"><a href="#">Отварной картофель</a></div>
+										<div class="weight">20 гр.</div>
+									</li>
+									<li>
+										<div class="photo-box">
+											<a class="fancybox-thumb photo" rel="fancybox-thumb" href="http://farm9.staticflickr.com/8340/8206551054_74581f13ba_b.jpg" title="Ribambelle * (Titole)"></a>
+										</div>
+										<div class="name"><a href="#">Мексиканский салат</a></div>
+										<div class="weight">20 гр.</div>
+									</li>
+									<li class="even">
+										<div class="photo-box">
+											<a class="fancybox-thumb photo" rel="fancybox-thumb" href="http://farm8.staticflickr.com/7100/6917703112_d18e3e1b95_b.jpg" title="Assunção - Santo Tirso...a New Dimension... (Alex Matos)"></a>
+										</div>
+										<div class="name"><a href="#">Отварной картофель</a></div>
+										<div class="weight">100 гр.</div>
+									</li>
+								</ul>
+								<div class="row">
+									<div class="total-weight"><strong>350</strong> гр.</div>
+									<div class="calories">5045 калорий</div>
+								</div>
+							</div>
+						</div>
+						<div class="promo-list-title">Что Вы получите</div>
+						<ul class="promo-list inner04">
+							<li>
+								<div class="img-holder">
+									<a href="#"><img src="images/img28.png" width="102" height="139" alt="image description" /></a>
+									<span class="photo-ico"></span>
+								</div>
+								<div class="name"><a href="#">Набор продуктов в фирменной упаковке</a></div>
+								<span class="deco"></span>
+							</li>
+							<li>
+								<div class="img-holder">
+									<a href="#"><img src="images/img29.png" width="107" height="139" alt="image description" /></a>
+									<span class="photo-ico"></span>
+								</div>
+								<div class="name"><a href="#">Подробный рецепт</a></div>
+								<span class="deco"></span>
+							</li>
+							<li>
+								<div class="img-holder">
+									<a href="#"><img src="images/img30.png" width="132" height="139" alt="image description" /></a>
+									<span class="soon-ico"></span>
+								</div>
+								<div class="name"><a href="#">Видеоурок, доступный в вашем кабинете</a></div>
+								<span class="deco"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="comments-box">
+						<div class="head">
+							<a href="#" class="add-commnet">Оставить комментарий</a>
+							<span class="comment-num">35</span>
+							<div class="title">Отзывы</div>
+						</div>
+						<ul class="comment-list">
+							<li>
+								<div class="img-holder"><a href="#"><img src="images/img51.jpg" width="60" height="60" alt="image description" /></a></div>
+								<div class="text">
+									<div class="name">Людмила</div>
+									<p>Изысканное ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер</p>
+								</div>
+							</li>
+							<li>
+								<div class="img-holder"><a href="#"><img src="images/img52.jpg" width="60" height="60" alt="image description" /></a></div>
+								<div class="text">
+									<div class="name">Вася</div>
+									<p>Изысканное ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер ризотто с овощами порадует вас особенно нежным вкусом и обеспечит приятный вечер</p>
+								</div>
+							</li>
+						</ul>
+						<div class="bottom">
+							<div class="more-comments">
+								<a href="#">Показать еще 33 отзыва</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--main end-->
+		<div class="recommend-box">
+			<div class="head">С этим блюдом мы также рекомендуем...</div>
+			<ul class="recommend-list">
+				<li>
+					<div class="img-holder"><a href="#"><img src="images/img50.jpg" width="210" height="164" alt="image description" /></a></div>
+					<div class="info-row">
+						<span class="bottom-deco">&nbsp;</span>
+						<div class="info-frame">
+							<div class="title"><a href="#">Мексиканский салат</a></div>
+							<span class="price"><strong>180.00</strong> грн.</span>
+							<span class="weight-text"><strong>250</strong> грамм</span>
+						</div>
+						<form action="#" class="tools">							<fieldset>
+								<div class="row">
+									<label class="input-holder">
+										<input type="text" value="1" />
+									</label>
+									<span class="control-label-text">шт.</span>
+									<div class="btn-holder">
+										<div class="green-btn">
+											<span>Заказать</span>
+											<input type="submit" value="Заказать" title="Заказать" />
+										</div>
+									</div>
+								</div>							</fieldset>						</form>
+					</div>
+				</li>
+				<li>
+					<div class="img-holder"><a href="#"><img src="images/img50.jpg" width="210" height="164" alt="image description" /></a></div>
+					<div class="info-row">
+						<span class="bottom-deco">&nbsp;</span>
+						<div class="info-frame">
+							<div class="title"><a href="#">Мексиканский салат</a></div>
+							<span class="price"><strong>180.00</strong> грн.</span>
+							<span class="weight-text"><strong>250</strong> грамм</span>
+						</div>
+						<form action="#" class="tools">							<fieldset>
+								<div class="row">
+									<label class="input-holder">
+										<input type="text" value="1" />
+									</label>
+									<span class="control-label-text">шт.</span>
+									<div class="btn-holder">
+										<div class="green-btn">
+											<span>Заказать</span>
+											<input type="submit" value="Заказать" title="Заказать" />
+										</div>
+									</div>
+								</div>							</fieldset>						</form>
+					</div>
+				</li>
+				<li>
+					<div class="img-holder"><a href="#"><img src="images/img50.jpg" width="210" height="164" alt="image description" /></a></div>
+					<div class="info-row">
+						<span class="bottom-deco">&nbsp;</span>
+						<div class="info-frame">
+							<div class="title"><a href="#">Мексиканский салат</a></div>
+							<span class="price"><strong>180.00</strong> грн.</span>
+							<span class="weight-text"><strong>250</strong> грамм</span>
+						</div>
+						<form action="#" class="tools">							<fieldset>
+								<div class="row">
+									<label class="input-holder">
+										<input type="text" value="1" />
+									</label>
+									<span class="control-label-text">шт.</span>
+									<div class="btn-holder">
+										<div class="green-btn">
+											<span>Заказать</span>
+											<input type="submit" value="Заказать" title="Заказать" />
+										</div>
+									</div>
+								</div>							</fieldset>						</form>
+					</div>
+				</li>
+				<li>
+					<div class="img-holder"><a href="#"><img src="images/img50.jpg" width="210" height="164" alt="image description" /></a></div>
+					<div class="info-row">
+						<span class="bottom-deco">&nbsp;</span>
+						<div class="info-frame">
+							<div class="title"><a href="#">Мексиканский салат</a></div>
+							<span class="price"><strong>180.00</strong> грн.</span>
+							<span class="weight-text"><strong>250</strong> грамм</span>
+						</div>
+						<form action="#" class="tools">							<fieldset>
+								<div class="row">
+									<label class="input-holder">
+										<input type="text" value="1" />
+									</label>
+									<span class="control-label-text">шт.</span>
+									<div class="btn-holder">
+										<div class="green-btn">
+											<span>Заказать</span>
+											<input type="submit" value="Заказать" title="Заказать" />
+										</div>
+									</div>
+								</div>							</fieldset>						</form>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="see-menu btn-holder center">
+			<a href="#" class="green-btn">
+				<span>Смотреть меню</span>
+			</a>
+		</div>
+	</div><!--wrapper end-->
+</div>
+<div class="footer-holder">
+	<div id="footer"><!--footer start-->
+		<ul class="partneer-list">
+			<li><a href="#"><img src="images/img33.png" width="170" height="140" alt="image description" /></a></li>
+			<li><a href="#"><img src="images/img33.png" width="170" height="140" alt="image description" /></a></li>
+			<li><a href="#"><img src="images/img33.png" width="170" height="140" alt="image description" /></a></li>
+			<li><a href="#"><img src="images/img33.png" width="170" height="140" alt="image description" /></a></li>
+			<li><a href="#"><img src="images/img33.png" width="170" height="140" alt="image description" /></a></li>
+		</ul>
+		<div class="footer-row">
+			<div class="col">
+				<ul class="footer-nav">
+					<li>
+						<ul>
+							<li><a href="#">О проекте</a></li>
+							<li><a href="#">Как это работает</a></li>
+							<li><a href="#">Оплата и доставка</a></li>
+							<li><a href="#">Команда</a></li>
+						</ul>
+					</li>
+					<li>
+						<ul>
+							<li><a href="#">Частые вопросы</a></li>
+							<li><a href="#">Пресса о нас</a></li>
+							<li><a href="#">Контакты</a></li>
+							<li><a href="#">Архив меню</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="copy">© 2013 Личный повар &nbsp;|&nbsp; <a href="#">Условия использования</a></div>
+			</div>
+			<div class="col">
+				<form action="#" class="subscribe">
+					<fieldset>
+						<div class="title">Узнавайте первыми новинках «Личного повара»!</div>
+						<div class="row">
+							<label class="input-holder">
+								<input type="text" value="Ваш e-mail"/>
+							</label>
+							<div class="btn-holder">
+								<div class="green-btn">
+									<span>Подписаться</span>
+									<input type="submit" value="Подписаться" />
+								</div>
+							</div>
+						</div>
+						<a href="#">Посмотреть пример рассылки</a>
+					</fieldset>
+				</form>
+				<div class="title">Следите за нами</div>
+				<ul class="social-list">
+					<li><a href="#"><img src="images/fb.png" width="40" height="40" alt="image description" /></a></li>
+					<li><a href="#"><img src="images/vk.png" width="40" height="40" alt="image description" /></a></li>
+					<li><a href="#"><img src="images/tw.png" width="40" height="40" alt="image description" /></a></li>
+					<li><a href="#"><img src="images/ig.png" width="40" height="40" alt="image description" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<span class="deco"></span>
+	</div><!--footer end-->
+</div>
+<div class="to-up-holder">
+	<a href="#" class="to-up">Наверх</a>
+</div>
+</body>
+</html>
