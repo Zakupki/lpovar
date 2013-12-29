@@ -7,9 +7,9 @@
 					<? 
 					$cnt=1;
 					$class=array();
-					foreach($tdishes as $dish){
+					foreach($tdishes['types'] as $dish){
 					$class[$cnt]='';
-					if($cnt==count($tdishes)){
+					if($cnt==count($tdishes['types'])){
 						$class[$cnt]=' class="last"';
 						if(isset($this->dishtype_id))
 						if($this->dishtype_id==$dish['id'])
@@ -33,13 +33,12 @@
 								<img src="<?=$dish['image'];?>"/>
                             </span>
 						</a>
-                        <? if($dish['id']==18){?>
+                        <? if($dish['id']==18 && isset($tdishes['other'])){?>
                             <ul>
                                 <li class="submenu-start"></li>
-                                <li><a href="#">Вино</a></li>
-                                <li><a href="#">Напитки</a></li>
-                                <li><a href="#">Печенье</a></li>
-                                <li><a href="#">Макароны</a></li>
+                                <? foreach($tdishes['other'] as $other){?>
+                                <li><a href="/product/category/<?=$other['id'];?>"><?=$other['title'];?></a></li>
+                                <?}?>
                                 <li class="submenu-end"></li>
                             </ul>
                         <?}?>
