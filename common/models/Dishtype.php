@@ -128,7 +128,7 @@ class Dishtype extends BaseActiveRecord
           CONCAT("/",gs_file.path,"/",gs_file.`file`) AS image
         FROM
           gs_dishtype
-          LEFT JOIN `gs_dish`
+          INNER JOIN `gs_dish`
           ON gs_dish.`dishtype_id`=gs_dishtype.id AND gs_dish.status=1
           LEFT JOIN gs_file
           ON gs_file.id=gs_dishtype.`image_id`
