@@ -20,9 +20,8 @@
  * The followings are the available model relations:
  * @property File $image
  */
-class Dishtype extends BaseActiveRecord
+class Producttype extends BaseActiveRecord
 {
-
     public function behaviors()
     {
         return array(
@@ -68,7 +67,7 @@ class Dishtype extends BaseActiveRecord
             array('dpid,image_id,image2_id,detail_text', 'safe'),
             array('image_id,image2_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
         
-            array('id, title, detail_text, image_id, image2_id, status, sort', 'safe', 'on' => 'search'),
+            array('dpid, id, title, detail_text, image_id, image2_id, status, sort', 'safe', 'on' => 'search'),
         ));
     }
 
@@ -93,6 +92,7 @@ class Dishtype extends BaseActiveRecord
     {
         return array(
             'id' => 'ID',
+            'dpid' => 'PID',
             'title' => Yii::t('backend', 'Title'),
             'image_id' => Yii::t('backend', 'Image'),
             'image2_id' => Yii::t('backend', 'Image'),
@@ -110,60 +110,13 @@ class Dishtype extends BaseActiveRecord
     {
         $criteria = new CDbCriteria;
         $criteria->compare('t.id',$this->id);
-        $criteria->addCondition("t.dpid IS NULL");
-        $criteria->compare('t.title',$this->title,true);
+		$criteria->compare('t.title',$this->title,true);
 		$criteria->compare('t.image_id',$this->image_id);
 		$criteria->compare('t.image2_id',$this->image2_id);
+        $criteria->compare('t.dpid',18);
 		$criteria->compare('t.status',$this->status);
         $criteria->compare('t.detail_text',$this->detail_text);
 		$criteria->compare('t.sort',$this->sort);
-
         return parent::searchInit($criteria);
-    }
-    public function getTopDishes(){
-        $connection=Yii::app()->db;
-        $sql='SELECT
-          gs_dishtype.id,
-          gs_dishtype.dpid,
-          gs_dishtype.`title`,
-          gs_dishtype.`sort`,
-          COUNT(gs_dish.id) AS cnt,
-          CONCAT("/",gs_file.path,"/",gs_file.`file`) AS image
-        FROM
-          gs_dishtype
-          LEFT JOIN `gs_dish`
-          ON gs_dish.`dishtype_id`=gs_dishtype.id AND gs_dish.status=1
-          LEFT JOIN gs_file
-          ON gs_file.id=gs_dishtype.`image_id`
-        WHERE  gs_dishtype.status=1
-        AND gs_dishtype.dpid IS NULL
-        GROUP BY gs_dishtype.id
-        ORDER BY gs_dishtype.sort
-        LIMIT 0,6';
-        $command=$connection->createCommand($sql);
-        $rows=$command->queryAll();
-        $data=array();
-        $data['types']=$rows;
-
-        if($rows){
-            $sql2='
-            SELECT
-              gs_dishtype.id,
-              gs_dishtype.`title`,
-              COUNT(gs_dish.id) AS cnt
-            FROM
-              gs_dishtype
-              LEFT JOIN `gs_dish`
-              ON gs_dish.`dishtype_id`=gs_dishtype.id AND gs_dish.status=1
-            WHERE  gs_dishtype.status=1 AND gs_dishtype.dpid=18
-            GROUP BY gs_dishtype.id
-            ORDER BY gs_dishtype.sort';
-            $command2=$connection->createCommand($sql2);
-            $rows2=$command2->queryAll();
-            if($rows2)
-                $data['other']=$rows2;
-        }
-        if($data)
-            return $data;
     }
 }
