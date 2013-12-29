@@ -6,13 +6,13 @@ class DishController extends FrontController
 	public $dishtype_id;
 	public function actionIndex($page=1)
 	{
-		$total=count(Dish::model()->findAll('t.main=0'));
+
+        $total=count(Dish::model()->findAll('t.main=0'));
 			
 		$Paging = new Paging('dish/page',self::PAGE_SIZE, $total, $page);
 		$topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->sort('t.sort ASC')->active()->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.main=0');
 		
-		
-		$this->render('index',array(
+		$this->render($view,array(
 		    'topdishes'=>$topdishes,
 		    'pages'=>$Paging->GetHTML(),
 		));
@@ -31,8 +31,12 @@ class DishController extends FrontController
 			$this->seo_description=$seo->description;
 			$this->seo_keywords=$seo->keywords;
 		}
-		
-		$this->render('index',array(
+        $view='index';
+        if(isset($topdishes[0]->dishtype->dpid))
+            if($topdishes[0]->dishtype->dpid==18)
+                $view='products';
+
+		$this->render($view,array(
 		    'topdishes'=>$topdishes,
 		    'pages'=>$Paging->GetHTML(),
 		));
