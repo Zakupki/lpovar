@@ -87,6 +87,21 @@ function popupAction(){
     });
 }
 function buypopupAction(){
+    $('.callbuy-popup,.callbuy-popup2 input:submit').click(function(e){
+        /*alert($(this).attr('rel'));*/
+        $('#default-popup .popup-frame p').html('Заказ временно не доступен. Мы вернемся 4 января!');
+
+        $('#default-popup').css('left', '0').hide().fadeIn(200);
+        $('.bg').height(popups());
+        if ($('#default-popup .popup').height() < $(window).height()) {
+            $('#default-popup .popup').css({top:($(window).height()/2-$('#default-popup .popup').outerHeight()/2+$(window))});
+        }
+        e.preventDefault();
+    });
+    $('#video-popup .close').click(function(e){
+        $('#video-popup .popup-frame p').html('');
+    });
+    return;
     $('.callbuy-popup').click(function(e){
         var quantity=$(this).attr('rel');
         var carturl=$(this).attr('href');
