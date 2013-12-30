@@ -193,3 +193,66 @@
 .new-year #nav .redmenu:hover span{
     background-position:0 -80px;
 }
+
+/*newyearpopup close*/
+#newyear-popup2 .popup {
+    position: absolute;
+    left: 42%;
+    top: 95px;
+    margin-left: -130px;
+    width: 340px;
+}
+#newyear-popup2 .popup .close {
+    top: 27px;
+    right: -73px;
+}
+
+/*Teaser submenu*/
+#main-submenu{
+
+}
+ul.tisers-list ul {
+    display: none;
+    list-style:none;
+    position: absolute;
+    top:105px;
+    left: -1px;
+    margin: 0;
+    width: 142px;
+    padding: 0;
+    border-top: 5px solid #da251d;
+}
+#main-submenu ul li{
+    height: 20px;
+    width: 102px;
+    display:block;
+    border-left: 0;
+    margin: 0 4px;
+    padding: 2px 16px;
+    background-color: #be2a28;
+}
+#main-submenu ul li.submenu-start{
+    height: 7px;
+}
+#main-submenu ul li.submenu-end{
+    height: 7px;
+    border-bottom-right-radius: 8% 100%;
+    border-bottom-left-radius: 8% 100%;
+    moz-border-bottom-right-radius: 8% 100%;
+    moz-border-bottom-left-radius: 8% 100%;
+}
+#main-submenu ul li a{
+    height: 20px;
+    color:white;
+    border: 0;
+    text-decoration: none;
+    }
+#main-submenu ul li a:hover{
+    text-decoration: underline;
+}
+ul.tisers-list li:hover > ul {
+    display: block;
+}
+#main-submenu ul li a:hover > #main-submenu a {
+    display: none;
+}
