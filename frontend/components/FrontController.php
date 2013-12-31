@@ -56,19 +56,19 @@ abstract class FrontController extends CController
 		$this->seo_keywords=Option::getOpt('seokeywords');
 		$this->cart = $this->getCart();
 
-        if(Yii::app()->detectMobileBrowser->showMobile){
+        /*if(Yii::app()->detectMobileBrowser->showMobile){
             $this->povar_newyear=1;
-            /*$this->povar_newyear = Yii::app()->request->cookies['povar_newyear'];
+            $this->povar_newyear = Yii::app()->request->cookies['povar_newyear'];
             if(!$this->povar_newyear){
                 $cookie = new CHttpCookie('povar_newyear', 1);
                 $cookie->expire = time()+60*60*24*3;
                 Yii::app()->request->cookies['povar_newyear'] = $cookie;
-            }*/
-        }else{
+            }
+        }else{*/
             $this->povar_newyear = Yii::app()->session['povar_newyear2'];
             if(!$this->povar_newyear)
                 Yii::app()->session['povar_newyear2'] = 1;
-        }
+       // }
 
         //unset(Yii::app()->request->cookies['povar_newyear']);
         $this->tdishes=Dishtype::model()->getTopDishes();
