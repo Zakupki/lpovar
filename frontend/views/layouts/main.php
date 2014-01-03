@@ -414,13 +414,13 @@ if(date('Ymd')<20131230){?>
     </div>
 </div>-->
 <?}elseif(date('Ymd')>20131229 && date('Ymd')<20140104){?>
-<div class="popup-holder" id="newyear-popup2">
+<!--<div class="popup-holder" id="newyear-popup2">
    <div class="bg">&nbsp;</div>
    <div class="popup">
        <img src="/images/newyear_closed.png?v=1"/>
           <a href="#" class="close"></a>
    </div>
-</div>
+</div>-->
 <?}}?>
 <!--popup end-->
 <!-- Yandex.Metrika counter -->

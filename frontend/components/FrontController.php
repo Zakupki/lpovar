@@ -65,9 +65,9 @@ abstract class FrontController extends CController
                 Yii::app()->request->cookies['povar_newyear'] = $cookie;
             }
         }else{*/
-            $this->povar_newyear = Yii::app()->session['povar_newyear2'];
-            if(!$this->povar_newyear)
-                Yii::app()->session['povar_newyear2'] = 1;
+            //$this->povar_newyear = Yii::app()->session['povar_newyear2'];
+            //if(!$this->povar_newyear)
+                //Yii::app()->session['povar_newyear2'] = 1;
        // }
 
         //unset(Yii::app()->request->cookies['povar_newyear']);
