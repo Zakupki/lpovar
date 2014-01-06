@@ -167,7 +167,7 @@
 					<li><a href="/howitworks/"><span>Как это работает</span></a></li>
 					<li><a href="/site/delivery/"><span>Оплата и доставка</span></a></li>
                     <li><a href="/site/team/"><span>Команда</span></a></li>
-                    <li><a class="redmenu" href="/dish/category/17"><span>Новый Год</span></a></li>
+                    <!--<li><a class="redmenu" href="/dish/category/17"><span>Новый Год</span></a></li>-->
                     <? if(Yii::app()->user->getId()>0){?>
 					<li class="logout"><a href="/site/logout/"><span>Выйти<i></i></span></a></li>
 					<?}else{?>
