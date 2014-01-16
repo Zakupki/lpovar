@@ -28,10 +28,11 @@
 				            $dish['title']=mb_substr(strip_tags($dish['title']), 0, 31, 'UTF-8')."...";}
 
                             $othercount=0;
-                            if($dish['id']==18 && isset($tdishes['other']))
+                            if($dish['id']==18 && isset($tdishes['other'])){
                             foreach($tdishes['other'] as $other)
                                     $othercount=$othercount+$other['cnt'];
                             $dish['cnt']=$othercount;
+                            }
                             ?>
 							<span class="text"><?=$dish['title'];?></span>
 							<em class="num"><?=$dish['cnt'];?> <?=$this->intMorphy($dish['cnt'],'набор','набора','наборов');?></em>
