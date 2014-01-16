@@ -12,8 +12,12 @@
 								?>
 								<li class="cart-item" rel="<?=$order->id;?>">
 									<div class="img-holder">
+                                        <? if($order->dishtype->dpid==18 && isset($order->image)){?>
+                                            <img width="215" src="/<?=$order->image->path;?>/<?=$order->image->file;?>">
+                                        <?}else{?>
 										<a href="<?=$order->getUrl();?>"><?=(isset($order->dishThumbs[0]->thumb))?$order->dishThumbs[0]->thumb->asHtmlImage():'';?></a>
-									</div>
+									    <?}?>
+                                    </div>
 									<div class="choice-frame">
 										<div class="text-box">
 											<a href="<?=$order->getUrl();?>"><?=$order->title;?></a>

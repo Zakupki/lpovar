@@ -203,8 +203,8 @@
     width: 340px;
 }
 #newyear-popup2 .popup .close {
-    top: 27px;
-    right: -73px;
+    top: 30px;
+    right: -145px;
 }
 
 /*Teaser submenu*/
@@ -221,6 +221,7 @@ ul.tisers-list ul {
     width: 142px;
     padding: 0;
     border-top: 5px solid #da251d;
+    z-index: 4;
 }
 #main-submenu ul li{
     height: 20px;
@@ -255,4 +256,20 @@ ul.tisers-list li:hover > ul {
 }
 #main-submenu ul li a:hover > #main-submenu a {
     display: none;
+}
+.product-list .recipe-gallery {
+    width: 280px;
+    height: 240px;
+}
+.product-list .recipe-gallery ul li {
+    width: 280px;
+    float: left;
+}
+.product-list .recipe-gallery-holder {
+    width: 280px;
+    height: 240px;
+}
+.product-list .recipe-frame {
+    width: 620px;
+    min-height: 225px;
 }

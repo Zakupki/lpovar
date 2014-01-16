@@ -42,7 +42,7 @@ class Product extends BaseActiveRecord implements IECartPosition
             'attach' => array(
                 'class' => 'common.components.FileAttachBehavior',
                 'imageAttributes' => array(
-                    'image_id'
+                    'image_id','thumb_id'
                 ),
                 'fileAttributes' => array(
                 ),
@@ -107,10 +107,10 @@ class Product extends BaseActiveRecord implements IECartPosition
             array('price,weight', 'numerical'),
             array('title', 'length', 'max' => 255),
             array('detail_text,video,image_id, shef_id', 'safe'),
-            array('image_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
+            array('image_id,thumb_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('shef_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
             array('dishtype_id', 'exist', 'className' => 'Dishtype', 'attributeName' => 'id'),
-            array('id, title, date_create, image_id, topsell, new, status, sort, detail_text,video, prepare, steps, dishtype_id, price,weight,difficulty', 'safe', 'on' => 'search'),
+            array('id, title, date_create, image_id, thumb_id, topsell, new, status, sort, detail_text,video, prepare, steps, dishtype_id, price,weight,difficulty', 'safe', 'on' => 'search'),
         ));
     }
 
@@ -123,6 +123,7 @@ class Product extends BaseActiveRecord implements IECartPosition
             'dishtype' => array(self::BELONGS_TO, 'Dishtype', 'dishtype_id'),
             'dishImages' => array(self::HAS_MANY, 'DishImage', 'dish_id','with'=>'image','order'=>'dishImages.sort asc'),
             'image' => array(self::BELONGS_TO, 'File', 'image_id'),
+            'thumb_id' => array(self::BELONGS_TO, 'File', 'thumb_id'),
             'courses' => array(self::HAS_MANY, 'Course', 'dish_id'),
             'dishThumbs' => array(self::HAS_MANY, 'DishImage', 'dish_id','with'=>'thumb','order'=>'dishThumbs.sort asc'),
             'drinkDishes' => array(self::HAS_MANY, 'DrinkDish', 'dish_id'),
@@ -145,7 +146,8 @@ class Product extends BaseActiveRecord implements IECartPosition
         return array(
             'id' => 'ID',
             'title' => Yii::t('backend', 'Title'),
-            'image_id' => Yii::t('backend', 'Recipe'),
+            'image_id' => Yii::t('backend', 'Image'),
+            'thumb_id' => Yii::t('backend', 'Thumb'),
             'date_create' => Yii::t('backend', 'Date Create'),
             'status' => Yii::t('backend', 'Status'),
             'sort' => Yii::t('backend', 'Sort'),

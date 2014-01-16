@@ -44,7 +44,7 @@ class SiteController extends FrontController
 	
 	public function actionIndex()
 	{
-        $dishtypes=Dishtype::model()->with(array('dishtypeimage2','dishtypeimage','dishes'=>array('with'=>array('portions','dishImages'))))->active()->sort('t.sort ASC,dishes.sort,dishes.date_create DESC')->findAll('dishes.status=1');
+        $dishtypes=Dishtype::model()->with(array('dishtypeimage2','dishtypeimage','dishes'=>array('with'=>array('portions','dishImages'))))->active()->sort('t.sort ASC,dishes.sort,dishes.date_create DESC')->findAll('dishes.status=1 AND t.dpid is null');
 		$teasers=Teaser::model()->with('image')->sort()->active()->findAll();
 		$this->render('index',array('dishtypes'=>$dishtypes,'teasers'=>$teasers));
 	}

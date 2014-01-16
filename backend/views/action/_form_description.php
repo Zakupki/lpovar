@@ -20,6 +20,7 @@
 
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span9', 'maxlength' => 255)); ?>
     <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
+    <?php echo $form->textFieldRow($model, 'link', array('class' => 'span9', 'maxlength' => 255)); ?>
     <?php echo $form->textAreaRow($model, 'preview_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
     <?php $this->tinymce(CHtml::resolveName($model, $tmp = "preview_text")); ?>
     <?php echo $form->textFieldRow($model, 'sort', array('class' => 'span2')); ?>

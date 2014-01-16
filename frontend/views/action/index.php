@@ -8,7 +8,11 @@
 							<ul>
 							<? 
 							if($tdish->image){?>
-								<li><?=$tdish->image->asHtmlImage($tdish->title);?></li>
+								<li>
+                                    <? if(strlen($tdish->link)>0){?><a target="_blank" href="<?=$tdish->link;?>"><?}?>
+                                    <?=$tdish->image->asHtmlImage($tdish->title);?>
+                                    <? if(strlen($tdish->link)>0){?></a><?}?>
+                                </li>
 							<?}else{?>
 								<li><img width="455" height="390" src="/images/zaglush.jpg" alt="<?=$tdish->title;?>"></li>
 							<?}?>
