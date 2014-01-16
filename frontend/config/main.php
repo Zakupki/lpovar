@@ -42,13 +42,14 @@ $config = array(
                                '<lang:\w{2}>/<controller:\w+>/<id:\d+>' => '<controller>/view',
                                '<lang:\w{2}>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                                '<lang:\w{2}>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',*/
-               
 
+                'product/<action:\w+>/<id:\d+>' => 'dish/<action>',
                 '<controller:\w+>' => '<controller>',
                 '<controller:\w+>/<id:\d+>/<title:\w+>' => '<controller>/view',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/page/<page:\d+>' => '<controller>',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+
                 'page/<code:\w+>'=>'page/view',
                 'site/message/<message:\w+>'=>'site/message',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
