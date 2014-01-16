@@ -65,6 +65,7 @@ class Action extends BaseActiveRecord
     {
         return array_merge(parent::rules(), array(
             array('sort, status', 'numerical', 'integerOnly' => true),
+            array('link', 'url', 'allowEmpty'=>true, 'defaultScheme' => 'http'),
             array('title', 'length', 'max' => 255),
             array('image_id, preview_text', 'safe'),
             array('image_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
@@ -91,6 +92,7 @@ class Action extends BaseActiveRecord
         return array(
             'id' => 'ID',
             'title' => Yii::t('backend', 'Title'),
+            'link' => Yii::t('backend', 'Link'),
             'image_id' => Yii::t('backend', 'Image'),
             'preview_text' => Yii::t('backend', 'Preview Text'),
             'sort' => Yii::t('backend', 'Sort'),
@@ -108,6 +110,7 @@ class Action extends BaseActiveRecord
 
         		$criteria->compare('t.id',$this->id);
 		$criteria->compare('t.title',$this->title,true);
+        $criteria->compare('t.link',$this->link,true);
 		$criteria->compare('t.image_id',$this->image_id);
 		$criteria->compare('t.preview_text',$this->preview_text,true);
 		$criteria->compare('t.sort',$this->sort);
