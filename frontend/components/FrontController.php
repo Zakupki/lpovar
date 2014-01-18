@@ -75,8 +75,8 @@ abstract class FrontController extends CController
 
         //$this->tdishes=Dishtype::model()->sort('t.sort ASC')->active()->with(array('dishtypeimage','dishes'=>array('select'=>false,'joinType'=>'INNER JOIN')))->limit(6,0)->findAll();
 
-        if(isset($this->tdishes[0])){
-			$this->firstcategory_id=$this->tdishes[0]['id'];
+        if(isset($this->tdishes['types'][0])){
+			$this->firstcategory_id=$this->tdishes['types'][0]['id'];
 		}	
         $this->setModelName(ucfirst($this->getId()));
     }
