@@ -71,7 +71,7 @@ abstract class FrontController extends CController
             //if(!$this->povar_newyear)
                 //Yii::app()->session['povar_newyear2'] = 1;
        // }
-        if($_SERVER['REMOTE_ADDR']=='91.209.51.157'){
+        //if($_SERVER['REMOTE_ADDR']=='91.209.51.157'){
             //echo Yii::app()->request->cookies['current_popup'];
         $this->current_popup=0;
         $this->current_popup = Yii::app()->request->cookies['current_popup'];
@@ -89,7 +89,7 @@ abstract class FrontController extends CController
             //unset(Yii::app()->session['current_popup_sess']);
             //unset(Yii::app()->request->cookies['current_popup']);
 
-        }
+        //}
 
 
 
