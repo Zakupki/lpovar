@@ -75,7 +75,7 @@ abstract class FrontController extends CController
             //echo Yii::app()->request->cookies['current_popup'];
         $this->current_popup=0;
         $this->current_popup = Yii::app()->request->cookies['current_popup'];
-        if((string)$this->current_popup<3){
+        if((string)$this->current_popup<3 && !Yii::app()->detectMobileBrowser->showMobile){
             //echo 'b';
             //echo Yii::app()->request->cookies['current_popup'];
             if(!Yii::app()->session['current_popup_sess']){

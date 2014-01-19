@@ -276,19 +276,19 @@ ul.tisers-list li:hover > ul {
 /*tefal popup*/
 #tefal-popup .popup {
     position: absolute;
-    left: 38%;
-    top: 95px;
+    left: 43%;
+    top: 102px;
     margin-left: -180px;
     width: 340px;
 }
 #tefal-popup .popup .close {
-    top: 30px;
-    right: -426px;
+    top: 23px;
+    right: -237px;
 }
 #tefal-popup .preorder {
     font: 18px/21px Georgia, Georgia, serif;
-    top: 508px;
-    right: -140px;
+    top: 382px;
+    right: -35px;
     position: absolute;
     /*width: 18px;
     height: 18px;*/
