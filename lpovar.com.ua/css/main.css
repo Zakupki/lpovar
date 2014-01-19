@@ -273,3 +273,42 @@ ul.tisers-list li:hover > ul {
     width: 620px;
     min-height: 225px;
 }
+/*tefal popup*/
+#tefal-popup .popup {
+    position: absolute;
+    left: 38%;
+    top: 95px;
+    margin-left: -180px;
+    width: 340px;
+}
+#tefal-popup .popup .close {
+    top: 30px;
+    right: -426px;
+}
+#tefal-popup .preorder {
+    font: 18px/21px Georgia, Georgia, serif;
+    top: 508px;
+    right: -140px;
+    position: absolute;
+    /*width: 18px;
+    height: 18px;*/
+    overflow: hidden;
+    text-decoration: none;
+    /*text-indent: -9999px;*/
+}
+#tefal-popup .preorder a {
+    float: left;
+    background: url(/images/red-btn-ny.png) no-repeat 100% -40px;
+    height: 40px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+}
+#tefal-popup .preorder a span {
+    float: left;
+    cursor: pointer;
+    height: 31px;
+    background: url(/images/red-btn-ny.png) no-repeat;
+    padding: 9px 13px 0 17px;
+}

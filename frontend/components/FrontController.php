@@ -39,6 +39,8 @@ abstract class FrontController extends CController
 	public $firstcategory_id;
 	public $tdishes;
     public $povar_newyear;
+    public $current_popup;
+    public $display_popup;
     /**
      * Model name
      *
@@ -69,6 +71,27 @@ abstract class FrontController extends CController
             //if(!$this->povar_newyear)
                 //Yii::app()->session['povar_newyear2'] = 1;
        // }
+        if($_SERVER['REMOTE_ADDR']=='91.209.51.157'){
+            //echo Yii::app()->request->cookies['current_popup'];
+        $this->current_popup=0;
+        $this->current_popup = Yii::app()->request->cookies['current_popup'];
+        if((string)$this->current_popup<3){
+            //echo 'b';
+            //echo Yii::app()->request->cookies['current_popup'];
+            if(!Yii::app()->session['current_popup_sess']){
+                //if($this->current_popup>0){
+                Yii::app()->request->cookies['current_popup'] = new CHttpCookie('current_popup', (string)$this->current_popup+1);
+                //}
+                Yii::app()->session['current_popup_sess']=1;
+                $this->display_popup=1;
+            }
+        }
+            //unset(Yii::app()->session['current_popup_sess']);
+            //unset(Yii::app()->request->cookies['current_popup']);
+
+        }
+
+
 
         //unset(Yii::app()->request->cookies['povar_newyear']);
         $this->tdishes=Dishtype::model()->getTopDishes();

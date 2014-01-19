@@ -403,17 +403,25 @@
 <!--popup end-->
 <!--popup start-->
 <?
-if(isset($_GET['banner']) || !isset($this->povar_newyear)){
-if(date('Ymd')<20131230){?>
+if(isset($_GET['banner']) || $this->display_popup){
+//if(date('Ymd')<20131230){?>
+<div class="popup-holder" id="tefal-popup">
+    <div class="bg">&nbsp;</div>
+    <div class="popup">
+        <img src="/images/tefal-banner.png"/>
+            <a href="#" class="close"></a>
+        <div class="preorder"><a href="/dish/category/3"><span>Сделать заказ<i></i></span></a></div>
+    </div>
+</div>
 <!--<div class="popup-holder" id="newyear-popup">
     <div class="bg">&nbsp;</div>
     <div class="popup">
         <img src="/images/newyear.png?v=2"/>
-            <a href="#" class="close"></a>
+        <a href="#" class="close"></a>
         <div class="preorder"><a href="/dish/category/17"><span>Сделать предзаказ<i></i></span></a></div>
     </div>
-</div>-->
-<?}elseif(date('Ymd')>20131229 && date('Ymd')<20140104){?>
+</div>->
+<?//}elseif(date('Ymd')>20131229 && date('Ymd')<20140104){?>
 <!--<div class="popup-holder" id="newyear-popup2">
    <div class="bg">&nbsp;</div>
    <div class="popup">
@@ -421,7 +429,7 @@ if(date('Ymd')<20131230){?>
           <a href="#" class="close"></a>
    </div>
 </div>-->
-<?}}?>
+<?}//}?>
 <!--popup end-->
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
