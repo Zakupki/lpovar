@@ -20,11 +20,17 @@ class DishController extends FrontController
 	public function actionCategory($id,$page=1)
 	{
         $this->dishtype_id=$id;
-		$total=count(Dish::model()->active()->findAll('t.dishtype_id='.$id.''));
-			
-		$Paging = new Paging('dish/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
-		$topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->active()->sort('t.sort ASC')->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.dishtype_id='.$id.'');
-		
+
+        if($id==18){
+            $total=count(Dish::model()->with('dishtype')->active()->findAll('dishtype.dpid='.$id.''));
+            $Paging = new Paging('product/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
+            $topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->active()->sort('t.sort ASC')->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('dishtype.dpid='.$id.'');
+        }else{
+            $total=count(Dish::model()->active()->findAll('t.dishtype_id='.$id.''));
+            $Paging = new Paging('dish/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
+            $topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->active()->sort('t.sort ASC')->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.dishtype_id='.$id.'');
+        }
+
 		if($seo=Seo::model()->find('t.pid=:id AND t.entity="dishtype"', array(':id'=>$id)))
 		{
 			$this->seo_title=$seo->title;
@@ -32,8 +38,8 @@ class DishController extends FrontController
 			$this->seo_keywords=$seo->keywords;
 		}
         $view='index';
-        if(isset($topdishes[0]->dishtype->dpid))
-            if($topdishes[0]->dishtype->dpid==18)
+        if(isset($topdishes[0]->dishtype->dpid) || $id==18)
+            if($topdishes[0]->dishtype->dpid==18 || $id==18)
                 $view='products';
 
 		$this->render($view,array(
