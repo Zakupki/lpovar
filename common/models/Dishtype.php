@@ -139,7 +139,7 @@ class Dishtype extends BaseActiveRecord
         AND gs_dishtype.dpid IS NULL
         GROUP BY gs_dishtype.id
         ORDER BY gs_dishtype.sort
-        LIMIT 0,6';
+        LIMIT 0,8';
         $command=$connection->createCommand($sql);
         $rows=$command->queryAll();
         $data=array();
