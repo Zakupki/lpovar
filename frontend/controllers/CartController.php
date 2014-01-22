@@ -474,9 +474,7 @@ class CartController extends FrontController
 		$drinks=null;
 		if(count($dishArr)>0)
 		$drinks=DrinkDish::model()->with(array('drink'=>array('with'=>'image')),'active')->findAll('t.dish_id in('.implode(',',$dishArr).') AND drink.status=1');
-		
-		
-		
+
 		if($order->id>0)
 		$cart->clear();
 		
