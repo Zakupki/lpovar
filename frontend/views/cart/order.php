@@ -42,11 +42,11 @@
 									$drinkHtml=array(0=>'',1=>'');
 									$cnt=0;
 									foreach($drinks as $drink){
-									$drinkprice=explode('.',$drink->drink['price']);
+									$drinkprice=explode('.',$drink['price']);
 									
                                     $image=null;	
-									if(isset($drink->drink->image->file)){
-									$image=$drink->drink->image->asHtmlImage();
+									if(isset($drink['image'])){
+									    $image='<img src="'.$drink['image'].'">';
 									}
 									$drinkHtml[$cnt].='
 									<li>
@@ -54,11 +54,11 @@
 											'.$image.'
 										</div>
 										<div class="text-box">
-											<div class="title">'.$drink->drink->title.'</div>
-											<p>'.$drink->drink->detail_text.'</p>
+											<div class="title">'.$drink['title'].'</div>
+											<p>'.$drink['detail_text'].'</p>
 											<form action="/cart/adddrink/" method="post" class="add_drink">
 											<input type="hidden" value="'.$order_id.'" name="order_id"/>
-											<input type="hidden" value="'.$drink->drink->id.'" name="drink_id"/>
+											<input type="hidden" value="'.$drink['drink'].'" name="drink_id"/>
 											<div class="bottom-tools">
 												<div class="price">
 													<div class="num">'.$drinkprice[0].'</div>

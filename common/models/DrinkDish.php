@@ -159,4 +159,28 @@ class DrinkDish extends BaseActiveRecord
 
         return parent::searchInit($criteria);
     }
+    public function getDrinks($params=array()){
+        $connection = Yii::app()->db;
+        $sql = '
+        SELECT
+          gs_drink.title,
+          gs_drink.`detail_text`,
+          gs_drink.`price`,
+          gs_drink_dish.`drink_id`,
+          IF(gs_file.id,CONCAT("/",gs_file.path,"/",gs_file.`file`),"") AS image
+        FROM
+          `gs_drink_dish`
+        INNER JOIN gs_drink
+        ON gs_drink.id=gs_drink_dish.`drink_id`
+        LEFT JOIN gs_file
+        ON gs_drink.`image_id`=gs_file.id
+        WHERE gs_drink_dish.`dish_id` IN ('.implode(',',$params['dishes']).')
+        AND gs_drink.`status`=1
+        GROUP BY gs_drink.id
+        ';
+        $command = $connection->createCommand($sql);
+        $result = $command->queryAll();
+        if($result)
+            return $result;
+    }
 }
