@@ -168,7 +168,7 @@
 									<div class="required-description">Обязательные для заполнения поля</div>
 								</div>
 							</div>
-                            <? if($_SERVER['REMOTE_ADDR']=='195.177.72.222'){?>
+                            <? if($_SERVER['REMOTE_ADDR']=='91.209.51.157'){?>
                                 <?
                                 $charities=Charity::model()->active()->sort()->findAll();
                                 if($charities){
