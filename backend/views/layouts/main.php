@@ -181,6 +181,11 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'visible' => user()->checkAccess('Order.*'),
                                 'active' => $this->getId() === 'order',
                             ),
+                            array('label' => Yii::t('backend', 'Charity'),
+                                'url' => array('/charity'),
+                                'visible' => user()->checkAccess('Charity.*'),
+                                'active' => $this->getId() === 'charity',
+                            ),
                         )
                     ),
 
