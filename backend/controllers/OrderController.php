@@ -365,9 +365,7 @@ public function actionReceipt() {
        foreach($order->orderDishes as $dish){
        $total=null;
        $total=$dish->dish->price*$dish->quantity;
-       
        $total_dish=$total_dish+$total;
-       
        $tbl .= "
             <tr>
                 <td>{$cnt}</td>
@@ -393,6 +391,7 @@ public function actionReceipt() {
             </tr>";
        $cnt++;     
        }
+
        
         $discount=null;
         if($user->discount>0){
@@ -413,7 +412,19 @@ public function actionReceipt() {
             $discount=1;
        //echo $discount;
        //die();
-       $total_all=$total_dish*$discount+$total_drink;
+       $chartotal=0;
+       foreach($order->orderCharities as $char){
+           $chartotal=$chartotal+$char->charity->value;
+           $tbl .= "
+            <tr>
+                <td></td>
+                <td>{$char->charity->title}</td>
+                <td></td>
+                <td></td>
+                <td>{$char->charity->value} грн.</td>
+            </tr>";
+       }
+       $total_all=$total_dish*$discount+$total_drink+$chartotal;
 
 
 
