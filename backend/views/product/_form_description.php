@@ -40,7 +40,6 @@ $form = $this->beginWidget('backend.components.ActiveForm', array(
     <div class="span6">
         <?php echo $form->textFieldRow($model, 'title', array('class' => 'span9', 'maxlength' => 255)); ?>
         <?php echo $form->dropDownListRow($model, 'dishtype_id', CHtml::listData(Dishtype::model()->findAll('t.dpid=18'),'id','title')); ?>
-        <?php echo $form->textFieldRow($model, 'price', array('class' => 'span3')); ?>
         <?php echo $form->textAreaRow($model, 'detail_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
         <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
         <?php $this->tinymce(CHtml::resolveName($model, $tmp = "detail_text")); ?>
