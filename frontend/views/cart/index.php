@@ -168,6 +168,22 @@
 									<div class="required-description">Обязательные для заполнения поля</div>
 								</div>
 							</div>
+                            <? if($_SERVER['REMOTE_ADDR']=='195.177.72.222'){?>
+                                <?
+                                $charities=Charity::model()->active()->sort()->findAll();
+                                if($charities){
+                                    ?>
+                                    <div class="row" style="margin:-9px 0 11px;">
+                                        <?
+                                        foreach($charities as $charity){?>
+                                            <div class="label-holder">&nbsp;</div>
+                                            <input type="checkbox" name="charity[<?=$charity->id;?>]" id="char<?=$charity->id;?>" class="checkbox" value="<?=$charity->id;?>" />
+                                            <label class="checkbox-label" for="char<?=$charity->id;?>"><?=$charity->title;?></label>
+                                        <?}?>
+                                    </div>
+                                <?}
+                                ?>
+                            <?}?>
 							<div class="form-box">
 								<?
 								$cnt=1;
@@ -181,6 +197,7 @@
 								<?
 								$cnt++;
 								}?>
+
 								<!--<div class="row" style="margin:0 0 7px;">
 									<div class="label-holder">&nbsp;</div>
 									<input type="radio" name="paytype_id" class="radio" value="2"/>

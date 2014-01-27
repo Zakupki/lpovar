@@ -157,8 +157,8 @@ class CartController extends FrontController
             }
             else
 			$discountfoodPrice=$newfoodPrice;
-			
-            
+
+
             
 			foreach($order->orderDrinks as $orderedDrink){
 				$newPrice=$newPrice+($orderedDrink->drink->price*$orderedDrink->quantity);
@@ -360,6 +360,21 @@ class CartController extends FrontController
 				$table.='<tr><td>'.$cnt.'</td><td>'.$dish->title.'</td><td>'.$dish->quantity.'</td><td>'.$dish->price.'</td><td>'.$dish->price*$dish->quantity.' грн</td></tr>';
 			$cnt++;	
 			}
+
+            $charitybody='';
+            $charityCost=0;
+            if(isset($_POST['charity'])){
+                foreach($_POST['charity'] as $charity){
+                    $charityUser=new CharityOrder;
+                    $charityUser->order_id=$order->id;
+                    $charityUser->charity_id=$charity;
+                    $charityUser->save();
+                    $char=Charity::model()->findByPk($charity);
+                    $charityCost=$charityCost+$char->value;
+                    $charitybody.='<tr><td></td><td>'.$char->title.'</td><td></td><td></td><td>'.$char->value.' грн</td></tr>';
+                }
+            }
+
 			$messageuserbody=null;
 			if(isset($user->discount)){
 			$messageuserbody='
@@ -374,14 +389,15 @@ class CartController extends FrontController
 			
 			#Сообщение покупателю
 			$message = new YiiMailMessage;
+            $totalwithcharity=$charityCost+$this->cart->getCost();
 			$message_body='
 			Здравствуйте!<br><br>
 			Спасибо, что сделали заказ на сайте Lpovar.com.ua.<br><br>
 			Ваш заказ №'.$order->id.':<br><br>
 			<table border="1">
 			<tr><td>№</td><td>Название</td><td>Количество</td><td>Цена за шт.</td><td>Цена всего</td></tr>
-			'.$table.'
-			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost().' грн</td></tr>
+			'.$table.''.$charitybody.'
+			<tr><td colspan="3"></td><td>Всего:</td><td>'.$totalwithcharity.' грн</td></tr>
 			'.$messageuserbody.'
 			</table><br><br>
 			Ваши данные:<br><br>
@@ -439,11 +455,11 @@ class CartController extends FrontController
 			$message = new YiiMailMessage;
 			$messagebody=null;
 			$messagebody='Здравствуйте!<br><br>
-			Поступил новый заказ №'.$order->id.' от пользователя '.$user->email.' на сумму '.$this->cart->getCost().' грн.<br><br>
+			Поступил новый заказ №'.$order->id.' от пользователя '.$user->email.' на сумму '.$totalwithcharity.' грн.<br><br>
 			<table border="1">
 			<tr><td>№</td><td>Название</td><td>Количество</td><td>Цена за шт.</td><td>Цена всего</td></tr>
-			'.$table.'
-			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost().' грн</td></tr>';
+			'.$table.''.$charitybody.'
+			<tr><td colspan="3"></td><td>Всего:</td><td>'.$totalwithcharity.' грн</td></tr>';
 			if(isset($user->discount)){
 			$messagebody.='
 			<tr><td colspan="3"></td><td>Скидка:</td><td>-'.$user->discount.'%</td></tr>
