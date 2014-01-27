@@ -146,12 +146,6 @@ class CartController extends FrontController
 				$table.='<tr><td>'.$cnt.'</td><td>'.$orderedDish->dish->title.'</td><td>'.$orderedDish->quantity.'</td><td>'.$orderedDish->dish->price.'</td><td>'.$orderedDish->dish->price*$orderedDish->quantity.' грн</td></tr>';
 				$cnt++;
 			}
-            $charities=CharityOrder::model()->findByPk($order->id);
-            foreach($charities as $charOrder){
-                $table.='<tr><td></td><td>'.$charOrder->charity->title.'</td><td></td><td></td><td>'.$charOrder->charity->value.' грн</td></tr>';
-                $newfoodPrice=$newfoodPrice+$charOrder->charity->value;
-            }
-
 			$disc_percent=null;
 			if($order->discount_id>0){
 			    $discount=Discount::model()->findByPk($order->discount_id);
@@ -366,20 +360,6 @@ class CartController extends FrontController
 				$table.='<tr><td>'.$cnt.'</td><td>'.$dish->title.'</td><td>'.$dish->quantity.'</td><td>'.$dish->price.'</td><td>'.$dish->price*$dish->quantity.' грн</td></tr>';
 			$cnt++;	
 			}
-            $charitybody='';
-            $charityCost='';
-            if(isset($_POST['charity'])){
-                foreach($_POST['charity'] as $charity){
-                    $charityUser=new CharityOrder;
-                    $charityUser->order_id=$order->id;
-                    $charityUser->charity_id=$charity;
-                    $charityUser->save();
-                    $char=Charity::model()->findByPk($charity);
-                    $charityCost=$charityCost+$char->value;
-                    $charitybody.='<tr><td></td><td>'.$char->title.'</td><td></td><td></td><td>'.$char->value.' грн</td></tr>';
-                }
-            }
-
 			$messageuserbody=null;
 			if(isset($user->discount)){
 			$messageuserbody='
@@ -401,8 +381,7 @@ class CartController extends FrontController
 			<table border="1">
 			<tr><td>№</td><td>Название</td><td>Количество</td><td>Цена за шт.</td><td>Цена всего</td></tr>
 			'.$table.'
-			'.$charitybody.'
-			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost()+$charityCost.' грн</td></tr>
+			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost().' грн</td></tr>
 			'.$messageuserbody.'
 			</table><br><br>
 			Ваши данные:<br><br>
@@ -464,16 +443,15 @@ class CartController extends FrontController
 			<table border="1">
 			<tr><td>№</td><td>Название</td><td>Количество</td><td>Цена за шт.</td><td>Цена всего</td></tr>
 			'.$table.'
-			'.$charitybody.'
-			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost()+$charityCost.' грн</td></tr>';
+			<tr><td colspan="3"></td><td>Всего:</td><td>'.$this->cart->getCost().' грн</td></tr>';
 			if(isset($user->discount)){
 			$messagebody.='
 			<tr><td colspan="3"></td><td>Скидка:</td><td>-'.$user->discount.'%</td></tr>
-			<tr><td colspan="3"></td><td>Всего со скидкой:</td><td>'.$_POST['total']+$charityCost.' грн</td></tr>';
+			<tr><td colspan="3"></td><td>Всего со скидкой:</td><td>'.$_POST['total'].' грн</td></tr>';	
 			}
 			elseif(isset($session['discount'])){
 			$messagebody.='<tr><td colspan="3"></td><td>Скидка:</td><td>-'.$session['discount'].'%</td></tr>';
-			$messagebody.='<tr><td colspan="3"></td><td>Всего со скидкой:</td><td>'.$_POST['total']+$charityCost.' грн</td></tr>';
+			$messagebody.='<tr><td colspan="3"></td><td>Всего со скидкой:</td><td>'.$_POST['total'].' грн</td></tr>';	
 			}
 			$messagebody.='</table><br><br>
 			Данные заказчика:<br><br>
