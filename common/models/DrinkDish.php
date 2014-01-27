@@ -163,6 +163,7 @@ class DrinkDish extends BaseActiveRecord
         $connection = Yii::app()->db;
         $sql = '
         SELECT
+          gs_drink.id,
           gs_drink.title,
           gs_drink.`detail_text`,
           gs_drink.`price`,
