@@ -26,7 +26,7 @@
         $model->date_create=date('Y-m-d H:i:s');
     ?>
         
-    <?php echo $form->dropDownListRow($model, 'user_id', User::model()->listData(),array('empty'=>'Новый пользователь')); ?>
+    <?php echo $form->dropDownListRow($model, 'user_id', User::model()->sort('email')->listData(),array('empty'=>'Новый пользователь')); ?>
     <?php echo $form->dropDownListRow($model, 'paytype_id', Paytype::model()->listData()); ?>
     <?php echo $form->dropDownListRow($model, 'orderstate_id', Orderstate::model()->listData()); ?>
     <?php echo $form->textFieldRow($model, 'name', array('class' => 'span9', 'maxlength' => 255)); ?>
@@ -45,7 +45,30 @@
         'language' => 'ru-UTF',
     )); ?>
     <?php echo $form->dropDownListRow($model, 'discount_id',Discount::model()->listData(), array('empty'=>'')); ?>
+    <?
+        $charityOrders=CharityOrder::model()->findAllByAttributes(array('order_id'=>$model->id));
+        $charityArr=array();
+            foreach($charityOrders as $char){
+                $charityArr[$char->charity_id]=$char->charity_id;
+            }
+        $charities=Charity::model()->active()->sort()->findAll();
+
+        foreach($charities as $charity){
+            $cheched=(in_array($charity->id,$charityArr))?' checked="checked"':'';
+            echo '
+            <div class="control-group ">
+                <div class="controls">
+                    <label class="checkbox" for="CharityOrder_'.$charity->id.'">
+                        <input name="CharityOrder['.$charity->id.']" id="CharityOrder_'.$charity->id.'" value="'.$charity->id.'"'.$cheched.' type="checkbox">
+                        '.$charity->title.'
+                    </label>
+                </div>
+            </div>
+            ';
+        }
+    ?>
     <?php echo $form->textFieldRow($model, 'total', array('class' => 'span9', 'maxlength' => 55)); ?>
+
     <?php echo $form->checkBoxRow($model, 'status'); ?>
     <?php echo $form->textFieldRow($model, 'sort', array('class' => 'span2')); ?>
  </div>

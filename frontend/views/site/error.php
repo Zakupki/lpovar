@@ -22,7 +22,7 @@ $this->pageTitle .= ' - Error';
                     </div>
                 </div>
             </div>
-            <?=$this->renderWidgets($page->id);?>
+            <?//$this->renderWidgets($page->id);?>
         </div><!--main end-->
         <div class="see-menu btn-holder center">
             <a href="/#top" class="green-btn">

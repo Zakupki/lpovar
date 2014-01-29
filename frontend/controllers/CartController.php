@@ -171,11 +171,19 @@ class CartController extends FrontController
 			
 			$newPrice=$newPrice+$discountfoodPrice;
             
+            $charityOrders=CharityOrder::model()->findAllByAttributes(array('order_id'=>$order->id));
+            foreach($charityOrders as $charity){
+                $table.='<tr><td></td><td>'.$charity->charity->title.'</td><td></td><td></td><td>'.$charity->charity->value.' грн</td></tr>';
+                $nonDiscountPrice=$nonDiscountPrice+$charity->charity->value;
+                $newPrice=$newPrice+$charity->charity->value;
+            }
+
             if($order->orderDishes || $order->orderDrinks){
             settype($newPrice,"double");
 			$order->total=$newPrice;
 			$order->save();
 			}
+
 			
 			#Сообщение пользователю
 			$message = new YiiMailMessage;
@@ -488,10 +496,11 @@ class CartController extends FrontController
 			
 		}
 		$drinks=null;
-		if(count($dishArr)>0)
-            $drinks=DrinkDish::model()->getDrinks(array('dishes'=>$dishArr));
+		if(count($dishArr)>0){
+        $drinks=DrinkDish::model()->getDrinks(array('dishes'=>$dishArr));
 		//$drinks=DrinkDish::model()->with(array('drink'=>array('with'=>'image')),'active')->findAll('t.dish_id in('.implode(',',$dishArr).') AND drink.status=1');
-
+        }
+        //$drinks=null;
 		if($order->id>0)
 		$cart->clear();
 		

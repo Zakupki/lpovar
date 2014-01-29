@@ -245,6 +245,46 @@ class OrderController extends BackController
 
         if($discountpercent<1)
             $discount=1;
+
+
+        /*if(isset($_POST['CharityOrder']))
+        {
+            $charityOrders=CharityOrder::model()->findAllByAttributes(array('order_id'=>$model->id));
+            foreach($charityOrders){
+
+            }
+
+        }*/
+        if(isset($_POST['CharityOrder']))
+        {
+            $hasErrors = false;
+            $psModel = new CharityOrder();
+            $CharityOrderData = $_POST['CharityOrder'];
+            foreach($CharityOrderData as $item)
+            {
+                    $psModel->charity_id = $item;
+                    if(!$psModel->validate(array('charity_id')))
+                    {
+                        $hasErrors = true;
+                        user()->addFlash(
+                            'error',
+                            $this->renderPartial('//inc/_model_errors', array('data' => $psModel->stringifyAttributeErrors()), true)
+                        );
+                        continue;
+                    }
+
+            }
+
+            if(!$hasErrors)
+                CharityOrder::model()->updateForOrder($model->id, $CharityOrderData);
+        }else{
+            CharityOrder::model()->updateForOrder($model->id, array());
+        }
+
+
+
+
+
 		$sql='
 			SELECT SUM(total) FROM ((SELECT 
 			SUM(gs_order_dish.`quantity`*gs_dish.price)*'.$discount.' AS `total`
@@ -253,6 +293,8 @@ class OrderController extends BackController
 			INNER JOIN gs_dish
 			ON gs_dish.id=gs_order_dish.`dish_id`
 			WHERE gs_order_dish.`order_id`='.$model->id.')
+			UNION ALL
+			(SELECT SUM(gs_charity.value) AS `total` FROM gs_charity_order INNER JOIN gs_charity ON gs_charity.id=gs_charity_order.charity_id WHERE gs_charity_order.order_id='.$model->id.')
 			UNION ALL
 			(SELECT 
 			SUM(gs_order_drink.`quantity`*gs_drink.price) AS `total`
@@ -323,9 +365,7 @@ public function actionReceipt() {
        foreach($order->orderDishes as $dish){
        $total=null;
        $total=$dish->dish->price*$dish->quantity;
-       
        $total_dish=$total_dish+$total;
-       
        $tbl .= "
             <tr>
                 <td>{$cnt}</td>
@@ -351,6 +391,7 @@ public function actionReceipt() {
             </tr>";
        $cnt++;     
        }
+
        
         $discount=null;
         if($user->discount>0){
@@ -371,7 +412,19 @@ public function actionReceipt() {
             $discount=1;
        //echo $discount;
        //die();
-       $total_all=$total_dish*$discount+$total_drink;
+       $chartotal=0;
+       foreach($order->orderCharities as $char){
+           $chartotal=$chartotal+$char->charity->value;
+           $tbl .= "
+            <tr>
+                <td></td>
+                <td>{$char->charity->title}</td>
+                <td></td>
+                <td></td>
+                <td>{$char->charity->value} грн.</td>
+            </tr>";
+       }
+       $total_all=$total_dish*$discount+$total_drink+$chartotal;
 
 
 

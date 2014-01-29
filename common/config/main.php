@@ -64,9 +64,9 @@ $config = array(
             'assignmentTable' => 'gs_auth_assignment',
             'rightsTable' => 'gs_rights',
         ),
-        'cache' => array(
+       /* 'cache' => array(
             'class' => 'system.caching.CDummyCache',
-        ),
+        ),*/
         'mail' => array(
             'class' => 'common.extensions.yii-mail.YiiMail',
             'transportType' => 'php',

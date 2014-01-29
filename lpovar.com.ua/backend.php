@@ -1,5 +1,5 @@
 <?php
-if($_SERVER['REMOTE_ADDR']=='31.42.52.10' || $_SERVER['REMOTE_ADDR']=='91.209.51.157'){
+if($_SERVER['REMOTE_ADDR']=='31.42.52.10' || $_SERVER['REMOTE_ADDR']=='91.209.51.157' && 1==2){
     error_reporting(1);
     @ini_set('display_errors',1);
     @ini_set('error_reporting', E_ALL);

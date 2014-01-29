@@ -94,4 +94,58 @@ class CharityOrder extends BaseActiveRecord
 
         return parent::searchInit($criteria);
     }
+    public function updateForOrder($id, $newData = array())
+    {
+        $buff = array();
+        // rid of possibly duplicated size quantitys, use last one
+
+        foreach($newData as $item)
+            $buff[(int)$item] =$item;
+
+        $newData = $buff;
+
+        if(empty($newData))
+            return self::model()->deleteAllByAttributes(array('order_id' => $id));
+
+        $o = 0;
+        $delete = array();
+
+        // update existing product info with new quantities, prices
+        /** @var $curData ProductInfo[] */
+        $curData = self::model()->findAllByAttributes(array('order_id' => $id));
+        foreach($curData as $item)
+        {
+            if(!isset($newData[$item->charity_id]))
+            {
+                $delete[] = $item->charity_id;
+                continue;
+            }
+            if(isset($newData[$item->charity_id])){
+                unset($newData[$item->charity_id]);
+                ++$o;
+            }
+        }
+
+        // delete info
+        self::model()->deleteAllByAttributes(array('order_id' => $id, 'charity_id' => $delete));
+
+
+
+        // add new info
+        $model = new self();
+        foreach($newData as $charity_id)
+        {
+            $model->order_id = $id;
+            $model->charity_id = $charity_id;
+            if($model->save(false))
+            {
+                ++$o;
+                $model->id = null;
+                $model->setIsNewRecord(true);
+            }
+        }
+
+        return $o;
+    }
+
 }

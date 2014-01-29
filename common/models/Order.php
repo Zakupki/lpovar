@@ -97,6 +97,7 @@ class Order extends BaseActiveRecord
             'orderDishes' => array(self::HAS_MANY, 'OrderDish', 'order_id'),
             //'dish_count' => array(self::STAT, 'OrderDish', 'order_id'),
             'orderDrinks' => array(self::HAS_MANY, 'OrderDrink', 'order_id'),
+            'orderCharities' => array(self::HAS_MANY, 'CharityOrder', 'order_id'),
             //'orderDrinksCount' => array(self::STAT, 'OrderDrink', 'order_id'),
             //'orderOrders' => array(self::HAS_MANY, 'Order', 'user_id'),
         );
