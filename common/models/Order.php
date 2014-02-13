@@ -208,7 +208,7 @@ class Order extends BaseActiveRecord
         
         //$criteria->join('innse JOIN users ON users.id=authorID');     
 
-        $criteria->with = array('discount', 'paytype', 'user');
+        $criteria->with = array('discount', 'paytype', 'user', 'orderCharities');
 
         return parent::searchInit($criteria);
     }

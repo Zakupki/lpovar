@@ -114,6 +114,10 @@ $this->breadcrumbs = array(
             'phone',
             'total',
             array(
+                'value'=>'$data->orderCharities[0]->charity->value',
+                'htmlOptions'=>array('style'=>'color:red'),
+            ),
+            array(
                 'name'=> 'delivery',
                 'value' => 'implode(" - ",array($data->delivery_from,$data->delivery_till))',
                 'filter' => ''
