@@ -382,6 +382,11 @@ class CartController extends FrontController
                     $charitybody.='<tr><td></td><td>'.$char->title.'</td><td></td><td></td><td>'.$char->value.' грн</td></tr>';
                 }
             }
+            if($charityCost>0){
+                $order = Order::model()->findByPk($order->id);
+                $order->total=$order->total+$charityCost;
+                $order->save();
+            }
 
 			$messageuserbody=null;
 			if(isset($user->discount)){
