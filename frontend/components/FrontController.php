@@ -41,6 +41,7 @@ abstract class FrontController extends CController
     public $povar_newyear;
     public $current_popup;
     public $display_popup;
+    public $display_closed_popup;
     /**
      * Model name
      *
@@ -86,7 +87,12 @@ abstract class FrontController extends CController
             //unset(Yii::app()->request->cookies['current_popup']);
 
         //}
-
+        if(!Yii::app()->session['closed_popup']){
+            Yii::app()->session['closed_popup']=1;
+            $this->display_closed_popup=1;
+        }else{
+            $this->display_closed_popup=0;
+        }
 
 
         //unset(Yii::app()->request->cookies['povar_newyear']);

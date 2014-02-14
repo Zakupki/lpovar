@@ -379,7 +379,7 @@
         <span class="popup-stroke"></span>
     </div>
 </div><!--popup end-->
-<?if(!Option::getOpt('buy')){?>
+<?if(!Option::getOpt('buy') && $this->display_closed_popup){?>
 <div class="popup-holder" id="closed-popup" style="display: block;"><!--popup start-->
     <div class="bg">&nbsp;</div>
     <div class="popup">
