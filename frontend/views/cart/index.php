@@ -201,7 +201,7 @@
 									<input type="radio" name="paytype_id" class="radio" value="2"/>
 									<label class="radio-label" for="lbl2402">Оплатить через Интернет-кассу. Мы принимаем все ;) </label>
 								</div>-->
-								
+                                <? if(Option::getOpt('buy')){?>
 								<div class="row">
 									<div class="btn-holder right">
 										<div class="red-btn">
@@ -210,6 +210,7 @@
 										</div>
 									</div>
 								</div>
+                                <?}?>
 							</div>
 						</fieldset>
 					</form>
@@ -330,7 +331,8 @@
 								<?
 								$cnt++;
 								}?>
-								<div class="row">
+                                <? if(Option::getOpt('buy')){?>
+                                <div class="row">
 									<div class="btn-holder right">
 										<div class="red-btn">
 											<span>Оформить заказ</span>
@@ -338,6 +340,7 @@
 										</div>
 									</div>
 								</div>
+                                <?}?>
 							</div>
 						</fieldset>
 					</form>

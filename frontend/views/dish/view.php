@@ -1,4 +1,5 @@
 		<div id="main"><!--main start-->
+        <? if(Option::getOpt('buy')){?>
 			<div class="aside aside-fixed">
 				<form action="/cart/add/<?=$dish->id;?>/" class="search">
 					<fieldset>
@@ -45,6 +46,7 @@
 					</fieldset>
 				</form>
 			</div>
+        <?}?>
 			<div class="content-frame">
             <? if($dish->new){?>
                 <span class="news-label">Новинка</span>
