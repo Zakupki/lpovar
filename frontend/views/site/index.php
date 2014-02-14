@@ -55,8 +55,10 @@
 						<?}?>
 						<span class="mask">&nbsp;</span>
 						</a>
-						<a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
-						<a href="<?=$dish->getUrl();?>" class="play"></a>
+                        <? if(Option::getOpt('buy')){?>
+                            <a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
+                        <?}?>
+                        <a href="<?=$dish->getUrl();?>" class="play"></a>
 					</div>
 					<div class="info-row">
 						<span class="bottom-deco">&nbsp;</span>
@@ -83,8 +85,10 @@
 						<?}?>
 						<span class="mask">&nbsp;</span>
 						</a>
-						<a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
-						<a href="<?=$dish->getUrl();?>" class="play"></a>
+                        <? if(Option::getOpt('buy')){?>
+                        <a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
+                        <?}?>
+                        <a href="<?=$dish->getUrl();?>" class="play"></a>
 					</div>
 					<div class="info-row">
 						<span class="bottom-deco">&nbsp;</span>
