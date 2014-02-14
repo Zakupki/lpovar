@@ -367,18 +367,38 @@
     <div class="popup">
         <div class="popup-frame">
             <p>Бесплатная доставка "сегодня на сегодня" по всему Киеву.<br>
-            Время работы: с 10.00 до 21.00 / 7 дней в неделю.<br>
+                Время работы: с 10.00 до 21.00 / 7 дней в неделю.<br>
             </p>
-                            <div class="btn-holder" >
-                                <a href="#" class="green-btn close-popup">
-                                    <span>ок</span>
-                                </a>
-                            </div>
+            <div class="btn-holder" >
+                <a href="#" class="green-btn close-popup">
+                    <span>ок</span>
+                </a>
+            </div>
             <a href="#" class="close"></a>
         </div>
         <span class="popup-stroke"></span>
     </div>
 </div><!--popup end-->
+<?if(!Option::getOpt('buy')){?>
+<div class="popup-holder" id="closed-popup" style="display: block;"><!--popup start-->
+    <div class="bg">&nbsp;</div>
+    <div class="popup">
+        <div class="popup-frame">
+            <p>Друзья, всех с праздником!<br>
+                У нас сегодня ооочень много доставок, так что пока мы не принимаем заказы!<br>
+                Следите за обновлениями!
+            </p>
+            <div class="btn-holder" >
+                <a href="#" class="green-btn close-popup">
+                    <span>ок</span>
+                </a>
+            </div>
+            <a href="#" class="close"></a>
+        </div>
+        <span class="popup-stroke"></span>
+    </div>
+</div>
+<?}?><!--popup end-->
 <!--popup end-->
 <div class="popup-holder" id="buy-popup"><!--popup start-->
     <div class="bg">&nbsp;</div>

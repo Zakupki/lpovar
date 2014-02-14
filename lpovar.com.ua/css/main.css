@@ -312,3 +312,9 @@ ul.tisers-list li:hover > ul {
     background: url(/images/red-btn-ny.png) no-repeat;
     padding: 9px 13px 0 17px;
 }
+#closed-popup .popup-frame {
+    padding: 21px 20px 52px;
+}
+#closed-popup .btn-holder {
+    padding: 0 0 0 116px;
+}

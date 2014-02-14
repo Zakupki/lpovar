@@ -181,6 +181,7 @@ function newyearpopupAction(){
     $('#newyear-popup').css('left', '0').fadeIn(200);
     $('#newyear-popup2').css('left', '0').fadeIn(200);
     $('#tefal-popup').css('left', '0').fadeIn(200);
+    $('#closed-popup').css('left', '0').fadeIn(200);
 }
 
 function subscribeValidation(){
