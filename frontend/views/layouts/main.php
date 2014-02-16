@@ -124,7 +124,7 @@
   js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=509418155763464";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="wrapper-holder new-year">
+<div class="wrapper-holder"><!--new-year-->
 	<div id="wrapper"><!--wrapper start-->
 		<div class="header-holder<?=($this->id=='site' && $this->action->id=='index')?'':' small';?>">
 			<div id="header"><!--header start-->
