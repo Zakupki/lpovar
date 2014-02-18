@@ -1,5 +1,5 @@
 <?php
-if($_SERVER['REMOTE_ADDR']=='31.42.52.10' || $_SERVER['REMOTE_ADDR']=='91.209.51.157' && 1==2){
+if(($_SERVER['REMOTE_ADDR']=='195.177.72.222' || $_SERVER['REMOTE_ADDR']=='91.209.51.157') && 1==1){
     error_reporting(1);
     @ini_set('display_errors',1);
     @ini_set('error_reporting', E_ALL);
@@ -7,6 +7,7 @@ if($_SERVER['REMOTE_ADDR']=='31.42.52.10' || $_SERVER['REMOTE_ADDR']=='91.209.51
     error_reporting(0);
     @ini_set('display_errors',0);
 }
+ini_set('memory_limit', '2048M');
 
 @include(dirname(__FILE__).'/../init.php');
 
