@@ -119,6 +119,11 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'visible' => user()->checkAccess('Tools.Admin'),
                                 'active' => $this->getId() === 'tools',
                             ),
+                            array('label' => Yii::t('backend', 'Blog'),
+                                'url' => array('/blog'),
+                                'visible' => user()->checkAccess('Blog.Admin'),
+                                'active' => $this->getId() === 'blog',
+                            ),
                         )
                     ),
                     array('label' => Yii::t('backend', 'Shop'),
