@@ -13,6 +13,8 @@
  * @property integer $views
  * @property integer $likes
  * @property integer $comments
+ * @property integer $sort
+ * @property integer $status
  *
  * @method Blog active
  * @method Blog cache($duration = null, $dependency = null, $queryCount = 1)
@@ -23,8 +25,8 @@
  * @method Blog sort($columns = '')
  *
  * The followings are the available model relations:
- * @property File $image
  * @property User $user
+ * @property File $image
  */
 class Blog extends BaseActiveRecord
 {
@@ -68,13 +70,13 @@ class Blog extends BaseActiveRecord
     {
         return array_merge(parent::rules(), array(
             array('user_id, date_create', 'required'),
-            array('user_id, views, likes, comments', 'numerical', 'integerOnly' => true),
+            array('user_id, views, likes, comments, sort, status', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 255),
             array('image_id, preview_text, detail_text', 'safe'),
             array('image_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('user_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
         
-            array('id, title, user_id, image_id, preview_text, detail_text, date_create, views, likes, comments', 'safe', 'on' => 'search'),
+            array('id, title, user_id, image_id, preview_text, detail_text, date_create, views, likes, comments, sort, status', 'safe', 'on' => 'search'),
         ));
     }
 
@@ -84,8 +86,8 @@ class Blog extends BaseActiveRecord
     public function relations()
     {
         return array(
-            'image' => array(self::BELONGS_TO, 'File', 'image_id'),
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+            'image' => array(self::BELONGS_TO, 'File', 'image_id'),
         );
     }
 
@@ -105,6 +107,8 @@ class Blog extends BaseActiveRecord
             'views' => Yii::t('backend', 'Views'),
             'likes' => Yii::t('backend', 'Likes'),
             'comments' => Yii::t('backend', 'Comments'),
+            'sort' => Yii::t('backend', 'Sort'),
+            'status' => Yii::t('backend', 'Status'),
         );
     }
 
@@ -126,6 +130,8 @@ class Blog extends BaseActiveRecord
 		$criteria->compare('t.views',$this->views);
 		$criteria->compare('t.likes',$this->likes);
 		$criteria->compare('t.comments',$this->comments);
+		$criteria->compare('t.sort',$this->sort);
+		$criteria->compare('t.status',$this->status);
 
 		$criteria->with = array('user');
 

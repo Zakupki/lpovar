@@ -4,8 +4,7 @@ class BlogController extends FrontController
 {
 	public function actionIndex()
 	{
-        $items=123;
-		//$items=Press::model()->with()->sort()->active()->findAll();
+        $items=Blog::model()->with()->sort()->active()->findAll();
 		$this->render('index',array('items'=>$items));
 	}
 	
