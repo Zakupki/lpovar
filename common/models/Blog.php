@@ -30,8 +30,6 @@
  */
 class Blog extends BaseActiveRecord
 {
-    public $sort;
-    public $status;
 
     public function behaviors()
     {
