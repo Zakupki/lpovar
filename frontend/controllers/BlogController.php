@@ -4,7 +4,7 @@ class BlogController extends FrontController
 {
 	public function actionIndex()
 	{
-        $items=Blog::model()->with()->sort()->active()->findAll();
+        $items=Blog::model()->sort()->active()->findAll();
 		$this->render('index',array('items'=>$items));
 	}
 	
