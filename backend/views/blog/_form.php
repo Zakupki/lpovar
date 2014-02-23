@@ -33,5 +33,7 @@
     <?php echo $form->textFieldRow($model, 'views', array('class' => 'span2')); ?>
     <?php echo $form->textFieldRow($model, 'likes', array('class' => 'span2')); ?>
     <?php echo $form->textFieldRow($model, 'comments', array('class' => 'span2')); ?>
+    <?php echo $form->textFieldRow($model, 'sort', array('class' => 'span2')); ?>]
+    <?php echo $form->checkBoxRow($model, 'status'); ?>
 
 <?php $this->endWidget(); ?>

@@ -1,7 +1,7 @@
 <div id="main"><!--main start-->
 			<div id="content">
 				<div class="content-box">
-					<h1>Пресса о нас</h1>
+					<h1>Блог</h1>
 					<ul class="lesson-list">
 						<? foreach($items as $item){?>
 						<li>
