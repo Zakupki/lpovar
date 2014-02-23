@@ -1,4 +1,4 @@
-<div id="main"><!--main start-->
+<div id="main blog"><!--main start-->
 			<div id="content">
 				<div class="content-box">
 					<h1>Блог</h1>
