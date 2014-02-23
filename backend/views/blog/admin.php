@@ -25,15 +25,10 @@ $this->breadcrumbs = array(
             'title',
             array(
                 'name' => 'user_id',
-                'value' => '$data->user ? $data->user->title : null',
-                'filter' => CHtml::listData(User::model()->findAll(), 'id', 'title'),
+                'value' => '$data->user ? $data->user->email : null',
+                'filter' => CHtml::listData(User::model()->sort('email')->findAll(), 'id', 'email'),
             ),
-            'preview_text',
-            'detail_text',
             'date_create',
-            'views',
-            'likes',
-            'comments',
         ),
     )); ?>
 

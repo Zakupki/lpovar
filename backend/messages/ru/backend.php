@@ -35,6 +35,8 @@ return array (
     'Alternative Title' => 'Альтернативный заголовок',
     'Big' => 'Большой',
     'Big image' => 'Большое изображение',
+    'Blog' => 'Блог',
+    'Blogs' => 'Блоги',
     'Cannot resolve site url' => 'Не могу определить ссылку сайта',
     'Category' => 'Категория',
     'Catalog' => 'Каталог',

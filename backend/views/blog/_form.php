@@ -19,7 +19,7 @@
 )); ?>
 
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span9', 'maxlength' => 255)); ?>
-    <?php echo $form->dropDownListRow($model, 'user_id', array()); ?>
+    <?php echo $form->dropDownListRow($model, 'user_id', User::model()->sort('email')->listData()); ?>
     <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
     <?php echo $form->textAreaRow($model, 'preview_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
     <?php echo $form->textAreaRow($model, 'detail_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
@@ -30,8 +30,8 @@
         'showsTime' => true,
         'language' => 'ru-UTF',
     )); ?>
-    <?php echo $form->textFieldRow($model, 'views', array('class' => 'span9')); ?>
-    <?php echo $form->textFieldRow($model, 'likes', array('class' => 'span9')); ?>
-    <?php echo $form->textFieldRow($model, 'comments', array('class' => 'span9')); ?>
+    <?php echo $form->textFieldRow($model, 'views', array('class' => 'span2')); ?>
+    <?php echo $form->textFieldRow($model, 'likes', array('class' => 'span2')); ?>
+    <?php echo $form->textFieldRow($model, 'comments', array('class' => 'span2')); ?>
 
 <?php $this->endWidget(); ?>
