@@ -392,3 +392,6 @@ ul.tisers-list li:hover > ul {
     -khtml-opacity: 0.5;        /* Safari 1.x */
     opacity: 0.5;
 }
+#wrapper .blog-holder{
+    background: url(/images/header-bg-blog.png) repeat-x 0 100% ;
+}
