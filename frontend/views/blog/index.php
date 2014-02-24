@@ -25,9 +25,9 @@
                             <p><?=$item->preview_text;?></p>
                             <div class="btn-holder right">
                                 <div class="blog-info">
-                                    <span class="blog-views informer">100</span>
-                                    <span class="blog-likes informer">100</span>
-                                    <span class="blog-comments informer">100</span>
+                                    <span class="blog-views informer">0</span>
+                                    <span class="blog-likes informer">0</span>
+                                    <span class="blog-comments informer">0</span>
                                 </div>
                                 <a href="/blog/<?=$item->id;?>/" class="green-btn">
                                     <span>Читать далее</span>
