@@ -23,6 +23,11 @@
                             <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
                             <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
+                            <div class="btn-holder right">
+                                <a href="/blog/<?=$item->id;?>/" class="green-btn">
+                                    <span>Читать далее</span>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 <?}?>
