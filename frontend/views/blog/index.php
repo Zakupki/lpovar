@@ -1,5 +1,8 @@
 <div class="blog-gallery-holder">
-    <div class="blog-holder-content">123</div>
+    <div class="blog-holder-content">
+        <img src="/images/blog-header.png"/>
+        <div class="blog-text">Выберите гастрономический набор, закажите бесплатную доставку специально подготовленных для него продуктов, добавьте щепотку вдохновения – и через полчаса изысканный ужин на двоих готов! Один набор – включает два блюда.</div>
+    </div>
 </div>
 <div id="blog"><!--main start-->
     <div id="content">
