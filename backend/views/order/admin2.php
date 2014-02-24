@@ -90,6 +90,13 @@ $this->breadcrumbs = array(
             'value' => '$data->orderstate_id>0 ? $data->orderstate->title : null',
             'filter' => CHtml::listData(Orderstate::model()->findAll(), 'id', 'title'),
             ),
+           /*
+            array(
+                           'class' => 'bootstrap.widgets.TbToggleColumn',
+                           'toggleAction' => 'example/toggle',
+                           'name' => 'status',
+                           'header' => 'Toggle'
+                       ),*/
 
             'order_count',
             'dish_count',
@@ -98,7 +105,7 @@ $this->breadcrumbs = array(
                 'value'=>'$data->dishlist',
                 ),
             'drink_count',
-            array(
+             array(
                 'name'=>'drinklist',
                 'value'=>'$data->drinklist',
                 ),
@@ -107,7 +114,7 @@ $this->breadcrumbs = array(
             'phone',
             'total',
             array(
-                'value'=>'(isset($data->orderCharities[0]->charity->value))?$data->orderCharities[0]->charity->value:0',
+                'value'=>'$data->orderCharities[0]->charity->value',
                 'htmlOptions'=>array('style'=>'color:red'),
             ),
             array(
@@ -116,14 +123,21 @@ $this->breadcrumbs = array(
                 'filter' => ''
                 ),
             'delivery_addr',
+            /*
+            array(
+                          'name' => 'date_create',
+                          'filter' => $this->widget('backend.extensions.bootstrap.widgets.TbDateRangePicker',
+                           array('name'=>'Order[name]')
+                           ),
+                       ),*/
 
              array(
                 'name'=>'date_create',
                 'filter'=>$dateisOn,
                 'value'=>'$data->date_create'
                 ),
-
-
+             
+            
         ),
         'extendedSummary' => array(
                 'title' => 'Всего заказано на сумму',
