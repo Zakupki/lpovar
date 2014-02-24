@@ -1,5 +1,5 @@
 <?php
-if(1==1){
+if(2==1){
     error_reporting(1);
     @ini_set('display_errors',1);
     @ini_set('error_reporting', E_ALL);
