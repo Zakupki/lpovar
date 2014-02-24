@@ -48,6 +48,7 @@
     </div>
     <div id="sidebar">
         <ul class="catalog-list">
+            <? foreach($dishes as $dish){?>
             <li>
                 <div class="img-holder">
                     <a href="/product/view/133?title=blyudo_ot_komyuniti_shefa_aleny_mischenko_spagetti_karbonara">
@@ -69,6 +70,7 @@
                     </div>
                 </div>
             </li>
+            <?}?>
         </ul>
     </div>
 </div><!--main end-->

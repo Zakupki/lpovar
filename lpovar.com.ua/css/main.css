@@ -439,6 +439,12 @@ ul.tisers-list li:hover > ul {
     border-radius: 86px;
     margin: 10px;
 }
+#blog #sidebar{
+    width:280px;
+}
+#blog .catalog-list{
+    width: 275px;
+}
 #blog .catalog-list > li{
     width: 275px;
     height: 275px;
