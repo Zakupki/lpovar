@@ -349,3 +349,11 @@ ul.tisers-list li:hover > ul {
     font: 16px/20px Georgia, Georgia, serif;
     padding: 0 0 5px;
 }
+.blog-gallery-holder {
+    background: url(/images/promo-blog-bg.png) repeat-x 50% 100%;
+    height: 479px;
+    position: relative;
+    margin: -8px -9999px 16px;
+    padding: 8px 9999px 0;
+    z-index: 1;
+}

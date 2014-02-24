@@ -126,7 +126,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper-holder"><!--new-year-->
 	<div id="wrapper"><!--wrapper start-->
-		<div class="header-holder<?=($this->id=='site' && $this->action->id=='index')?'':' small';?>">
+		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?'':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
 					<h1 class="logo"><a href="/">Личный повар</a></h1>
