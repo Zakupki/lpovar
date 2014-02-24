@@ -395,3 +395,47 @@ ul.tisers-list li:hover > ul {
 #wrapper .blog-holder{
     background: url(/images/header-bg-blog.png) repeat-x 0 100% ;
 }
+#blog .blogger{
+    overflow: hidden;
+    padding: 10px 0 30px;
+}
+#blog .blogger h2{
+    background: url(/images/quote.png) no-repeat;
+    padding: 13px 15px 0px 17px;
+    margin: 0 0 -4px -17px;
+    padding: 13px 15px 0px 17px;
+}
+#blog .blogger h3{
+    color: #6daf31;
+    font: 24px/24px Georgia, Georgia, serif;
+    margin: 20px 0 8px 0;
+}
+#blog .blogger-text{
+    padding: 0 0 0 240px;
+    color: #333333;
+}
+.blogger-logo{
+    overflow: hidden;
+    float:left;
+}
+.blogger-round{
+    background-color: #000000;
+    padding: 10px;
+    width: 172px;
+    height: 172px;
+    position: relative;
+    border-radius: 96px;
+    position: absolute;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";       /* IE 8 */
+    filter: alpha(opacity=10);  /* IE 5-7 */
+    -moz-opacity: 0.1;          /* Netscape */
+    -khtml-opacity: 0.1;        /* Safari 1.x */
+    opacity: 0.1;
+}
+.blogger-logo img{
+    width: 172px;
+    height: 172px;
+    position: relative;
+    border-radius: 86px;
+    margin: 10px;
+}
