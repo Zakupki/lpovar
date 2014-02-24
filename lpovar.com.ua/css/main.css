@@ -357,3 +357,21 @@ ul.tisers-list li:hover > ul {
     padding: 8px 9999px 0;
     z-index: 1;
 }
+#blog .blog-views{
+    background: url(/images/blog-views.png) no-repeat;
+    font: 14px/18px Georgia, Georgia, serif;
+    padding: 0 12px 0 19px;
+    color: #888888;
+}
+#blog .blog-likes{
+    background: url(/images/blog-likes.png) no-repeat;
+    font: 14px/18px Georgia, Georgia, serif;
+    padding: 0 12px 0 19px;
+    color: #888888;
+}
+#blog .blog-comments{
+    background: url(/images/blog-comments.png) no-repeat;
+    font: 14px/18px Georgia, Georgia, serif;
+    padding: 0 12px 0 19px;
+    color: #888888;
+}

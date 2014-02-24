@@ -24,6 +24,9 @@
                             <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
                             <div class="btn-holder right">
+                                <span class="blog-views">100</span>
+                                <span class="blog-likes">100</span>
+                                <span class="blog-comments">100</span>
                                 <a href="/blog/<?=$item->id;?>/" class="green-btn">
                                     <span>Читать далее</span>
                                 </a>
