@@ -318,3 +318,19 @@ ul.tisers-list li:hover > ul {
 #closed-popup .btn-holder {
     padding: 0 0 0 116px;
 }
+#blog {
+    width: 100%;
+    position: relative;
+}
+#blog #content{
+    width: 650px;
+}
+#blog #content .content-box{
+    padding: 0;
+}
+#blog #content .blog-text{
+    padding: 15px 20px 5px;
+}
+#blog .lesson-list li{
+    border-bottom: none;
+}

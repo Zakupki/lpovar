@@ -179,7 +179,8 @@
 		</div>
 		<?=$content;?>
 		<!-- end catalog-list -->
-			<div class="like-row">
+			<? if(yii::app()->controller->id!='blog'){?>
+            <div class="like-row">
 				<div class="ico-frame">
 					<img src="/images/ico24.png" width="76" height="70" alt="image description" />
 				</div>
@@ -188,6 +189,7 @@
 					<!--<div class="fb-facepile" data-app-id="509418155763464" data-href="https://www.facebook.com/Lpovar" data-action="Comma separated list of action of action types" data-width="824" data-max-rows="1"></div>-->
 				</div>
 			</div>
+            <?}?>
 	</div><!--wrapper end-->
 </div>
 <div class="footer-holder">
