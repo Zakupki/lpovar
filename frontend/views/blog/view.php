@@ -27,7 +27,7 @@
                         ?>
                         <div class="blog-text">
                             <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
-                            <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
+                            <h3><?=$item->title;?></h3>
                             <p><?=$item->detail_text;?></p>
                             <div class="btn-holder right">
                                 <div class="blog-info">
@@ -37,6 +37,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="fb-comments" data-href="http://<?=$_SERVER['HTTP_HOST'];?><?=$_SERVER['REQUEST_URI'];?>" data-num_posts="2"  data-width="620"></div>
                     </li>
             </ul>
         </div>

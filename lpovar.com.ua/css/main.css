@@ -449,3 +449,6 @@ ul.tisers-list li:hover > ul {
     width: 275px;
     height: 275px;
 }
+#blog .fb-comments{
+    padding: 10px 10px 0;
+}
