@@ -10,10 +10,10 @@
                         }
                         ?>
                         <div class="blog-text">
-                            <h3><a href="/press/<?=$item->id;?>/"><?=$item->title;?></a></h3>
+                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
+                            <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
                         </div>
-                        <!--<div class="date">20 ноября 2014 / 22:00</div>-->
                     </li>
                 <?}?>
             </ul>

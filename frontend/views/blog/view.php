@@ -1,26 +1,28 @@
-		<div id="main"><!--main start-->
-			<div id="content">
-				<div class="content-box">
-					<h1><?=$page['title'];?></h1>
-					<? if(isset($page->image->file)){?>
-					<div class="visual-box" style="margin-bottom:10px;">
-						<?=$page->image->asHtmlImage($page->title);?>
-					</div>
-					<?}?>
-					<div class="content-block">
-							<p><?=$page['detail_text'];?></p>
-							<? if($page['link']){?>
-							<p><br/>
-								Источник: 
-								<a target="_blank" href="http://<?=str_replace(array('http://','https://'), '', $page['link'])?>"><?=$page['link'];?></a></p>
-							<?}?>
-					</div>
-				</div>
-			</div>
-			<?=$this->renderWidgets($page->id);?>
-		</div><!--main end-->
-		<div class="see-menu btn-holder center">
-			<a href="/#top" class="green-btn">
-				<span><?=Yii::t('frontend', 'Actualdish');?></span>
-			</a>
-		</div>
+<div id="blog"><!--main start-->
+    <div id="content">
+        <div class="content-box">
+            <ul class="lesson-list">
+                    <li>
+                        <?
+                        if(isset($item->image)){
+                            echo $item->image->asHtmlImage($item->title);
+                        }
+                        ?>
+                        <div class="blog-text">
+                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
+                            <h3><?=$item->title;?></h3>
+                            <p><?=$item->detail_text;?></p>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <div id="sidebar">
+        <?=$this->renderWidgets();?>
+    </div>
+</div><!--main end-->
+<div class="see-menu btn-holder center">
+    <a href="/#top" class="green-btn">
+        <span><?=Yii::t('frontend', 'Actualdish');?></span>
+    </a>
+</div>

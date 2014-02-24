@@ -756,6 +756,9 @@ padding:0 0 545px;
 }
 .btn-holder.center {
     text-align:center;
+
+    float: left;
+    width:100%;
 }
 .btn-holder.center .red-btn,
 .btn-holder.center .red-btn span,

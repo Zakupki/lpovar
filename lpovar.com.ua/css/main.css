@@ -327,10 +327,25 @@ ul.tisers-list li:hover > ul {
 }
 #blog #content .content-box{
     padding: 0;
+    background: none;
 }
 #blog #content .blog-text{
     padding: 15px 20px 5px;
 }
 #blog .lesson-list li{
+    background: #fff;
     border-bottom: none;
+    border-radius: 5px;
+    padding-top: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
+}
+#blog .lesson-list h3{
+    margin: 3px 0 10px;
+}
+#blog .blog-date {
+    color: #ba8154;
+    font: 16px/20px Georgia, Georgia, serif;
+    padding: 0 0 5px;
 }
