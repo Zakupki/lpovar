@@ -1,12 +1,5 @@
 <div class="blog-gallery-holder">
-    <ul class="promo-gallery">
-
-    </ul>
-    <div class="switcher">
-        <ul>
-
-        </ul>
-    </div>
+    <div class="blog-holder-content">123</div>
 </div>
 <div id="blog"><!--main start-->
     <div id="content">
