@@ -47,7 +47,29 @@
         </div>
     </div>
     <div id="sidebar">
-        <?=$this->renderWidgets();?>
+        <ul class="catalog-list">
+            <li>
+                <div class="img-holder">
+                    <a href="/product/view/133?title=blyudo_ot_komyuniti_shefa_aleny_mischenko_spagetti_karbonara">
+                        <img src="/upload/dishimage/5d/52453e50df14c2d041f6863fcf461a92.jpg" width="275" alt="Блюдо от комьюнити-шефа Алены Мищенко. Спагетти Карбонара">
+                        <span class="mask">&nbsp;</span>
+                    </a>
+                    <a data-cat="13" rel="2" href="/cart/add/133/?q=2" class="to-cart callbuy-popup"></a>
+                    <a href="/product/view/133?title=blyudo_ot_komyuniti_shefa_aleny_mischenko_spagetti_karbonara" class="play"></a>
+                </div>
+                <div class="info-row">
+                    <span class="bottom-deco">&nbsp;</span>
+                    <div class="info-frame">
+                        <div class="title">
+                            <a href="/product/view/133?title=blyudo_ot_komyuniti_shefa_aleny_mischenko_spagetti_karbonara">
+                                Блюдо от комьюнити-шефа Алены Мищенко...								</a>
+                        </div>
+                        <span class="price"><strong>59.00</strong> грн.</span>
+                        <span class="weight-text"><strong>250</strong> грамм</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </div><!--main end-->
 <div class="see-menu btn-holder center">

@@ -411,7 +411,7 @@ ul.tisers-list li:hover > ul {
     margin: 20px 0 8px 0;
 }
 #blog .blogger-text{
-    padding: 0 0 0 240px;
+    padding: 0 10px 0 240px;
     color: #333333;
 }
 .blogger-logo{
@@ -438,4 +438,8 @@ ul.tisers-list li:hover > ul {
     position: relative;
     border-radius: 86px;
     margin: 10px;
+}
+#blog .catalog-list > li{
+    width: 275px;
+    height: 275px;
 }
