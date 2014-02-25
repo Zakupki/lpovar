@@ -126,7 +126,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper-holder"><!--new-year-->
 	<div id="wrapper"><!--wrapper start-->
-		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?'':' small';?>">
+		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
 					<h1 class="logo"><a href="/">Личный повар</a></h1>
@@ -480,5 +480,22 @@ if(isset($_GET['banner']) || $this->display_popup){
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/20811406" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<!-- Google Code for &#1058;&#1077;&#1075; &#1088;&#1077;&#1084;&#1072;&#1088;&#1082;&#1077;&#1090;&#1080;&#1085;&#1075;&#1072; -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 988716451;
+    var google_conversion_label = "GlwWCP3gzQQQo7u61wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/988716451/?value=0&amp;label=GlwWCP3gzQQQo7u61wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
 </body>
 </html>
