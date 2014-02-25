@@ -309,7 +309,7 @@
             <form action="/site/login/" method="post" id="login-form">
                 <fieldset>
                     <div class="description">
-                        Введите ваш e-mail и пароль <br /> или войдите с помощью Facebook</div>
+                        Наш диетолог обязательно ответит вам в течении 24 часов на ваш email</div>
                     <div class="row">
                         <label class="input-holder"><!--class="error"-->
                             <input type="text" name="LoginForm[email]" placeholder="Ваш e-mail" value="" />
@@ -323,24 +323,13 @@
                     <div class="row">
                         <div class="btn-holder right">
                             <div class="green-btn">
-                                <span>Войти</span>
-                                <input type="submit" value="Войти" />
-                            </div>
-                            <div class="remember">
-                                <input id="lbl101" type="checkbox" value="1" name="LoginForm[rememberMe]" class="checkbox" />
-                                <label for="lbl101">Запомнить пароль</label>
+                                <span>Отправить</span>
+                                <input type="submit" value="Отправить" />
                             </div>
                         </div>
                     </div>
                     <div class="attention"><!--class="active"-->
                         <div class="text"></div>
-                    </div>
-                    <div class="row links">
-                        <a href="#"  class="forgot">Забыли пароль?</a>
-                        <a href="/site/register/" class="register">Регистрация</a>
-                    </div>
-                    <div class="row">
-                        <? $this->widget('common.extensions.yii-eauth.EAuthWidget', array('action' => 'site/loginoauth'));?>
                     </div>
                 </fieldset>
             </form>

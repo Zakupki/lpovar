@@ -71,6 +71,15 @@ function popupAction(){
         }
         e.preventDefault();
     });
+    $('#diet-button a').click(function(e){
+
+        $('#diet').css('left', '0').hide().fadeIn(200);
+        /*$('.bg').height(popups());
+        if ($('#default-popup .popup').height() < $(window).height()) {
+            $('#default-popup .popup').css({top:($(window).height()/2-$('#default-popup .popup').outerHeight()/2+$(window))});
+        }*/
+        e.preventDefault();
+    });
     $('.startvideo').click(function(e){
         /*alert($(this).attr('rel'));*/
         $('#video-popup .popup-frame p').html($('.popup-videodata').html());
