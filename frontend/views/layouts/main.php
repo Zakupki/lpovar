@@ -129,6 +129,9 @@
 		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
+                    <? if($_SERVER['REMOTE_ADDR']=='195.191.126.1'){?>
+                    <div id="diet-button"><a href="">Вопрос диетологу</a></div>
+                    <?}?>
 					<h1 class="logo"><a href="/">Личный повар</a></h1>
 					<div class="head-contacts">
 						<p>c 10.00 до 21.00 ежедневно</p>
@@ -298,6 +301,53 @@
 		</div>
 		<span class="popup-stroke"></span>
 	</div>
+</div><!--popup end-->
+<div class="popup-holder" id="diet"><!--popup start-->
+    <div class="bg">&nbsp;</div>
+    <div class="popup">
+        <div class="popup-frame">
+            <form action="/site/login/" method="post" id="login-form">
+                <fieldset>
+                    <div class="description">
+                        Введите ваш e-mail и пароль <br /> или войдите с помощью Facebook</div>
+                    <div class="row">
+                        <label class="input-holder"><!--class="error"-->
+                            <input type="text" name="LoginForm[email]" placeholder="Ваш e-mail" value="" />
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label class="input-holder"><!--class="error"-->
+                            <input type="password" name="LoginForm[password]"  placeholder="Пароль" value="" />
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="btn-holder right">
+                            <div class="green-btn">
+                                <span>Войти</span>
+                                <input type="submit" value="Войти" />
+                            </div>
+                            <div class="remember">
+                                <input id="lbl101" type="checkbox" value="1" name="LoginForm[rememberMe]" class="checkbox" />
+                                <label for="lbl101">Запомнить пароль</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attention"><!--class="active"-->
+                        <div class="text"></div>
+                    </div>
+                    <div class="row links">
+                        <a href="#"  class="forgot">Забыли пароль?</a>
+                        <a href="/site/register/" class="register">Регистрация</a>
+                    </div>
+                    <div class="row">
+                        <? $this->widget('common.extensions.yii-eauth.EAuthWidget', array('action' => 'site/loginoauth'));?>
+                    </div>
+                </fieldset>
+            </form>
+            <a href="#" class="close"></a>
+        </div>
+        <span class="popup-stroke"></span>
+    </div>
 </div><!--popup end-->
 <div class="popup-holder" id="remind"><!--popup start-->
 	<div class="bg">&nbsp;</div>

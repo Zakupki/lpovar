@@ -452,3 +452,17 @@ ul.tisers-list li:hover > ul {
 #blog .fb-comments{
     padding: 10px 10px 0;
 }
+#diet-button{
+    float:right;
+    background: url(/images/diet-button.png) no-repeat;
+    width:110px;
+    height:17px;
+    padding: 0 0 0 3px;
+    line-height: 14px;
+}
+#diet-button a{
+    color: #ffffff;
+    text-decoration: none;
+    font: 11px/12px Georgia, Georgia, serif;
+    line-height: 14px;
+}
