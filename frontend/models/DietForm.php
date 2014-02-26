@@ -22,18 +22,16 @@ class DietForm extends CFormModel
 	{
         $message = new YiiMailMessage;
         $message_body='
-                        Здравствуйте!<br><br>
-                        Ваш заказ №'.$order->id.' успешно оплачен через систему интеркасса<br><br>
-                        В течение 10 минут наш менеджер вам перезвонит.<br><br>
-                        Наш телефон: '.Option::getOpt('mainphone').'<br><br>
-                        С уважением,<br>
-                        Личный Повар';
+                        Новый вопрос диетологу!<br><br>
+                        Имя: '.$this->title.'<br>
+                        Email: '.$this->email.'<br>
+                        Имя: '.$this->detail_text.'<br>
+                        ';
         $message->setBody($message_body, 'text/html');
-        $message->subject = 'Заказ оплачен';
-        $message->addTo($order->user->email);
+        $message->subject = 'Новый вопрос диетологу';
+        $message->addTo(Option::getOpt('diet_email'));
         $message->from = Yii::app()->params['adminEmail'];
-        Yii::app()->mail->send($message);
+        return Yii::app()->mail->send($message);
 
-        return true;
 	}
 }
