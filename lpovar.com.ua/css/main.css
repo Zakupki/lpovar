@@ -466,3 +466,13 @@ ul.tisers-list li:hover > ul {
     font: 11px/12px Georgia, Georgia, serif;
     line-height: 14px;
 }
+#diet .popup {
+    width: 510px;
+    margin-left: -260px;
+}
+#diet .popup .popup-frame {
+    width: 470px;
+}
+#diet .textarea-holder{
+    background: #ddddca;
+}

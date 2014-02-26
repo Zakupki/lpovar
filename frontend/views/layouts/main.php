@@ -129,7 +129,7 @@
 		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
-                    <? if($_SERVER['REMOTE_ADDR']=='195.191.126.1'){?>
+                    <? if($_SERVER['REMOTE_ADDR']=='195.177.72.222'){?>
                     <div id="diet-button"><a href="">Вопрос диетологу</a></div>
                     <?}?>
 					<h1 class="logo"><a href="/">Личный повар</a></h1>
@@ -306,18 +306,24 @@
     <div class="bg">&nbsp;</div>
     <div class="popup">
         <div class="popup-frame">
-            <form action="/site/login/" method="post" id="login-form">
+            <form action="/site/diet/" method="post" id="login-form">
                 <fieldset>
                     <div class="description">
                         Наш диетолог обязательно ответит вам в течении 24 часов на ваш email</div>
                     <div class="row">
                         <label class="input-holder"><!--class="error"-->
-                            <input type="text" name="LoginForm[email]" placeholder="Ваш e-mail" value="" />
+                            <input type="text" name="DietForm[title]" placeholder="Вашe имя" value="" />
                         </label>
                     </div>
                     <div class="row">
                         <label class="input-holder"><!--class="error"-->
-                            <input type="password" name="LoginForm[password]"  placeholder="Пароль" value="" />
+                            <input type="text" name="DietForm[email]" placeholder="Ваш e-mail" value="" />
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label class="textarea-holder"><!--class="error"-->
+                            <textarea name="DietForm[detail_text]">123</textarea>
+                            <!--<input type="password" name="DietForm[password]"  placeholder="Пароль" value="" />-->
                         </label>
                     </div>
                     <div class="row">
@@ -328,9 +334,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="attention"><!--class="active"-->
+                    <!--<div class="attention">
                         <div class="text"></div>
-                    </div>
+                    </div>-->
                 </fieldset>
             </form>
             <a href="#" class="close"></a>
