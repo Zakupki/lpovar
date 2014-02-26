@@ -376,8 +376,11 @@ function dietAction(){
                 login_status.addClass('active');
                 login_status_text.append(data.status);
             } else {
-                login_status_text.hide();
-                window.location.reload(true);
+                //login_status_text.hide();
+                $('#diet').fadeOut(200);
+                $('#default-popup .popup-frame p').html('Ваше сообщение успешно отправлено диетологу');
+                $('#default-popup').css('left', '0').fadeIn(200);
+                //window.location.reload(true);
             }
         })
     });

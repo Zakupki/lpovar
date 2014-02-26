@@ -4,7 +4,7 @@ class SiteController extends FrontController
 {
     public function init()
     {
-    	parent::init();
+       parent::init();
        Yii::import('common.extensions.yii-mail.*');
     }
 	
