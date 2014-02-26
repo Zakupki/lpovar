@@ -11,7 +11,7 @@ $(function(){
     portionsAction();
     selfdeliverAction();
     newyearpopupAction();
-
+    dietAction();
     /*$('.tools .green-btn input').click(function(e){
      $(this).closest("form").submit();
      //alert(123);
@@ -351,6 +351,24 @@ function loginAction(){
     form.submit(function(e){
         login_status=$('#login-form .attention');
         login_status_text=$('#login-form .attention .text');
+        e.preventDefault();
+        login_status_text.empty();
+        $.post(this.action, form.serialize(), 'json').done(function(data){
+            if(data.error){
+                login_status.addClass('active');
+                login_status_text.append(data.status);
+            } else {
+                login_status_text.hide();
+                window.location.reload(true);
+            }
+        })
+    });
+}
+function dietAction(){
+    form = $('#diet-form');
+    form.submit(function(e){
+        login_status=$('#diet-form .attention');
+        login_status_text=$('#diet-form .attention .text');
         e.preventDefault();
         login_status_text.empty();
         $.post(this.action, form.serialize(), 'json').done(function(data){

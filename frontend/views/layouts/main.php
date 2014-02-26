@@ -306,7 +306,7 @@
     <div class="bg">&nbsp;</div>
     <div class="popup">
         <div class="popup-frame">
-            <form action="/site/diet/" method="post" id="login-form">
+            <form action="/site/diet/" method="post" id="diet-form">
                 <fieldset>
                     <div class="description">
                         Наш диетолог обязательно ответит вам в течении 24 часов на ваш email</div>

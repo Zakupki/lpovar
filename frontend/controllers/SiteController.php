@@ -335,6 +335,25 @@ class SiteController extends FrontController
 		}
 		Yii::app()->end();
 	}
+    public function actionDiet()
+    {
+
+        header('Content-Type: application/json; charset=utf-8');
+        $model=new DietForm;
+        // collect user input data
+        if(isset($_POST['DietForm']))
+        {
+            $model->attributes=$_POST['DietForm'];
+            // validate user input and redirect to the previous page if valid
+            if($model->validate() && $model->save()){
+                echo json_encode(array('error' => 0));
+            }
+            else{
+                echo json_encode(array('error' => 1, 'status' => 'Вы заполнили не все поля'));
+            }
+        }
+        Yii::app()->end();
+    }
 
     /**
      * Logs out the current user and redirect to homepage.
