@@ -129,7 +129,7 @@
 		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
-                    <? if($_SERVER['REMOTE_ADDR']=='195.177.72.222'){?>
+                    <? if($_GET['diet']){?>
                     <div id="diet-button"><a href="">Вопрос диетологу</a></div>
                     <?}?>
 					<h1 class="logo"><a href="/">Личный повар</a></h1>
