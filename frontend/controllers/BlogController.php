@@ -18,6 +18,8 @@ class BlogController extends FrontController
 	public function actionView($id=null) {
 		//$managers=User::model()->with(array('userUsertypes'=>array('joinType'=>'inner join')))->findAll('userUsertypes.id=3');
         $item=Blog::model()->active()->findByPk($id);
+        $item->views=$item->views+1;
+        $item->save();
 		$dishes=Dish::model()->findAll(array(
             "condition" => "status=1",
             "order" => "rand()",
