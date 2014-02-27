@@ -322,12 +322,13 @@
                     </div>
                     <div class="row">
                         <label class="textarea-holder"><!--class="error"-->
-                            <textarea name="DietForm[detail_text]">123</textarea>
+                            <textarea name="DietForm[detail_text]"></textarea>
                             <!--<input type="password" name="DietForm[password]"  placeholder="Пароль" value="" />-->
                         </label>
                     </div>
                     <div class="row">
                         <div class="btn-holder right">
+                            <img src="/images/diet-logo.png"/>
                             <div class="green-btn">
                                 <span>Отправить</span>
                                 <input type="submit" value="Отправить" />
