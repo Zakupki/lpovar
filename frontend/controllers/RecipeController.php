@@ -7,11 +7,10 @@ class RecipeController extends FrontController
 	public function actionIndex($page=1)
 	{
         $view='index';
-        $total=count(Dish::model()->findAll('t.main=0'));
+        $total=count(Course::model()->findAll('t.recipe=1'));
 			
 		$Paging = new Paging('recipe/page',self::PAGE_SIZE, $total, $page);
-		$topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->sort('t.sort ASC')->active()->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.main=0');
-		
+		$topdishes=Course::model()->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.recipe=1');
 		$this->render($view,array(
 		    'topdishes'=>$topdishes,
 		    'pages'=>$Paging->GetHTML(),
