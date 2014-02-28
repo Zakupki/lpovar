@@ -1,5 +1,5 @@
 <div id="main"><!--main start-->
-<div class="content-box">
+<div class="content-box recipe-box">
     <div class="item-box">
         <div class="item-row">
             <div class="recipe-gallery-holder">
@@ -43,9 +43,21 @@
                     <h3><?=$course->title;?></h3>
                     <p><?=nl2br($course->detail_text);?></p>
                 </div>
-                <div class="bottom-tools">
-                    <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
+                <div class="recipe-buttons">
+                    <div class="btn-holder">
+                        <a href="/blog/1/" class="green-btn">
+                            <span>Печать</span>
+                        </a>
+                    </div>
+                    <div class="btn-holder">
+                        <a href="/blog/1/" class="green-btn">
+                            <span>Скачать рецепт</span>
+                        </a>
+                    </div>
                 </div>
+                <!--<div class="bottom-tools">
+                    <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
+                </div>-->
             </div>
         </div>
         <ul class="items">
@@ -145,36 +157,6 @@
             <?//}?>
         </ul>
 
-        <ul class="promo-list">
-            <li>
-                <a class="fancybox-thumb2 photo" rel="fancybox-thumb" href="/images/img_bag.jpg" title="Набор продуктов в фирменной упаковке">
-                    <div class="img-holder">
-                        <img src="/images/img28.png" width="102" height="139" alt="image description" />
-                        <span class="photo-ico"></span>
-                    </div>
-                    <div class="name">Набор продуктов в фирменной упаковке</div>
-                    <span class="deco"></span>
-                </a>
-            </li>
-            <li>
-                <a class="fancybox-thumb2 photo" rel="fancybox-thumb" href="/images/menu_example.jpg" title="Подробный рецепт">
-                    <div class="img-holder">
-                        <img src="/images/img29.png" width="107" height="139" alt="image description" />
-                        <span class="photo-ico"></span>
-                    </div>
-                    <div class="name">Подробный рецепт</div>
-                    <span class="deco"></span>
-                </a>
-            </li>
-            <li>
-                <div class="img-holder">
-                    <a class="startvideo" target="_blank" href="/page/videorecipe"><img src="/images/img30.png" width="132" height="139" alt="image description" /></a>
-                    <!--<span class="soon-ico"></span>-->
-                </div>
-                <div class="name"><a class="startvideo" target="_blank" href="/page/videorecipie">Видеоурок, доступный в вашем кабинете</a></div>
-                <span class="deco"></span>
-            </li>
-        </ul>
     </div>
 </div>
 <div class="content-box">
