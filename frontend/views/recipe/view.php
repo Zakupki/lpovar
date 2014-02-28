@@ -124,12 +124,10 @@
                 </li>
             <?}?>
         </ul>
-        <?
-            echo ceil(count($course->courseIngredients)/2);
-        ?>
         <ul class="menu-list mark2">
             <?
             $cnt=1;
+            $half=ceil(count($course->courseIngredients)/2);
             foreach($course->courseIngredients as $ingredient){
                 if($cnt==1){
                 ?>
@@ -156,9 +154,9 @@
                         <span class="total-weight">выход блюда: <?=$course['weight'];?> гр</span>
                     <?}?>
                 </div>
+                <?}?>
             </li>
             <?
-                }
                 $cnt++;
             }?>
         </ul>
