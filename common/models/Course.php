@@ -68,14 +68,14 @@ class Course extends BaseActiveRecord
     {
         return array_merge(parent::rules(), array(
             array('dish_id', 'required'),
-            array('sort, status, dishtype_id, dish_id,weight', 'numerical', 'integerOnly' => true),
+            array('sort,status,dishtype_id,dish_id,weight,recipe', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 255),
             array('image_id,recipeimage_id, calories', 'safe'),
             array('image_id,recipeimage_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('dishtype_id', 'exist', 'className' => 'Dishtype', 'attributeName' => 'id'),
             array('dish_id', 'exist', 'className' => 'Dish', 'attributeName' => 'id'),
         
-            array('id, title, sort, status, image_id,recipeimage_id, calories, dishtype_id, dish_id,weight', 'safe', 'on' => 'search'),
+            array('id, title, sort, status, image_id,recipeimage_id, calories, dishtype_id, dish_id,weight,recipe', 'safe', 'on' => 'search'),
         ));
     }
 
@@ -108,6 +108,7 @@ class Course extends BaseActiveRecord
             'calories' => Yii::t('backend', 'Calories'),
             'dishtype_id' => Yii::t('backend', 'Dishtype'),
             'dish_id' => Yii::t('backend', 'Dish'),
+            'recipe' => Yii::t('backend', 'Recipe'),
             'weight' => Yii::t('backend', 'Weight'),
         );
     }
@@ -120,11 +121,12 @@ class Course extends BaseActiveRecord
     {
         $criteria = new CDbCriteria;
 
-        		$criteria->compare('t.id',$this->id);
+        $criteria->compare('t.id',$this->id);
 		$criteria->compare('t.title',$this->title,true);
 		$criteria->compare('t.sort',$this->sort);
 		$criteria->compare('t.status',$this->status);
 		$criteria->compare('t.image_id',$this->image_id);
+        $criteria->compare('t.recipe',$this->recipe);
 		$criteria->compare('t.calories',$this->calories);
 		$criteria->compare('t.dishtype_id',$this->dishtype_id);
 		$criteria->compare('t.dish_id',$this->dish_id);
