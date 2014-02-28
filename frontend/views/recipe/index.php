@@ -37,7 +37,7 @@
                             </div>
                             <div class="text-box">
                                 <h3><a href="/recipe/<?=$tdish['id'];?>"><?=$tdish->title;?></a></h3>
-                                <p>123</p>
+                                <p><?=nl2br($tdish->preview_text);?></p>
                             </div>
                             <div class="bottom-tools">
                                 <?=$this->renderShare('/recipe/'.$tdish['id'].'/',$tdish->title);?>

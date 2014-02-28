@@ -13,7 +13,7 @@
                         <?}?>
                     </ul>
                 </div>
-                <div class="switcher">
+                <!--<div class="switcher">
                     <div class="switcher-box">
                         <ul>
                             <li><a class="active" href="#"></a></li>
@@ -22,35 +22,29 @@
                             <li><a href="#"></a></li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <div class="recipe-frame">
                 <div class="head">
                     <ul class="ingredients-list">
-                        <? if(isset($course)){
-                            $cnt=0;
-                            foreach($course as $ctype){
-                                if(isset($ctype->coursetype->dishtypeimage->file)){
-                                    ?>
-                                    <li>
-                                        <?=$ctype->coursetype->dishtypeimage->asHtmlImage();;?>
-                                    </li>
-                                    <?
-                                    if($cnt==1)
-                                        break;
-                                    $cnt++;
-                                }
+                        <?
+                            if(isset($course->coursetype->dishtypeimage)){
+                            ?>
+                            <li>
+                                <?=$course->coursetype->dishtypeimage->asHtmlImage();;?>
+                            </li>
+                            <?
                             }
-                        }?>
+                        ?>
                     </ul>
                 </div>
                 <div class="text-box">
                     <h3><?=$course->title;?></h3>
-                    <p><?nl2br($course->detail_text);?></p>
+                    <p><?=nl2br($course->detail_text);?></p>
                 </div>
                 <div class="bottom-tools">
-                    <?=$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
+                    <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
                 </div>
             </div>
         </div>
@@ -147,13 +141,6 @@
                         <span class="total-weight">выход блюда: <?=$course['weight'];?> гр</span>
                     <?}?>
                 </div>
-                <? //if(isset($order)){
-                ?>
-                <div class="btn-holder center">
-                    <a href="<?=$course->getUrl();?>" class="red-btn big-btn"><span>Пошаговый фото и видеорецепт</span></a>
-                </div>
-                <?
-                //}?>
             </li>
             <?//}?>
         </ul>
