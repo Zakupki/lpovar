@@ -39,9 +39,6 @@
                                 <h3><a href="/recipe/<?=$tdish['id'];?>"><?=$tdish->title;?></a></h3>
                                 <p><?=nl2br($tdish->preview_text);?></p>
                             </div>
-                            <div class="bottom-tools">
-                                <?=$this->renderShare('/recipe/'.$tdish['id'].'/',$tdish->title);?>
-                            </div>
                         </div>
                         <div style="clear:both;"></div>
                     </li>
