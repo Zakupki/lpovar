@@ -87,7 +87,8 @@ class RecipeController extends FrontController
     public function actionView($id)
     {
         $course=Course::model()->findByPk($id);
-        $this->render('view',array('course'=>$course));
+        $videos=Video::model()->sort()->active()->findAll('t.course_id='.$id);
+        $this->render('view',array('course'=>$course,'videos'=>$videos));
     }
 
 }

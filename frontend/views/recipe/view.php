@@ -45,12 +45,12 @@
                 </div>
                 <div class="recipe-buttons">
                     <div class="btn-holder">
-                        <a href="/blog/1/" class="green-btn">
+                        <a href="" class="green-btn">
                             <span>Печать</span>
                         </a>
                     </div>
                     <div class="btn-holder">
-                        <a href="/blog/1/" class="green-btn">
+                        <a href="" class="green-btn">
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
@@ -133,6 +133,11 @@
                 ?>
             <li>
                 <ul class="ingredients">
+                <?}elseif($cnt==$half+1){?>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="ingredients">
                 <?}?>
                         <li>
                             <div class="photo-box">
@@ -146,23 +151,66 @@
                             <div class="weight"><?=$ingredient->value;?> <?=$ingredient->ingredient->dimension;?></div>
                         </li>
                 <? if($cnt==count($course->courseIngredients)){?>
+                <?}
+                $cnt++;
+                }
+                ?>
                 </ul>
-                <div class="total-row">
-                    <? if($course['calories']){?>
-                        <div class="calories">калорийность 1 порции: <?=$course['calories'];?> калорий</div>
-                    <?} if($course['weight']){?>
-                        <span class="total-weight">выход блюда: <?=$course['weight'];?> гр</span>
+                <div class="row">
+                    <? if($course['weight']){?>
+                    <div class="total-weight"><span class="title-text">выход 1 порции:</span><strong><?=$course['weight'];?></strong> гр.</div>
+                    <?} if($course['calories']){?>
+                    <div class="calories"><span class="title-text">калорийность 1 порции:</span><strong><?=$course['calories'];?></strong> калорий</div>
                     <?}?>
                 </div>
-                <?}?>
             </li>
             <?
-                $cnt++;
-            }?>
+            ?>
         </ul>
 
     </div>
 </div>
+<? if(isset($videos)){?>
+        <div class="video-box">
+            <?  $cnt=0;
+            $videoHtml='';
+            foreach($videos as $video){
+                $vid=null;
+                if($video->videotype_id==1){
+                    $vid=$this->youtube_id_from_url(urldecode($video->url));
+                    $videoHtml.='<li><a href="https://www.youtube.com/v/'.$vid.'?version=3&autoplay=1">'.$video->title.'</a></li>';
+                    $firsturl='https://www.youtube.com/v/'.$vid.'?version=3&autoplay=0';
+                }elseif($video->videotype_id==2){
+                    $vid=$this->vimeo_id_from_url(urldecode($video->url));
+                    $videoHtml.='<li><a href="http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0">'.$video->title.'</a></li>';
+                    $firsturl='http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0';
+                }?>
+                <?
+                $cnt++;
+                ?>
+                <div class="video-frame">
+                    <object width="640" height="370">
+                        <param name="allowfullscreen" value="true">
+                        <param name="allowscriptaccess" value="always">
+                        <param name="movie" value="<?=$firsturl;?>">
+                        <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
+                    </object>
+                </div>
+            <?}?>
+
+            <!--<div class="video-frame">
+                            <object width="640" height="370">
+                                <param name="allowfullscreen" value="true">
+                                <param name="allowscriptaccess" value="always">
+                                <param name="movie" value="<?=$firsturl;?>">
+                                <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
+                            </object>
+                        </div>-->
+            <ul class="video-list">
+                <?=$videoHtml;?>
+            </ul>
+        </div>
+<?}?>
 <div class="content-box">
     <h1>Детальный рецепт приготовления</h1>
     <?
@@ -178,6 +226,22 @@
                 <p><?=$step['detail_text'];?></p>
             </div>
         </div>
+        <? if(strlen($step['advice'])>0 && $step->user['id']>0){?>
+            <div class="advice">
+                <div class="img-holder round">
+                    <? if(isset($step->user->image)){
+                        echo $step->user->image->asHtmlImage();
+                    }?>
+                    <!--<img src="/images/img32.jpg" width="172" height="172" alt="image description" />-->
+                </div>
+                <div class="advice-frame">
+                    <div class="title">Шеф-совет</div>
+                    <p>«<?=$step['advice'];?>»</p>
+                    <div class="name"><em>Ваш личный повар, <?=$step->user['name'];?></em></div>
+                    <span class="deco"></span>
+                </div>
+            </div>
+        <?}?>
     <?}?>
 </div>
 </div><!--main end-->
