@@ -23,7 +23,6 @@
 <div class="row">
     <div class="span6">
     <?php echo $form->textFieldRow($model, 'title', array('class' => 'span9', 'maxlength' => 255)); ?>
-    <?php echo $form->checkBoxRow($model, 'status'); ?>
     <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
     <?php echo $form->fileUploadRow($model, 'recipeimage_id', 'recipe'); ?>
     <?php echo $form->textFieldRow($model, 'calories', array('class' => 'span2')); ?>
@@ -31,6 +30,8 @@
     <?php echo $form->dropDownListRow($model, 'dishtype_id', Dishtype::model()->listData(), array('empty'=>'')); ?>
     <?php echo $form->dropDownListRow($model, 'dish_id', Dish::model()->listData()); ?>
     <?php echo $form->textFieldRow($model, 'sort', array('class' => 'span2')); ?>
+    <?php echo $form->checkBoxRow($model, 'recipe'); ?>
+    <?php echo $form->checkBoxRow($model, 'status'); ?>
     </div>
     <div class="span6">
     	 	<div data-block="sjstpl" class="control-group control-group-multiple product-info">
