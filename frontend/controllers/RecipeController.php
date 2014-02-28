@@ -46,7 +46,7 @@ class RecipeController extends FrontController
 		    'pages'=>$Paging->GetHTML(),
 		));
 	}
-	public function actionView($id)
+	public function actionView2($id)
 	{
 		$order=null;
 		if(yii::app()->user->getId()>0)	
@@ -84,5 +84,10 @@ class RecipeController extends FrontController
             'shef'=>$shef
         ));
 	}
+    public function actionView($id)
+    {
+        $course=Course::model()->findByPk($id);
+        $this->render('view',array('course'=>$course));
+    }
 
 }

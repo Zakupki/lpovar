@@ -70,7 +70,7 @@ class Course extends BaseActiveRecord
             array('dish_id', 'required'),
             array('sort,status,dishtype_id,dish_id,weight,recipe', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 255),
-            array('image_id,recipeimage_id, calories', 'safe'),
+            array('image_id,recipeimage_id,calories,preview_text,detail_text', 'safe'),
             array('image_id,recipeimage_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('dishtype_id', 'exist', 'className' => 'Dishtype', 'attributeName' => 'id'),
             array('dish_id', 'exist', 'className' => 'Dish', 'attributeName' => 'id'),
@@ -90,6 +90,7 @@ class Course extends BaseActiveRecord
             'image' => array(self::BELONGS_TO, 'File', 'image_id'),
             'recipe' => array(self::BELONGS_TO, 'File', 'recipeimage_id'),
             'courseIngredients' => array(self::HAS_MANY, 'CourseIngredient', 'course_id'),
+            'steplist' => array(self::HAS_MANY, 'Step', 'course_id'),
         );
     }
 
@@ -110,6 +111,8 @@ class Course extends BaseActiveRecord
             'dish_id' => Yii::t('backend', 'Dish'),
             'recipe' => Yii::t('backend', 'Recipe'),
             'weight' => Yii::t('backend', 'Weight'),
+            'detail_text' => Yii::t('backend', 'Detail Text'),
+            'preview_text' => Yii::t('backend', 'Preview Text'),
         );
     }
 

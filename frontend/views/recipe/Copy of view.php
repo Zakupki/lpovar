@@ -264,7 +264,7 @@
 					<li><a href="#"><?=$video['title'];?></a></li>
 					<?}?>
 				</ul>
-			</div>
+			</div>-->
 			<? if(count($steps)>0){?>
 			<div class="content-box">
 				<h1>Детальный рецепт приготовления</h1>
@@ -285,7 +285,7 @@
 				</div>
 				<?}?>
 			</div>
-			<?}?>-->
+			<?}?>
 		</div><!--main end-->
 		<div class="see-menu btn-holder center">
 			<a href="/#top" class="green-btn">
