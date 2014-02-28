@@ -124,14 +124,18 @@
                 </li>
             <?}?>
         </ul>
+        <?
+            echo ceil(count($course->courseIngredients)/2);
+        ?>
         <ul class="menu-list mark2">
             <?
-            //if(1==2)
-            //foreach($course->courseIngredients as $cor){
-            ?>
+            $cnt=1;
+            foreach($course->courseIngredients as $ingredient){
+                if($cnt==1){
+                ?>
             <li>
                 <ul class="ingredients">
-                    <? foreach($course->courseIngredients as $ingredient){?>
+                <?}?>
                         <li>
                             <div class="photo-box">
                                 <? if($ingredient->ingredient->image['id']>0){?>
@@ -143,8 +147,7 @@
                             <div class="name"><?=$ingredient->ingredient->title;?></div>
                             <div class="weight"><?=$ingredient->value;?> <?=$ingredient->ingredient->dimension;?></div>
                         </li>
-                    <?}?>
-
+                <? if($cnt==count($course->courseIngredients)){?>
                 </ul>
                 <div class="total-row">
                     <? if($course['calories']){?>
@@ -154,7 +157,10 @@
                     <?}?>
                 </div>
             </li>
-            <?//}?>
+            <?
+                }
+                $cnt++;
+            }?>
         </ul>
 
     </div>
