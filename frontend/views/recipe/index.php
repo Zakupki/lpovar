@@ -27,8 +27,8 @@
                         <div class="recipe-frame">
                             <div class="head">
                                 <div class="btn-holder">
-                                    <a href="/recipe/<?=$tdish['id'];?>" class="green-btn">
-                                        <span>Смотреть</span>
+                                    <a href="/recipe/<?=$tdish['id'];?>" class="lime-btn">
+                                        <span>Cмотреть рецепт</span>
                                     </a>
                                 </div>
                                 <ul class="ingredients-list">
