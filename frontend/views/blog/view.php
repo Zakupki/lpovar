@@ -12,8 +12,8 @@
         </div>
         <div class="blogger-text">
             <h3>Ваш Личный Блоггер</h3>
-            <h2>Дмитрий Божок</h2>
-            <p>Лазанья - национальное блюдо итальянской кухни. Тесто для неё готовится исключительно из твердых сортов пшениц. Правильное блюдо должно состоять как минимум из 4 слоёв теста с чередованием мясного соуса и соуса Бешамель. Лазанья - сочная и сытная, поэтому идеальным сочетанием к ней является витаминный салатный микс с помидорами черри и пармезаном...</p>
+            <h2><?=$item->user->name;?></h2>
+            <p><?=$item->user->detail_text;?></p>
         </div>
     </div>
     <div id="content">
@@ -26,7 +26,7 @@
                         }
                         ?>
                         <div class="blog-text">
-                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
+                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->name;?></span>
                             <h3><?=$item->title;?></h3>
                             <p><?=$item->detail_text;?></p>
                             <div class="btn-holder right">

@@ -27,7 +27,7 @@
                         }
                         ?>
                         <div class="blog-text">
-                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->email;?></span>
+                            <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->name;?></span>
                             <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
                             <div class="btn-holder right">
