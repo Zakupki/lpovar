@@ -45,7 +45,7 @@
                 </div>
                 <div class="recipe-buttons">
                     <div class="btn-holder">
-                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="green-btn">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>&print=1" target="_blank" class="green-btn">
                             <span>Печать</span>
                         </a>
                     </div>

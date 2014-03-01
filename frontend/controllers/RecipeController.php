@@ -92,21 +92,27 @@ class RecipeController extends FrontController
     }
     public function actionPdf() {
         $id=$_GET['id'];
-        /*$pdf = Yii::createComponent('common.extensions.tcpdf.ETcPdf',
-            'P', 'cm', 'A4', true, 'UTF-8');
-        $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor("Lpovar");
-        $pdf->SetTitle("Товарный чек");
-        $pdf->SetKeywords("TCPDF, PDF, example, test, guide");
-        $pdf->setPrintHeader(false);
-        $pdf->setPrintFooter(false);
-        $pdf->AliasNbPages();
-        $pdf->AddPage();
-        $pdf->SetFont('freeserif', '', 11);*/
         $course=Course::model()->findByPk($id);
-        $this->renderPartial('recipe_pdf',array('course'=>$course));
-        //$pdf->writeHTML($tbl, true, false, false, false, '');
-        //$pdf->Output("example_002.pdf", "I");
+
+        if(isset($_GET['print'])){
+            $printable=$_GET['print'];
+            $this->renderPartial('recipe_pdf',array('course'=>$course,'printable'=>$printable));
+        }else{
+            $printable=0;
+            $pdf = Yii::createComponent('common.extensions.tcpdf.ETcPdf',
+                'P', 'cm', 'A4', true, 'UTF-8');
+            $pdf->SetCreator(PDF_CREATOR);
+            $pdf->SetAuthor("Lpovar");
+            $pdf->SetTitle("Товарный чек");
+            $pdf->SetKeywords("TCPDF, PDF, example, test, guide");
+            $pdf->setPrintHeader(false);
+            $pdf->setPrintFooter(false);
+            //$pdf->AliasNbPages();
+            $pdf->AddPage();
+            $pdf->SetFont('freeserif', '', 11);
+            $pdf->writeHTML($this->renderPartial('recipe_pdf',array('course'=>$course,'printable'=>$printable),true), true, false, false, false, '');
+            $pdf->Output("example_002.pdf", "I");
+        }
     }
 
 }
