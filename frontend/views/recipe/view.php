@@ -54,6 +54,11 @@
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
+                    <div class="btn-holder">
+                        <a href="" class="red-btn">
+                            <span>Купить</span>
+                        </a>
+                    </div>
                 </div>
                 <!--<div class="bottom-tools">
                     <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
