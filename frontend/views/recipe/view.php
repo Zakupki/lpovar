@@ -54,11 +54,14 @@
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
+                    <? if($course->dish_id>0)
+                    if($course->dish->status=1){?>
                     <div class="btn-holder">
-                        <a href="" class="red-btn">
+                        <a href="/dish/<?=$course->dish_id;?>/" class="red-btn">
                             <span>Купить</span>
                         </a>
                     </div>
+                    <?}?>
                 </div>
                 <!--<div class="bottom-tools">
                     <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
