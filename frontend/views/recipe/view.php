@@ -58,7 +58,7 @@
                     if($course->dish->status=1){?>
                     <div class="btn-holder">
                         <a href="/dish/<?=$course->dish_id;?>/" class="red-btn">
-                            <span>Купить</span>
+                            <span>Купить продукты</span>
                         </a>
                     </div>
                     <?}?>

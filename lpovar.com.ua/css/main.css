@@ -452,6 +452,9 @@ ul.tisers-list li:hover > ul {
 #blog .fb-comments{
     padding: 10px 10px 0;
 }
+#blog .blog-text p{
+    line-height: 20px;
+}
 #diet-button{
     float:right;
     background: url(/images/diet-button.png) no-repeat;
@@ -489,22 +492,6 @@ ul.tisers-list li:hover > ul {
     padding: 0 10px 0 0;
     float: left;
 }
-/*
-#blog .blog-text .green-btn{
-    height: 40px;
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    background: url(/images/nav-bg.png) no-repeat 100% -360px;
-    padding: 0 5px 0 0;
-    font-size: 14px;
+.recipe-box  .recipe-frame p{
+line-height: 20px;
 }
-#blog .blog-text .green-btn span {
-    cursor: pointer;
-    height: 28px;
-    background: url(/images/nav-bg.png) no-repeat 0 -320px;
-    padding: 12px 9px 0 14px;
-    float: left;
-    text-align: center;
-}*/
