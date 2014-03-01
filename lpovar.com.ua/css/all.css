@@ -762,11 +762,34 @@ padding:0 0 545px;
 }
 .btn-holder.center .red-btn,
 .btn-holder.center .red-btn span,
+.btn-holder.center .lime-btn,
+.btn-holder.center .lime-btn span,
 .btn-holder.center .green-btn,
 .btn-holder.center .green-btn span{
     float:none;
     display:inline-block;
 }
+
+.lime-btn{
+    float: left;
+    height: 40px;
+    text-decoration: none;
+    color: #fff;
+    position:relative;
+    overflow: hidden;
+    background: url(/images/nav-bg.png) no-repeat 100% -360px;
+    padding: 0 5px 0 0;
+    font-size:14px;
+}
+.lime-btn span{
+    cursor: pointer;
+    height: 28px;
+    background: url(/images/nav-bg.png) no-repeat 0 -320px;
+    padding: 12px 9px 0 14px;
+    float: left;
+    text-align:center;
+}
+
 /*footer start*/
 .footer-holder{
     background:url(/images/footer-bg.png) no-repeat 50% 0;
@@ -1278,6 +1301,7 @@ h2 {
     overflow:hidden;
 }
 .btn-holder.right .green-btn,
+.btn-holder.right .lime-btn,
 .btn-holder.right .red-btn{
     float:right;
 }

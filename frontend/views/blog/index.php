@@ -36,7 +36,7 @@
                                     <span class="blog-likes informer">0</span>
                                     <span class="blog-comments informer">0</span>
                                 </div>
-                                <a href="/blog/<?=$item->id;?>/" class="green-btn">
+                                <a href="/blog/<?=$item->id;?>/" class="lime-btn">
                                     <span>Читать далее</span>
                                 </a>
                             </div>
