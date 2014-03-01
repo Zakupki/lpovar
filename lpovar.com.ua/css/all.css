@@ -476,7 +476,7 @@ padding:0 0 545px;
     height:1%;
     /*overflow:hidden;*/
     position:relative;
-    z-index:5;
+    z-index:3;
 }
 .recipe-gallery-holder {
     float:left;
@@ -2858,7 +2858,7 @@ add 12 09 2013
     font-size:16px;
 }
 .tisers-list.catalog li {
-    width:85px;
+    width:84px;
     line-height:normal;
 }
 .tisers-list.catalog li.last{

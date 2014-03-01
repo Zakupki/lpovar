@@ -221,7 +221,7 @@ ul.tisers-list ul {
     width: 142px;
     padding: 0;
     border-top: 5px solid #da251d;
-    z-index: 4;
+    z-index: 6;
 }
 #main-submenu ul li{
     height: 20px;
