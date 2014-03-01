@@ -489,3 +489,9 @@ ul.tisers-list li:hover > ul {
     padding: 0 10px 0 0;
     float: left;
 }
+#blog .blog-text .green-btn{
+    background: url(/images/nav-bg.png) no-repeat 100% -320px;
+}
+#blog .blog-text .green-btn span {
+    background: url(/images/nav-bg.png) no-repeat 0 -360px;
+}
