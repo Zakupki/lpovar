@@ -380,7 +380,7 @@ function dietAction(){
                 $('#diet').fadeOut(200);
                 $('#default-popup .popup-frame p').html('Ваше сообщение успешно отправлено диетологу');
                 $('#diet-form input').val('');
-                $('#diet-form textarea').html('');
+                $('#diet-form textarea').val('');
                 $('#default-popup').css('left', '0').fadeIn(200);
                 //window.location.reload(true);
             }
