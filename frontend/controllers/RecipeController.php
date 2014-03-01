@@ -90,5 +90,23 @@ class RecipeController extends FrontController
         $videos=Video::model()->sort()->active()->findAll('t.course_id='.$id);
         $this->render('view',array('course'=>$course,'videos'=>$videos));
     }
+    public function actionPdf() {
+        $id=$_GET['id'];
+        /*$pdf = Yii::createComponent('common.extensions.tcpdf.ETcPdf',
+            'P', 'cm', 'A4', true, 'UTF-8');
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor("Lpovar");
+        $pdf->SetTitle("Товарный чек");
+        $pdf->SetKeywords("TCPDF, PDF, example, test, guide");
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+        $pdf->AliasNbPages();
+        $pdf->AddPage();
+        $pdf->SetFont('freeserif', '', 11);*/
+        $course=Course::model()->findByPk($id);
+        $this->renderPartial('recipe_pdf',array('course'=>$course));
+        //$pdf->writeHTML($tbl, true, false, false, false, '');
+        //$pdf->Output("example_002.pdf", "I");
+    }
 
 }

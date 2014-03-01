@@ -45,12 +45,12 @@
                 </div>
                 <div class="recipe-buttons">
                     <div class="btn-holder">
-                        <a href="" class="green-btn">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="green-btn">
                             <span>Печать</span>
                         </a>
                     </div>
                     <div class="btn-holder">
-                        <a href="" class="lime-btn">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="lime-btn">
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
