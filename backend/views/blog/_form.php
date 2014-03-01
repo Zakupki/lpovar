@@ -23,6 +23,7 @@
     <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
     <?php echo $form->textAreaRow($model, 'preview_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
     <?php echo $form->textAreaRow($model, 'detail_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
+    <?php $this->tinymce(CHtml::resolveName($model, $tmp = "detail_text")); ?>
     <?php echo $form->textFieldRow($model, 'date_create', array('class' => 'span2')); ?>
     <?php $this->widget('backend.extensions.calendar.SCalendar', array(
         'inputField' => CHtml::activeId($model, 'date_create'),
