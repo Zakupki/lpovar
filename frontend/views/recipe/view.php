@@ -50,7 +50,7 @@
                         </a>
                     </div>
                     <div class="btn-holder">
-                        <a href="" class="green-btn">
+                        <a href="" class="lime-btn">
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
