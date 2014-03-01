@@ -322,7 +322,7 @@
                     </div>
                     <div class="row">
                         <label class="textarea-holder"><!--class="error"-->
-                            <textarea name="DietForm[detail_text]"></textarea>
+                            <textarea placeholder="Напишите свой вопрос" name="DietForm[detail_text]"></textarea>
                             <!--<input type="password" name="DietForm[password]"  placeholder="Пароль" value="" />-->
                         </label>
                     </div>
