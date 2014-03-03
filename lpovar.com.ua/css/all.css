@@ -622,6 +622,7 @@ padding:0 0 545px;
     padding:0 0 55px;
     position:relative;
     z-index:2;
+    line-height:20px;
 }
 .recipe-frame .description-row {
     color:#ba8154;
@@ -2562,6 +2563,7 @@ form .label-holder{
 }
 .step p{
     margin:0;
+    line-height:20px;
 }
 .step .img-holder{
     float:left;
