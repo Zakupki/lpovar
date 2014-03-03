@@ -365,13 +365,13 @@ function loginAction(){
     });
 }
 function dietAction(){
-    form = $('#diet-form');
-    form.submit(function(e){
+    dietform = $('#diet-form');
+    dietform.submit(function(e){
         login_status=$('#diet-form .attention');
         login_status_text=$('#diet-form .attention .text');
         e.preventDefault();
         login_status_text.empty();
-        $.post(this.action, form.serialize(), 'json').done(function(data){
+        $.post(this.action, dietform.serialize(), 'json').done(function(data){
             if(data.error){
                 login_status.addClass('active');
                 login_status_text.append(data.status);
