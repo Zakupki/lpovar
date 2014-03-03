@@ -54,7 +54,7 @@
                        // CVarDumper::dump($course->recipeimage->file,10,true);
                         ?>
                     <div class="btn-holder">
-                        <a href="/<?=$course->recipeimage->path;?>/<?=$course->recipeimage->file;?>" target="_blank" class="lime-btn">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="lime-btn">
                             <span>Скачать рецепт</span>
                         </a>
                     </div>

@@ -97,8 +97,10 @@ class RecipeController extends FrontController
         $course=Course::model()->findByPk($id);
         if(isset($_GET['print'])){
             $printable=$_GET['print'];
+        }else
+            $printable=0;
             $this->renderPartial('recipe_pdf',array('course'=>$course,'printable'=>$printable));
-        }else{
+        /*}else{
             $printable=0;
             $pdf = Yii::createComponent('common.extensions.tcpdf.ETcPdf',
                 'P', 'cm', 'A4', true, 'UTF-8');
@@ -113,7 +115,7 @@ class RecipeController extends FrontController
             $pdf->SetFont('freeserif', '', 11);
             $pdf->writeHTML($this->renderPartial('recipe_pdf',array('course'=>$course,'printable'=>$printable),true), true, false, false, false, '');
             $pdf->Output("example_002.pdf", "I");
-        }
+        }*/
     }
 
 }
