@@ -88,7 +88,7 @@ class Course extends BaseActiveRecord
             'coursetype' => array(self::BELONGS_TO, 'Dishtype', 'dishtype_id'),
             'dish' => array(self::BELONGS_TO, 'Dish', 'dish_id'),
             'image' => array(self::BELONGS_TO, 'File', 'image_id'),
-            'recipe' => array(self::BELONGS_TO, 'File', 'recipeimage_id'),
+            'recipeimage' => array(self::BELONGS_TO, 'File', 'recipeimage_id'),
             'courseIngredients' => array(self::HAS_MANY, 'CourseIngredient', 'course_id'),
             'steplist' => array(self::HAS_MANY, 'Step', 'course_id'),
         );

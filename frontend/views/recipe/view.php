@@ -44,16 +44,21 @@
                     <p><?=nl2br($course->detail_text);?></p>
                 </div>
                 <div class="recipe-buttons">
+                    <? if(isset($course->recipeimage)){?>
                     <div class="btn-holder">
-                        <a href="/recipe/pdf?id=<?=$course->id;?>&print=1" target="_blank" class="green-btn">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>&print=1" target="_blank" class="lime-btn">
                             <span>Печать</span>
                         </a>
                     </div>
+                        <?
+                       // CVarDumper::dump($course->recipeimage->file,10,true);
+                        ?>
                     <div class="btn-holder">
-                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="lime-btn">
+                        <a href="/<?=$course->recipeimage->path;?>/<?=$course->recipeimage->file;?>" target="_blank" class="lime-btn">
                             <span>Скачать рецепт</span>
                         </a>
                     </div>
+                    <?}?>
                     <? if($course->dish_id>0)
                     if($course->dish->status=1){?>
                     <div class="btn-holder">
@@ -182,6 +187,8 @@
         <div class="video-box">
             <?  $cnt=0;
             $videoHtml='';
+            $firsturl='';
+            if(count($videos)>0)
             foreach($videos as $video){
                 $vid=null;
                 if($video->videotype_id==1){
