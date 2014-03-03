@@ -71,7 +71,8 @@ class Course extends BaseActiveRecord
             array('sort,status,dishtype_id,dish_id,weight,recipe', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 255),
             array('image_id,recipeimage_id,calories,preview_text,detail_text', 'safe'),
-            array('image_id,recipeimage_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
+            array('image_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
+            array('recipeimage_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('dishtype_id', 'exist', 'className' => 'Dishtype', 'attributeName' => 'id'),
             array('dish_id', 'exist', 'className' => 'Dish', 'attributeName' => 'id'),
         
@@ -128,7 +129,8 @@ class Course extends BaseActiveRecord
 		$criteria->compare('t.title',$this->title,true);
 		$criteria->compare('t.sort',$this->sort);
 		$criteria->compare('t.status',$this->status);
-		$criteria->compare('t.image_id',$this->image_id);
+        $criteria->compare('t.image_id',$this->image_id);
+        $criteria->compare('t.recipeimage_id',$this->recipeimage_id);
         $criteria->compare('t.recipe',$this->recipe);
 		$criteria->compare('t.calories',$this->calories);
 		$criteria->compare('t.dishtype_id',$this->dishtype_id);
