@@ -7,7 +7,7 @@
                                 <ul>
                                     <?
                                     if($tdish->image){?>
-                                        <li><a href="/recipe/<?=$tdish['id'];?>/"><?=$tdish->image->asHtmlImage($tdish->title);?></a></li>
+                                        <li><a href="/recipe/<?=$tdish['id'];?>/"><img width="455" src="/<?=$tdish->image->path;?>/<?=$tdish->image->file;?>"/></a></li>
                                     <?}else{?>
                                         <li><a href="/recipe/<?=$tdish['id'];?>"><img width="455" height="390" src="/images/zaglush.jpg" alt="Омлет"></a></li>
                                     <?}?>

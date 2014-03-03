@@ -7,7 +7,7 @@
                     <ul>
                         <?
                         if(isset($course->image)){?>
-                            <li><?=$course->image->asHtmlImage($course->title);?></li>
+                            <li><img width="455" src="/<?=$course->image->path;?>/<?=$course->image->file;?>"/></li>
                         <?}else{?>
                             <li><img width="455" height="390" src="/images/zaglush.jpg" alt="<?=$course->title;?>"></li>
                         <?}?>

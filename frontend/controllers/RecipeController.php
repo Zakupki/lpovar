@@ -86,9 +86,9 @@ class RecipeController extends FrontController
         $course=Course::model()->findByPk($id);
         $videos=Video::model()->sort()->active()->findAll('t.course_id='.$id);
         if($course->dish_id)
-            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$course->dish_id);
+            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$course->dish_id.' AND similar.status=1');
         else
-            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll();
+            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('similar.status=1');
 
         $this->render('view',array('course'=>$course,'videos'=>$videos,'dishes'=>$dishes));
     }
