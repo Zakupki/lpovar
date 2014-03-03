@@ -129,10 +129,8 @@
 		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
-                    <? if(@$_GET['diet']){?>
                     <div id="diet-button"><a href="">Вопрос диетологу</a></div>
-                    <?}?>
-					<h1 class="logo"><a href="/">Личный повар</a></h1>
+                    <h1 class="logo"><a href="/">Личный повар</a></h1>
 					<div class="head-contacts">
 						<p>c 10.00 до 21.00 ежедневно</p>
 						<div class="phone"><?=Option::getOpt('mainphone');?></div>
