@@ -93,7 +93,6 @@ class RecipeController extends FrontController
     public function actionPdf() {
         $id=$_GET['id'];
         $course=Course::model()->findByPk($id);
-
         if(isset($_GET['print'])){
             $printable=$_GET['print'];
             $this->renderPartial('recipe_pdf',array('course'=>$course,'printable'=>$printable));
