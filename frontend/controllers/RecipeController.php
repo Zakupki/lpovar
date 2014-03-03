@@ -19,7 +19,6 @@ class RecipeController extends FrontController
 	public function actionCategory($id,$page=1)
 	{
         $this->dishtype_id=$id;
-
         if($id==18){
             $total=count(Dish::model()->with('dishtype')->active()->findAll('dishtype.dpid='.$id.''));
             $Paging = new Paging('product/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
@@ -29,7 +28,6 @@ class RecipeController extends FrontController
             $Paging = new Paging('dish/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
             $topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->active()->sort('t.sort ASC')->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.dishtype_id='.$id.'');
         }
-
 		if($seo=Seo::model()->find('t.pid=:id AND t.entity="dishtype"', array(':id'=>$id)))
 		{
 			$this->seo_title=$seo->title;
@@ -40,7 +38,6 @@ class RecipeController extends FrontController
         if(isset($topdishes[0]->dishtype->dpid) || $id==18)
             if($topdishes[0]->dishtype->dpid==18 || $id==18)
                 $view='products';
-
 		$this->render($view,array(
 		    'topdishes'=>$topdishes,
 		    'pages'=>$Paging->GetHTML(),
@@ -88,7 +85,12 @@ class RecipeController extends FrontController
     {
         $course=Course::model()->findByPk($id);
         $videos=Video::model()->sort()->active()->findAll('t.course_id='.$id);
-        $this->render('view',array('course'=>$course,'videos'=>$videos));
+        if($course->dish_id)
+            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$course->dish_id);
+        else
+            $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll();
+
+        $this->render('view',array('course'=>$course,'videos'=>$videos,'dishes'=>$dishes));
     }
     public function actionPdf() {
         $id=$_GET['id'];

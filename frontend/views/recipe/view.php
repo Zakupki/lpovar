@@ -260,6 +260,55 @@
     <?}?>
 </div>
 </div><!--main end-->
+<div class="recommend-box">
+    <? if(count($dishes)>0){?>
+        <div class="head">C этим блюдом Личный Повар рекомендует...</div>
+        <ul class="recommend-list">
+            <? foreach($dishes as $od){?>
+                <li>
+                    <? if(isset($od->similar->dishThumbs[1])){?>
+                        <div class="img-holder"><a href="<?=$od->similar->getUrl();?>"><img src="/<?=$od->similar->dishThumbs[1]->thumb->path;?>/<?=$od->similar->dishThumbs[1]->thumb->file;?>" width="210" alt="image description" /></a></div>
+                    <?}?>
+                    <div class="info-row">
+                        <span class="bottom-deco">&nbsp;</span>
+                        <div class="info-frame">
+                            <div class="title"><a href="<?=$od->similar->getUrl();?>">
+                                    <?
+                                    if(strlen($od->similar->title)>36){
+                                        $od->similar->title=mb_substr(strip_tags($od->similar->title), 0, 33, 'UTF-8')."...";}
+                                    echo $od->similar->title;
+                                    ?></a></div>
+                            <span class="price"><strong><?=$od->similar->price;?></strong> грн.</span>
+                            <? if($od->similar->weight>0){?>
+                                <span class="weight-text"><strong><?=$od->similar->weight*1000;?></strong> грамм</span>
+                            <?}?>
+                        </div>
+                        <form action="/cart/add/<?=$od->similar->id;?>/" rel="<?=$od->similar->dishtype_id;?>" class="tools callbuy-popup2">
+                            <fieldset>
+                                <? if(isset($od->similar->portions[0])){?>
+                                    <div class="row">
+                                        <label class="input-holder">
+                                            <input type="hidden" name="q" value="<?=$od->similar->portions[0]->value;?>"/>
+                                            <input disabled="dosabled" class="callbuy-popup" type="text" value="<?=$od->similar->portions[0]->value;?>" />
+                                        </label>
+                                        <span class="control-label-text">шт.</span>
+                                        <div class="btn-holder">
+                                            <div class="green-btn">
+                                                <span>Заказать</span>
+                                                <input type="submit" value="Заказать" title="Заказать" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?}?>
+                            </fieldset>
+                        </form>
+                    </div>
+                </li>
+            <?}?>
+
+        </ul>
+    <?}?>
+</div>
 <div class="see-menu btn-holder center">
     <a href="/#top" class="green-btn">
         <span><?=Yii::t('frontend', 'Actualdish');?></span>
