@@ -27,7 +27,7 @@
     <?php echo $form->textAreaRow($model, 'detail_text', array('rows' => 5, 'cols' => 50, 'class' => 'span9')); ?>
     <?php $this->tinymce(CHtml::resolveName($model, $tmp = "detail_text")); ?>
     <?php echo $form->fileUploadRow($model, 'image_id', 'image'); ?>
-    <?php echo $form->fileUploadRow($model, 'recipeimage_id', 'recipe'); ?>
+    <?php echo $form->fileUploadRow($model, 'recipeimage_id', 'recipeimage'); ?>
     <?php echo $form->textFieldRow($model, 'calories', array('class' => 'span2')); ?>
     <?php echo $form->textFieldRow($model, 'weight', array('class' => 'span2')); ?>
     <?php echo $form->dropDownListRow($model, 'dishtype_id', Dishtype::model()->listData(), array('empty'=>'')); ?>
