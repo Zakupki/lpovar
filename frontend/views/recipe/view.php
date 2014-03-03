@@ -183,7 +183,7 @@
 
     </div>
 </div>
-<? if(isset($videos)){?>
+<? if(isset($videos) && count($videos)>0){?>
         <div class="video-box">
             <?  $cnt=0;
             $videoHtml='';
