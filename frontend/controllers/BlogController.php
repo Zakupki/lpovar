@@ -19,8 +19,8 @@ class BlogController extends FrontController
         $item=Blog::model()->active()->findByPk($id);
         $item->views=$item->views+1;
         $item->save();
-		$dishes=Dish::model()->width('dishtype')->findAll(array(
-            "condition" => "status=1 AND dishtype.dpid<1",
+		$dishes=Dish::model()->with('dishtype')->findAll(array(
+            "condition" => "t.status=1 AND dishtype.dpid is null",
             "order" => "rand()",
             "limit" => 3,
             "together" => true
