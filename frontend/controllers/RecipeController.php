@@ -28,7 +28,7 @@ class RecipeController extends FrontController
             $Paging = new Paging('dish/category/'.$id.'/page',self::PAGE_SIZE, $total, $page);
             $topdishes=Dish::model()->with(array('dishImages','courses'=>array('with'=>array('coursetype'=>array('with'=>'coursetypeimage'))),'dishtype'=>array('with'=>'dishtypeimage')))->active()->sort('t.sort ASC')->limit(self::PAGE_SIZE,$Paging->getStart())->findAll('t.dishtype_id='.$id.'');
         }
-		if($seo=Seo::model()->find('t.pid=:id AND t.entity="dishtype"', array(':id'=>$id)))
+		if($seo=Seo::model()->find('t.pid=:id AND t.entity="course"', array(':id'=>$id)))
 		{
 			$this->seo_title=$seo->title;
 			$this->seo_description=$seo->description;
@@ -89,6 +89,13 @@ class RecipeController extends FrontController
             $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$course->dish_id.' AND similar.status=1');
         else
             $dishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('similar.status=1');
+
+        if($seo=Seo::model()->find('t.pid=:id AND t.entity="course"', array(':id'=>$id)))
+        {
+            $this->seo_title=$seo->title;
+            $this->seo_description=$seo->description;
+            $this->seo_keywords=$seo->keywords;
+        }
 
         $this->render('view',array('course'=>$course,'videos'=>$videos,'dishes'=>$dishes));
     }
