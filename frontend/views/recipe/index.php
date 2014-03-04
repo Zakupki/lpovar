@@ -7,9 +7,9 @@
                                 <ul>
                                     <?
                                     if($tdish->image){?>
-                                        <li><a href="/recipe/<?=$tdish['id'];?>/"><img width="455" src="/<?=$tdish->image->path;?>/<?=$tdish->image->file;?>"/></a></li>
+                                        <li><a href="<?=$tdish->getUrl('recipe');?>"><img width="455" src="/<?=$tdish->image->path;?>/<?=$tdish->image->file;?>"/></a></li>
                                     <?}else{?>
-                                        <li><a href="/recipe/<?=$tdish['id'];?>"><img width="455" height="390" src="/images/zaglush.jpg" alt="Омлет"></a></li>
+                                        <li><a href="<?=$tdish->getUrl('recipe');?>"><img width="455" height="390" src="/images/zaglush.jpg" alt="Омлет"></a></li>
                                     <?}?>
                                 </ul>
                             </div>
@@ -27,7 +27,7 @@
                         <div class="recipe-frame">
                             <div class="head">
                                 <div class="btn-holder">
-                                    <a href="/recipe/<?=$tdish['id'];?>" class="lime-btn">
+                                    <a href="<?=$tdish->getUrl('recipe');?>" class="lime-btn">
                                         <span>Cмотреть рецепт</span>
                                     </a>
                                 </div>
@@ -36,7 +36,7 @@
                                 </ul>
                             </div>
                             <div class="text-box">
-                                <h3><a href="/recipe/<?=$tdish['id'];?>"><?=$tdish->title;?></a></h3>
+                                <h3><a href="<?=$tdish->getUrl('recipe');?>"><?=$tdish->title;?></a></h3>
                                 <p><?=nl2br($tdish->preview_text);?></p>
                             </div>
                         </div>

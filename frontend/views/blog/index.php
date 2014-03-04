@@ -28,15 +28,15 @@
                         ?>
                         <div class="blog-text">
                             <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->name;?></span>
-                            <h3><a href="/blog/<?=$item->id;?>/"><?=$item->title;?></a></h3>
+                            <h3><a href="<?=$item->getUrl();?>"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
                             <div class="btn-holder right">
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
-                                    <span class="blog-likes informer">0</span>
-                                    <span class="blog-comments informer">0</span>
+                                    <span class="blog-likes informer"><?=$item->likes;?></span>
+                                    <!--<span class="blog-comments informer">0</span>-->
                                 </div>
-                                <a href="/blog/<?=$item->id;?>/" class="lime-btn">
+                                <a href="<?=$item->getUrl();?>" class="lime-btn">
                                     <span>Читать далее</span>
                                 </a>
                             </div>

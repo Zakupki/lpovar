@@ -32,8 +32,8 @@
                             <div class="btn-holder right">
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
-                                    <span class="blog-likes informer">0</span>
-                                    <span class="blog-comments informer">0</span>
+                                    <span class="blog-likes informer" rel=""><?=$item->likes;?></span>
+                                    <!--<span class="blog-comments informer">0</span>-->
                                 </div>
                             </div>
                         </div>

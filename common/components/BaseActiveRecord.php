@@ -53,15 +53,17 @@ abstract class BaseActiveRecord extends CActiveRecord
 		);
 		return $str=str_replace("__", "_", iconv("UTF-8","UTF-8//IGNORE",strtr($string,$replace)));
 	}
-    public function getUrl()
+    public function getUrl($url=null)
     {
         $controller=get_class($this);
         $controller[0]=strtolower($controller[0]);
+        if(!$url)
+            $url=$controller;
         $params=array('id'=>$this->id);
         // add the title parameter to the URL
         if($this->hasAttribute('title'))
             $params['title']=self::GetInTranslit($this->title);
-        return Yii::app()->urlManager->createUrl($controller.'/view', $params);
+        return Yii::app()->urlManager->createUrl($url.'/view', $params);
     } 
 	/**
      * Get ID attribute name
