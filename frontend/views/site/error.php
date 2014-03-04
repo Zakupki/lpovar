@@ -23,9 +23,9 @@ $this->pageTitle .= ' - Error';
                 </div>
             </div>
             <?//$this->renderWidgets($page->id);?>
-        </div><!--main end-->
         <div class="see-menu btn-holder center">
             <a href="/#top" class="green-btn">
                 <span><?=Yii::t('frontend', 'Actualdish');?></span>
             </a>
         </div>
+        </div><!--main end-->

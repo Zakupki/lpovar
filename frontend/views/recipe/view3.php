@@ -29,13 +29,13 @@
                 <div class="head">
                     <ul class="ingredients-list">
                         <?
-                        if(isset($course->coursetype->dishtypeimage)){
+                            if(isset($course->coursetype->dishtypeimage)){
                             ?>
                             <li>
                                 <?=$course->coursetype->dishtypeimage->asHtmlImage();;?>
                             </li>
-                        <?
-                        }
+                            <?
+                            }
                         ?>
                     </ul>
                 </div>
@@ -45,28 +45,28 @@
                 </div>
                 <div class="recipe-buttons">
                     <? if(isset($course->recipeimage)){?>
-                        <div class="btn-holder">
-                            <a href="/recipe/pdf?id=<?=$course->id;?>&print=1" target="_blank" class="lime-btn">
-                                <span>Печать</span>
-                            </a>
-                        </div>
+                    <div class="btn-holder">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>&print=1" target="_blank" class="lime-btn">
+                            <span>Печать</span>
+                        </a>
+                    </div>
                         <?
-                        // CVarDumper::dump($course->recipeimage->file,10,true);
+                       // CVarDumper::dump($course->recipeimage->file,10,true);
                         ?>
-                        <div class="btn-holder">
-                            <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="lime-btn">
-                                <span>Скачать рецепт</span>
-                            </a>
-                        </div>
+                    <div class="btn-holder">
+                        <a href="/recipe/pdf?id=<?=$course->id;?>" target="_blank" class="lime-btn">
+                            <span>Скачать рецепт</span>
+                        </a>
+                    </div>
                     <?}?>
                     <? if($course->dish_id>0)
-                        if($course->dish->status=1){?>
-                            <div class="btn-holder">
-                                <a href="/dish/<?=$course->dish_id;?>/" class="red-btn">
-                                    <span>Купить продукты</span>
-                                </a>
-                            </div>
-                        <?}?>
+                    if($course->dish->status=1){?>
+                    <div class="btn-holder">
+                        <a href="/dish/<?=$course->dish_id;?>/" class="red-btn">
+                            <span>Купить продукты</span>
+                        </a>
+                    </div>
+                    <?}?>
                 </div>
                 <!--<div class="bottom-tools">
                     <?//$this->renderShare('/course/'.$course['id'].'/',$course->title);?>
@@ -142,38 +142,38 @@
             $cnt=1;
             $half=ceil(count($course->courseIngredients)/2);
             foreach($course->courseIngredients as $ingredient){
-            if($cnt==1){
-            ?>
-        <li>
-        <ul class="ingredients">
-        <?}elseif($cnt==$half+1){?>
-        </ul>
-        </li>
+                if($cnt==1){
+                ?>
             <li>
                 <ul class="ingredients">
-                    <?}?>
-                    <li>
-                        <div class="photo-box">
-                            <? if($ingredient->ingredient->image['id']>0){?>
-                                <a class="fancybox-thumb photo" rel="fancybox-thumb" href="/<?=$ingredient->ingredient->image['path'].'/'.$ingredient->ingredient->image['file'];?>" title="<?=$ingredient->ingredient->title;?>"></a>
-                            <?}else{?>
-                                <span class="nophoto"></span>
-                            <?}?>
-                        </div>
-                        <div class="name"><?=$ingredient->ingredient->title;?></div>
-                        <div class="weight"><?=$ingredient->value;?> <?=$ingredient->ingredient->dimension;?></div>
-                    </li>
-                    <? if($cnt==count($course->courseIngredients)){?>
-                    <?}
-                    $cnt++;
-                    }
-                    ?>
+                <?}elseif($cnt==$half+1){?>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="ingredients">
+                <?}?>
+                        <li>
+                            <div class="photo-box">
+                                <? if($ingredient->ingredient->image['id']>0){?>
+                                    <a class="fancybox-thumb photo" rel="fancybox-thumb" href="/<?=$ingredient->ingredient->image['path'].'/'.$ingredient->ingredient->image['file'];?>" title="<?=$ingredient->ingredient->title;?>"></a>
+                                <?}else{?>
+                                    <span class="nophoto"></span>
+                                <?}?>
+                            </div>
+                            <div class="name"><?=$ingredient->ingredient->title;?></div>
+                            <div class="weight"><?=$ingredient->value;?> <?=$ingredient->ingredient->dimension;?></div>
+                        </li>
+                <? if($cnt==count($course->courseIngredients)){?>
+                <?}
+                $cnt++;
+                }
+                ?>
                 </ul>
                 <div class="row">
                     <? if($course['weight']){?>
-                        <div class="total-weight"><span class="title-text">выход 1 порции:</span><strong><?=$course['weight'];?></strong> гр.</div>
+                    <div class="total-weight"><span class="title-text">выход 1 порции:</span><strong><?=$course['weight'];?></strong> гр.</div>
                     <?} if($course['calories']){?>
-                        <div class="calories"><span class="title-text">калорийность 1 порции:</span><strong><?=$course['calories'];?></strong> калорий</div>
+                    <div class="calories"><span class="title-text">калорийность 1 порции:</span><strong><?=$course['calories'];?></strong> калорий</div>
                     <?}?>
                 </div>
             </li>
@@ -184,23 +184,23 @@
     </div>
 </div>
 <? if(isset($videos) && count($videos)>0){?>
-    <div class="video-box">
-        <?  $cnt=0;
-        $videoHtml='';
-        $firsturl='';
-        if(count($videos)>0)
+        <div class="video-box">
+            <?  $cnt=0;
+            $videoHtml='';
+            $firsturl='';
+            if(count($videos)>0)
             foreach($videos as $video){
                 $vid=null;
                 if($video->videotype_id==1){
                     $vid=$this->youtube_id_from_url(urldecode($video->url));
                     $videoHtml.='<li><a href="https://www.youtube.com/v/'.$vid.'?version=3&autoplay=1">'.$video->title.'</a></li>';
                     if(!$cnt)
-                        $firsturl='https://www.youtube.com/v/'.$vid.'?version=3&autoplay=0';
+                    $firsturl='https://www.youtube.com/v/'.$vid.'?version=3&autoplay=0';
                 }elseif($video->videotype_id==2){
                     $vid=$this->vimeo_id_from_url(urldecode($video->url));
                     $videoHtml.='<li><a href="http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0">'.$video->title.'</a></li>';
                     if(!$cnt)
-                        $firsturl='http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0';
+                    $firsturl='http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0';
                 }?>
                 <?
                 $cnt++;
@@ -215,18 +215,18 @@
                 </div>-->
             <?}?>
 
-        <div class="video-frame">
-            <object width="640" height="370">
-                <param name="allowfullscreen" value="true">
-                <param name="allowscriptaccess" value="always">
-                <param name="movie" value="<?=$firsturl;?>">
-                <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
-            </object>
+                        <div class="video-frame">
+                            <object width="640" height="370">
+                                <param name="allowfullscreen" value="true">
+                                <param name="allowscriptaccess" value="always">
+                                <param name="movie" value="<?=$firsturl;?>">
+                                <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
+                            </object>
+                        </div>
+            <ul class="video-list">
+                <?=$videoHtml;?>
+            </ul>
         </div>
-        <ul class="video-list">
-            <?=$videoHtml;?>
-        </ul>
-    </div>
 <?}?>
 <div class="content-box">
     <h1>Детальный рецепт приготовления</h1>
