@@ -5,11 +5,10 @@ class BlogController extends FrontController
 	public function actionIndex()
 	{
         $items=Blog::model()->sort()->active()->findAll();
-        $dishes=Dish::model()->findAll(array(
-            "condition" => "status=1",
+        $dishes=Dish::model()->with('dishtype')->findAll(array(
+            "condition" => "t.status=1 AND dishtype.dpid is null",
             "order" => "rand()",
             "limit" => 3,
-            "together" => true
         )  );
 		$this->render('index',array('items'=>$items,'dishes'=>$dishes));
 	}
@@ -20,8 +19,8 @@ class BlogController extends FrontController
         $item=Blog::model()->active()->findByPk($id);
         $item->views=$item->views+1;
         $item->save();
-		$dishes=Dish::model()->findAll(array(
-            "condition" => "status=1",
+		$dishes=Dish::model()->width('dishtype')->findAll(array(
+            "condition" => "status=1 AND dishtype.dpid<1",
             "order" => "rand()",
             "limit" => 3,
             "together" => true

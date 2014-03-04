@@ -44,15 +44,16 @@
     </div>
     <div id="sidebar">
         <ul class="catalog-list">
-            <? foreach($dishes as $dish){?>
+            <? foreach($dishes as $dish){
+                ?>
                 <li>
                     <? if($dish->new){?>
                         <span class="news-label">Новинка</span>
                     <?}?>
                     <div class="img-holder">
                         <a href="<?=$dish->getUrl();?>">
-                            <? if(isset($dish->dishImages[1]->image)){?>
-                                <img src="/<?=$dish->dishImages[1]->image->path.'/'.$dish->dishImages[1]->image->file;?>" width="275" alt="Блюдо от комьюнити-шефа Алены Мищенко. Спагетти Карбонара">
+                            <? if(isset($dish->dishImages[0]->image)){?>
+                                <img src="/<?=$dish->dishImages[0]->image->path.'/'.$dish->dishImages[0]->image->file;?>" width="275" alt="<?=$dish->title;?>">
                             <?}?>
                             <span class="mask">&nbsp;</span>
                         </a>
