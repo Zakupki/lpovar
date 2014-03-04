@@ -194,33 +194,35 @@
                 if($video->videotype_id==1){
                     $vid=$this->youtube_id_from_url(urldecode($video->url));
                     $videoHtml.='<li><a href="https://www.youtube.com/v/'.$vid.'?version=3&autoplay=1">'.$video->title.'</a></li>';
+                    if(!$cnt)
                     $firsturl='https://www.youtube.com/v/'.$vid.'?version=3&autoplay=0';
                 }elseif($video->videotype_id==2){
                     $vid=$this->vimeo_id_from_url(urldecode($video->url));
                     $videoHtml.='<li><a href="http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0">'.$video->title.'</a></li>';
+                    if(!$cnt)
                     $firsturl='http://vimeo.com/moogaloop.swf?clip_id='.$vid.'&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=c27736&amp;fullscreen=1&amp;autoplay=0&amp;loop=0';
                 }?>
                 <?
                 $cnt++;
                 ?>
-                <div class="video-frame">
+                <!--<div class="video-frame">
                     <object width="640" height="370">
                         <param name="allowfullscreen" value="true">
                         <param name="allowscriptaccess" value="always">
                         <param name="movie" value="<?=$firsturl;?>">
                         <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
                     </object>
-                </div>
+                </div>-->
             <?}?>
 
-            <!--<div class="video-frame">
+                        <div class="video-frame">
                             <object width="640" height="370">
                                 <param name="allowfullscreen" value="true">
                                 <param name="allowscriptaccess" value="always">
                                 <param name="movie" value="<?=$firsturl;?>">
                                 <embed src="<?=$firsturl;?>" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="370" />
                             </object>
-                        </div>-->
+                        </div>
             <ul class="video-list">
                 <?=$videoHtml;?>
             </ul>
