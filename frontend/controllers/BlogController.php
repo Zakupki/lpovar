@@ -34,4 +34,12 @@ class BlogController extends FrontController
 		
 		$this->render('view', array('item'=>$item,'dishes'=>$dishes));
 	}
+    public function actionLike() {
+        if(isset($_GET['id'])){
+            $blog=Blog::model()->findByPk($_GET['id']);
+            $blog->likes=$blog->likes+1;
+            $blog->save();
+            echo $blog->likes;
+        }
+    }
 }

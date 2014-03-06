@@ -12,6 +12,7 @@ $(function(){
     selfdeliverAction();
     newyearpopupAction();
     dietAction();
+    makelikeAction();
     /*$('.tools .green-btn input').click(function(e){
      $(this).closest("form").submit();
      //alert(123);
@@ -534,5 +535,19 @@ function deleteCartProduct(){
                 window.location.reload(true);
             }
         });
+    })
+}
+function makelikeAction(){
+    blogItem = $('.make-like');
+    blogItem.click(function(e){
+        $.post('/blog/like/?id='+blogItem.attr('rel')).done(function(data){
+            if(data.error){
+                alert(data.error);
+            } else {
+                blogItem.html(data);
+            }
+
+        });
+        e.preventDefault();
     })
 }

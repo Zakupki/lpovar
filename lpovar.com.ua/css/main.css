@@ -495,3 +495,6 @@ ul.tisers-list li:hover > ul {
 .recipe-box  .recipe-frame p{
 line-height: 20px;
 }
+.make-like {
+    text-decoration: none;
+}
