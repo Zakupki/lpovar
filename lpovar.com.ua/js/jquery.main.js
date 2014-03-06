@@ -164,7 +164,10 @@ function initAccordion () {
 }
 function initUp () {
 	$('.to-up-holder .to-up').click(function(e){
-		$('html, body').animate({scrollTop: 0},500)
+        if($('.blog-holder-content').length)
+		    $('html, body').animate({scrollTop: 850},500);
+        else
+            $('html, body').animate({scrollTop: 0},500);
 		e.preventDefault();
 	})
 	$(window).scroll(function(){
