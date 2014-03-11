@@ -18,7 +18,7 @@
 	<meta property="fb:admins" content="andrei.denisenko.58"/>
 	<link rel="stylesheet" href="/css/all.css?v=4" type="text/css" />
 	<link rel="stylesheet" href="/css/opacity.css?v=2" type="text/css" />
-	<link rel="stylesheet" href="/css/main.css?v=<?=time();?>" type="text/css" />
+	<link rel="stylesheet" href="/css/main.css?v=11032014" type="text/css" />
 	<link rel="stylesheet" href="/css/jquery.powertip.css" type="text/css" />
 	
 	
@@ -30,9 +30,9 @@
 	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
 	<!--<script type="text/javascript" src="/js/clear-form-fields.js"></script>-->
 	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.main.js?v=<?=time();?>"></script>
+	<script type="text/javascript" src="/js/jquery.main.js?v=11032014"></script>
 	<script type="text/javascript" src="/js/jquery.powertip.js"></script>
-	<script type="text/javascript" src="/js/main.js?v=<?=time();?>"></script>
+	<script type="text/javascript" src="/js/main.js?v=11032014"></script>
 	<!--[if lt IE 9]><script type="text/javascript" src="js/pie.js"></script><![endif]-->
 	<script type="text/javascript" src="/js/jquery.pseudo.js"></script>
 	<script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>

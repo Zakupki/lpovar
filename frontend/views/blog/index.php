@@ -36,7 +36,7 @@
                                     <span class="blog-likes informer"><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->likes;?></a></span>
                                     <!--<span class="blog-comments informer">0</span>-->
                                 </div>
-                                <a href="<?=$item->getUrl();?>" class="lime-btn">
+                                <a href="<?=$item->getUrl();?>#blog" class="lime-btn">
                                     <span>Читать далее</span>
                                 </a>
                             </div>
