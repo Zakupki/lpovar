@@ -35,7 +35,6 @@ class DishController extends BackController
 			}
 			if(isset($_POST['DishSimilar']))
 			{
-
                 if(count($_POST['DishSimilar'])>0)
                 {
                     $hasErrors = false;
