@@ -44,50 +44,35 @@
     </div>
     <div id="sidebar">
         <ul class="catalog-list">
-            <? foreach($dishes as $dish){
-                ?>
+            <?foreach($item->blogDishes as $dish){?>
                 <li>
-                    <? if($dish->new){?>
+                    <? if($dish->dish->new){?>
                         <span class="news-label">Новинка</span>
                     <?}?>
                     <div class="img-holder">
-                        <a href="<?=$dish->getUrl();?>">
-                            <? if(isset($dish->dishImages[0]->image)){?>
-                                <img src="/<?=$dish->dishImages[0]->image->path.'/'.$dish->dishImages[0]->image->file;?>" width="275" alt="<?=$dish->title;?>">
+                        <a href="<?=$dish->dish->getUrl();?>">
+                            <? if(isset($dish->dish->dishImages[0]->image)){?>
+                                <img src="/<?=$dish->dish->dishImages[0]->image->path.'/'.$dish->dish->dishImages[0]->image->file;?>" width="275" alt="<?=$dish->dish->title;?>">
                             <?}?>
                             <span class="mask">&nbsp;</span>
                         </a>
                         <? if(Option::getOpt('buy')){?>
-                            <a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
+                            <a data-cat="<?=$dish->dish->dishtype_id;?>" rel="<?=(isset($dish->dish->portions[0]->value))?$dish->dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->dish->id;?>/?q=<?=(isset($dish->dish->portions[0]->value))?$dish->dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
                         <?}?>
-                        <a href="<?=$dish->getUrl();?>" class="play"></a>
+                        <a href="<?=$dish->dish->getUrl();?>" class="play"></a>
                     </div>
                     <div class="info-row">
                         <span class="bottom-deco">&nbsp;</span>
                         <div class="info-frame">
-                            <div class="title"><a href="<?=$dish->getUrl();?>"><?=$dish->title;?></a></div>
-                            <span class="price"><strong><?=$dish->price;?></strong> грн.</span>
-                            <? if($dish->weight>0){?>
-                                <span class="weight-text"><strong><?=$dish->weight*1000;?></strong> грамм</span>
+                            <div class="title"><a href="<?=$dish->dish->getUrl();?>"><?=$dish->dish->title;?></a></div>
+                            <span class="price"><strong><?=$dish->dish->price;?></strong> грн.</span>
+                            <? if($dish->dish->weight>0){?>
+                                <span class="weight-text"><strong><?=$dish->dish->weight*1000;?></strong> грамм</span>
                             <?}?>
                         </div>
                     </div>
                 </li>
             <?}?>
-            <li class="category">
-                <a href="/dish/category/13/" style="width: 222px; height: 222px; top: 0px; left: 0px; opacity: 1;">
-					<span class="visual">
-						<span class="bulb">
-							<img src="/images/bulb01.png" width="210" height="154" alt="image description">
-						</span>
-						<span class="ico">
-							                                <img width="105" height="90" src="http://lpovar.com.ua/upload/dishtype/a9/logootkritayak.png" alt="От Шефа">                            						</span>
-						<span class="category-name">От Шефа</span>
-					</span>
-                    <span class="text"><strong>8</strong> наборов</span>
-                    <span class="bg" style="height: 4886px;"><img src="/images/category-bg.png" alt="image description"></span>
-                </a>
-            </li>
         </ul>
     </div>
 <div class="see-menu btn-holder center">
