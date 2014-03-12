@@ -89,6 +89,7 @@ class Blog extends BaseActiveRecord
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
             'image' => array(self::BELONGS_TO, 'File', 'image_id'),
             'blogDishes' => array(self::HAS_MANY, 'BlogDish', 'blog_id'),
+            'blogLikes'=>array(self::STAT, 'BlogLike', 'blog_id'),
         );
     }
 

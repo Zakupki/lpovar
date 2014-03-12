@@ -36,10 +36,17 @@ class BlogController extends FrontController
 	}
     public function actionLike() {
         if(isset($_GET['id'])){
-            $blog=Blog::model()->findByPk($_GET['id']);
-            $blog->likes=$blog->likes+1;
-            $blog->save();
-            echo $blog->likes;
+            $blog=BlogLike::model()->findByAttributes(array('blog_id'=>$_GET['id'],'user_id'=>yii::app()->user->getId()));
         }
+        if(!$blog){
+            $blog=new BlogLike;
+            $blog->blog_id=$_GET['id'];
+            $blog->user_id=yii::app()->user->getId();
+            $blog->save();
+            $b=Blog::model()->findByPk($_GET['id']);
+            echo $b->blogLikes;
+        }
+
+
     }
 }
