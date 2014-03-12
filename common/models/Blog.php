@@ -88,6 +88,7 @@ class Blog extends BaseActiveRecord
         return array(
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
             'image' => array(self::BELONGS_TO, 'File', 'image_id'),
+            'blogDishes' => array(self::HAS_MANY, 'BlogDish', 'blog_id'),
         );
     }
 
