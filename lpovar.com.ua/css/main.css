@@ -336,7 +336,7 @@ ul.tisers-list li:hover > ul {
     background: #fff;
     border-bottom: none;
     border-radius: 5px;
-    padding-top: 5px;
+    /*padding-top: 5px;*/
     -webkit-border-radius: 5px;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
@@ -356,6 +356,10 @@ ul.tisers-list li:hover > ul {
     margin: -8px -9999px 16px;
     padding: 8px 9999px 0;
     z-index: 1;
+    background-size: cover;
+    background-position: center center;
+    margin: -8px -600px 16px;
+    padding:0;
 }
 #blog .blog-info {
     float: left;

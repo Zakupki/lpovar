@@ -235,7 +235,9 @@
         ?>
         <div class="step">
             <div class="img-holder">
-                <?=$step->image->asHtmlImage();?>
+                <? if(isset($step->image)){?>
+                <?=$step->image->asHtmlImage();
+                }?>
             </div>
             <div class="text">
                 <h2>Шаг <?=$step['step'];?></h2>
