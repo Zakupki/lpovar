@@ -48,34 +48,34 @@
     </div>
     <div id="sidebar">
         <ul class="catalog-list">
-            <? foreach($dishes as $dish){?>
-            <li>
-                <? if($dish->new){?>
-                    <span class="news-label">Новинка</span>
-                <?}?>
-                <div class="img-holder">
-                    <a href="<?=$dish->getUrl();?>">
-                        <? if(isset($dish->dishImages[1]->image)){?>
-                        <img src="/<?=$dish->dishImages[1]->image->path.'/'.$dish->dishImages[1]->image->file;?>" width="275" alt="Блюдо от комьюнити-шефа Алены Мищенко. Спагетти Карбонара">
-                        <?}?>
-                        <span class="mask">&nbsp;</span>
-                    </a>
-                    <? if(Option::getOpt('buy')){?>
-                        <a data-cat="<?=$dish->dishtype_id;?>" rel="<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->id;?>/?q=<?=(isset($dish->portions[0]->value))?$dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
+            <?foreach($items[0]->blogDishes as $dish){?>
+                <li>
+                    <? if($dish->dish->new){?>
+                        <span class="news-label">Новинка</span>
                     <?}?>
-                    <a href="<?=$dish->getUrl();?>" class="play"></a>
-                </div>
-                <div class="info-row">
-                    <span class="bottom-deco">&nbsp;</span>
-                    <div class="info-frame">
-                        <div class="title"><a href="<?=$dish->getUrl();?>"><?=$dish->title;?></a></div>
-                        <span class="price"><strong><?=$dish->price;?></strong> грн.</span>
-                        <? if($dish->weight>0){?>
-                            <span class="weight-text"><strong><?=$dish->weight*1000;?></strong> грамм</span>
+                    <div class="img-holder">
+                        <a href="<?=$dish->dish->getUrl();?>">
+                            <? if(isset($dish->dish->dishImages[1]->image)){?>
+                                <img src="/<?=$dish->dish->dishImages[1]->image->path.'/'.$dish->dish->dishImages[1]->image->file;?>" width="275" alt="<?=$dish->dish->title;?>">
+                            <?}?>
+                            <span class="mask">&nbsp;</span>
+                        </a>
+                        <? if(Option::getOpt('buy')){?>
+                            <a data-cat="<?=$dish->dish->dishtype_id;?>" rel="<?=(isset($dish->dish->portions[0]->value))?$dish->dish->portions[0]->value:1;?>" href="/cart/add/<?=$dish->dish->id;?>/?q=<?=(isset($dish->dish->portions[0]->value))?$dish->dish->portions[0]->value:1;?>" class="to-cart callbuy-popup"></a>
                         <?}?>
+                        <a href="<?=$dish->dish->getUrl();?>" class="play"></a>
                     </div>
-                </div>
-            </li>
+                    <div class="info-row">
+                        <span class="bottom-deco">&nbsp;</span>
+                        <div class="info-frame">
+                            <div class="title"><a href="<?=$dish->dish->getUrl();?>"><?=$dish->dish->title;?></a></div>
+                            <span class="price"><strong><?=$dish->dish->price;?></strong> грн.</span>
+                            <? if($dish->dish->weight>0){?>
+                                <span class="weight-text"><strong><?=$dish->dish->weight*1000;?></strong> грамм</span>
+                            <?}?>
+                        </div>
+                    </div>
+                </li>
             <?}?>
         </ul>
     </div>

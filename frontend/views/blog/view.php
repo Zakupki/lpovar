@@ -51,8 +51,8 @@
                     <?}?>
                     <div class="img-holder">
                         <a href="<?=$dish->dish->getUrl();?>">
-                            <? if(isset($dish->dish->dishImages[0]->image)){?>
-                                <img src="/<?=$dish->dish->dishImages[0]->image->path.'/'.$dish->dish->dishImages[0]->image->file;?>" width="275" alt="<?=$dish->dish->title;?>">
+                            <? if(isset($dish->dish->dishImages[1]->image)){?>
+                                <img src="/<?=$dish->dish->dishImages[1]->image->path.'/'.$dish->dish->dishImages[1]->image->file;?>" width="275" alt="<?=$dish->dish->title;?>">
                             <?}?>
                             <span class="mask">&nbsp;</span>
                         </a>

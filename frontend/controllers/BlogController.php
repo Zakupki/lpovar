@@ -4,7 +4,7 @@ class BlogController extends FrontController
 {
 	public function actionIndex()
 	{
-        $items=Blog::model()->sort()->active()->findAll();
+        $items=Blog::model()->with('blogDishes')->sort('t.date_create DESC')->active()->findAll();
         $dishes=Dish::model()->with('dishtype')->findAll(array(
             "condition" => "t.status=1 AND dishtype.dpid is null",
             "order" => "rand()",
