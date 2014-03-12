@@ -22,13 +22,15 @@
                 <? foreach($items as $item){?>
                     <li>
                         <?
-                        if(isset($item->image)){
-                            echo $item->image->asHtmlImage($item->title);
-                        }
+                        if(isset($item->image)){?>
+                            <a href="<?=$item->getUrl();?>#blog">
+                            <?=$item->image->asHtmlImage($item->title);?>
+                            </a>
+                        <?}
                         ?>
                         <div class="blog-text">
                             <span class="blog-date"><?= Yii::app()->dateFormatter->formatDateTime($item->date_create, 'long', null); ?> / <?= Yii::app()->dateFormatter->formatDateTime($item->date_create, null, 'short'); ?> / <?=$item->user->name;?></span>
-                            <h3><a href="<?=$item->getUrl();?>"><?=$item->title;?></a></h3>
+                            <h3><a href="<?=$item->getUrl();?>#blog"><?=$item->title;?></a></h3>
                             <p><?=$item->preview_text;?></p>
                             <div class="btn-holder right">
                                 <div class="blog-info">
