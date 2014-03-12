@@ -540,13 +540,13 @@ function deleteCartProduct(){
 function makelikeAction(){
     blogItem = $('.make-like');
     blogItem.click(function(e){
-        $.post('/blog/like/?id='+blogItem.attr('rel')).done(function(data){
+        lin=$(this);
+        $.post('/blog/like/', {'id': $(this).attr('rel')}, 'json').done(function(data){
             if(data.error){
-                alert(data.error);
+                //alert(data.error);
             } else {
-                blogItem.html(data);
+                lin.html(data.likes);
             }
-
         });
         e.preventDefault();
     })

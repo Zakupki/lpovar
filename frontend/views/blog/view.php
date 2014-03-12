@@ -32,7 +32,7 @@
                             <div class="btn-holder right">
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
-                                    <span class="blog-likes informer" rel=""><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->likes;?></a></span>
+                                    <span class="blog-likes informer" rel=""><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->blogLikes;?></a></span>
                                     <!--<span class="blog-comments informer">0</span>-->
                                 </div>
                             </div>

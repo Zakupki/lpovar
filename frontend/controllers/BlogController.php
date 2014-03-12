@@ -35,18 +35,25 @@ class BlogController extends FrontController
 		$this->render('view', array('item'=>$item));
 	}
     public function actionLike() {
-        if(isset($_GET['id'])){
-            $blog=BlogLike::model()->findByAttributes(array('blog_id'=>$_GET['id'],'user_id'=>yii::app()->user->getId()));
+        if(yii::app()->user->getId()>0){
+            if(isset($_POST['id'])){
+                $blog=BlogLike::model()->findByAttributes(array('blog_id'=>$_POST['id'],'user_id'=>yii::app()->user->getId()));
+            }
+            if(!$blog){
+                $blog=new BlogLike;
+                $blog->blog_id=$_POST['id'];
+                $blog->user_id=yii::app()->user->getId();
+                $blog->save();
+                $b=Blog::model()->findByPk($_POST['id']);
+                $this->sendJsonResponse(array(
+                    'likes' => $b->blogLikes
+                ));
+                die();
+            }
         }
-        if(!$blog){
-            $blog=new BlogLike;
-            $blog->blog_id=$_GET['id'];
-            $blog->user_id=yii::app()->user->getId();
-            $blog->save();
-            $b=Blog::model()->findByPk($_GET['id']);
-            echo $b->blogLikes;
-        }
-
+        $this->sendJsonResponse(array(
+            'error' => true,
+        ));
 
     }
 }
