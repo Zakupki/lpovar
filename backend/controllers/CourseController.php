@@ -5,6 +5,7 @@ class CourseController extends BackController
     {
 
 
+        if(!isset($_POST['Seo']))
         if(isset($_POST['CourseIngredient']))
         {
             $hasErrors = false;
