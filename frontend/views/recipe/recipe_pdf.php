@@ -29,7 +29,11 @@
     $file = file_get_contents('/'.$course->recipeimage->path.'/'.$course->recipeimage->file, true);
     echo $file;*/
 }
-echo $course->recipeimage->asHtmlImage($course->title);
+//echo $course->recipeimage->asHtmlImage($course->title);
+if(isset($course->recipeimage)){
+    echo '<img src="/'.$course->recipeimage->path.'/'.$course->recipeimage->file.'" width="95%">';
+}
+
 if(isset($printable) && $printable){?>
 <script>window.print();</script>
 </html>
