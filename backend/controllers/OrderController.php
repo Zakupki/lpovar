@@ -332,7 +332,7 @@ public function actionReceipt() {
         $pdf->AddPage();
         $pdf->SetFont('freeserif', '', 11);
 
-    $tbl='';
+       $tbl='';
        $order=Order::model()->with(array('orderDishes'=>array('with'=>'dish'),'user','orderDrinks'=>array('with'=>'order'),'discount'))->find('t.id=:id',array(':id'=>$oid));
        $user=User::model()->findByPk($order->user_id);   
        $tbl .= '
