@@ -105,7 +105,7 @@ class CartController extends FrontController
 			$discount=$session['discount'];
         $orders=$this->cart->getPositions();
         $notin=null;
-        //if(!$discount && !$userdiscount)
+        if(!$discount && !$userdiscount)
         $discount=$session['discount'];
         //echo $discount;
         if(count($orders)>0)
@@ -641,7 +641,8 @@ class CartController extends FrontController
 			 elseif($item->id==$_POST['item'])
 			 $this->cart->update($item, $_POST['quantity']);
 		  }
-		
+
+
     	$this->sendJsonResponse(array(
             'error' => false,
             'remove' => $remove,

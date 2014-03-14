@@ -67,7 +67,7 @@
 										</div>
 									</div>
 									<?
-									if($discount){
+                                    if($discount){
 										$discountCost=$oldlCost/100*(100-$discount);
 										$discountCost=explode('.',$discountCost);
                                         if(count($discountCost)>1)
@@ -89,9 +89,9 @@
 									<div<?=($discount)?' style="display:block"':'';?> id="totalprice" class="price-holder">
 										<span class="payable">К оплате co скидкой:</span>
 										<div class="price">
-											<div class="num"><?=(isset($discountCost[0]))?$discountCost[0]:00;?></div>
+											<div class="num"><?=(isset($discountCost[0]))?$discountCost[0]:'00';?></div>
 											<div class="currency">
-												<span><?=(isset($discountCost[1]))?$discountCost[1]:00;?></span>
+												<span><?=(isset($discountCost[1]))?$discountCost[1]:'00';?></span>
 												<i>грн</i>
 											</div>
 										</div>
