@@ -93,12 +93,12 @@ class CartController extends FrontController
         if(yii::app()->user->getId()){
             $userdata=yii::app()->user->getData();
 			if($userdata['discount']){
-			$userdiscount=$discount=$userdata['discount'];
+			$userdiscount=$discount=$session['discount']=$userdata['discount'];
             }
 		}elseif(yii::app()->user->getId()<1 && $session['discemail']){
 			$userdata=User::model()->find('t.email=:email',array(':email'=>$session['discemail']));
 			if(isset($userdata->discount))
-			$userdiscount=$discount=$userdata['discount'];
+			$userdiscount=$discount=$session['discount']=$userdata['discount'];
             elseif($session['discount'])
             $discount=$session['discount'];
 		}else
@@ -107,7 +107,7 @@ class CartController extends FrontController
         $notin=null;
         if(!$discount && !$userdiscount)
         $discount=$session['discount'];
-        //echo $discount;
+
         if(count($orders)>0)
         $notin=' AND t.similar_id NOT IN('.implode(',',array_keys($orders)).') AND t.dish_id IN('.implode(',',array_keys($orders)).')';
         
@@ -641,12 +641,14 @@ class CartController extends FrontController
 			 elseif($item->id==$_POST['item'])
 			 $this->cart->update($item, $_POST['quantity']);
 		  }
-
+        $session=new CHttpSession;
+        $session->open();
 
     	$this->sendJsonResponse(array(
             'error' => false,
             'remove' => $remove,
-            'totalcost'=>$this->cart->getCost()
+            'totalcost'=>$this->cart->getCost(),
+            'totaldiscount'=>number_format($this->cart->getCost()/100*(100-$session['discount']), 2, '.', ' ')
         ));	
 		die();
 			

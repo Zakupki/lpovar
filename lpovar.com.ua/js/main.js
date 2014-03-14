@@ -298,9 +298,10 @@ function changeCart(){
             } else {
                 var prices =data.totalcost.split('.');
                 if(data.remove)
-                    $('li.cart-item[rel='+dishid+']').fadeOut();
-                $('.price-holder .num').html(prices[0]);
-                $('.price-holder .currency span').html(prices[1]);
+                $('li.cart-item[rel='+dishid+']').fadeOut();
+
+                $('#totaloldprice .num').html(prices[0]);
+                $('#totaloldprice .currency span').html(prices[1]);
 
             }
 
@@ -317,10 +318,15 @@ function changeCart(){
 
             } else {
                 var prices =data.totalcost.split('.');
+                var pricesdisc =data.totaldiscount.split('.');
                 if(data.remove)
                     $('li.cart-item[rel='+dishid+']').fadeOut();
-                $('.price-holder .num').html(prices[0]);
-                $('.price-holder .currency span').html(prices[1]);
+
+                $('#totalprice .num').html(pricesdisc[0]);
+                $('#totalprice .currency span').html(pricesdisc[1]);
+
+                $('#totaloldprice .num').html(prices[0]);
+                $('#totaloldprice .currency span').html(prices[1]);
 
             }
 

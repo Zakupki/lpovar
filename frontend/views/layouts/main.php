@@ -30,7 +30,7 @@
 	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
 	<!--<script type="text/javascript" src="/js/clear-form-fields.js"></script>-->
 	<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.main.js?v=11032014"></script>
+	<script type="text/javascript" src="/js/jquery.main.js?v=<?=time();?>"></script>
 	<script type="text/javascript" src="/js/jquery.powertip.js"></script>
 	<script type="text/javascript" src="/js/main.js?v=11032014"></script>
 	<!--[if lt IE 9]><script type="text/javascript" src="js/pie.js"></script><![endif]-->
