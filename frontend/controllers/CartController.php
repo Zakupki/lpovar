@@ -103,7 +103,6 @@ class CartController extends FrontController
             $discount=$session['discount'];
 		}else
 			$discount=$session['discount'];
-        echo $discount;
         $orders=$this->cart->getPositions();
         $notin=null;
         //if(!$discount && !$userdiscount)
@@ -542,13 +541,13 @@ class CartController extends FrontController
     {
        $session=new CHttpSession;
   	   $session->open();
-	   echo $session['disccode'];
+	  /* echo $session['disccode'];
 	   echo "<br>";
 	   echo $session['discemail'];
 	   echo "<br>";
 	   echo $session['discount'];
 	   echo "<br>";
-	   echo $session['discount_id'];
+	   echo $session['discount_id'];*/
 	   exit();
     }
 	public function actionAdddiscount()
