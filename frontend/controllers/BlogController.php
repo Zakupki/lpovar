@@ -53,6 +53,13 @@ class BlogController extends FrontController
                     'likes' => $b->blogLikes
                 ));
                 die();
+            }else{
+                $blog->delete();
+                $b=Blog::model()->findByPk($_POST['id']);
+                $this->sendJsonResponse(array(
+                    'likes' => $b->blogLikes
+                ));
+                die();
             }
         }
         $this->sendJsonResponse(array(

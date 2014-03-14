@@ -35,7 +35,9 @@
                             <div class="btn-holder right">
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
-                                    <span class="blog-likes informer"><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->blogLikes;?></a></span>
+                                    <? if(yii::app()->user->getId()){?>
+                                        <span class="blog-likes informer" rel=""><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->blogLikes;?></a></span>
+                                    <?}?>
                                     <!--<span class="blog-comments informer">0</span>-->
                                 </div>
                                 <a href="<?=$item->getUrl();?>#blog" class="lime-btn">
