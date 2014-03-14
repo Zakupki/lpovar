@@ -112,7 +112,7 @@ class CartController extends FrontController
         $notin=' AND t.similar_id NOT IN('.implode(',',array_keys($orders)).') AND t.dish_id IN('.implode(',',array_keys($orders)).')';
         
         //$topdishes=Dish::model()->with(array('portions','dishtype'=>array('with'=>'dishtypeimage')))->findAll('t.id>0'.$notin);
-		$topdishes=DishSimilar::model()->with(array('similar'=>array('with'=>array('portions','dishImages'))))->limit(5,0)->findAll('t.dish_id>0'.$notin);
+		$topdishes=DishSimilar::model()->with(array('similar'=>array('with'=>array('portions','dishImages'))))->limit(5,0)->findAll('similar.status=1 AND t.dish_id>0'.$notin);
 		
 		$paytype=Paytype::model()->sort()->active()->findAll('t.status=1');
 		$this->render('index',array('orders'=>$orders,'totalCost'=>$this->cart->getCost(), 'paytype'=>$paytype, 'topdishes'=>$topdishes,
