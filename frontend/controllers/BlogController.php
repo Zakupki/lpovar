@@ -18,8 +18,12 @@ class BlogController extends FrontController
 		//$managers=User::model()->with(array('userUsertypes'=>array('joinType'=>'inner join')))->findAll('userUsertypes.id=3');
         $item=Blog::model()->with('blogDishes')->active()->findByPk($id);
         $item->views=$item->views+1;
-        $item->save();
-       /* $dishes=Dish::model()->with('dishtype')->findAll(array(
+        $connection=Yii::app()->db;
+        $command=$connection->createCommand('UPDATE gs_blog SET gs_blog.`views`=gs_blog.`views`+1 WHERE id='.$id);
+        $rowCount=$command->execute();
+
+        //print_r($item2->attributes);
+        /* $dishes=Dish::model()->with('dishtype')->findAll(array(
             "condition" => "t.status=1 AND dishtype.dpid is null",
             "order" => "rand()",
             "limit" => 3,

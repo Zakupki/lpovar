@@ -72,11 +72,11 @@ class Blog extends BaseActiveRecord
             array('user_id, date_create', 'required'),
             array('user_id, views, likes, comments, sort, status', 'numerical', 'integerOnly' => true),
             array('title', 'length', 'max' => 255),
-            array('image_id, preview_text, detail_text', 'safe'),
+            array('image_id, preview_text, detail_text,views', 'safe'),
             array('image_id', 'file', 'types' => File::getAllowedExtensions(), 'allowEmpty' => true, 'on' => 'upload'),
             array('user_id', 'exist', 'className' => 'User', 'attributeName' => 'id'),
         
-            array('id, title, user_id, image_id, preview_text, detail_text, date_create, views, likes, comments, sort, status', 'safe', 'on' => 'search'),
+            array('id, title, user_id,views, image_id, preview_text, detail_text, date_create, views, likes, comments, sort, status', 'safe', 'on' => 'search'),
         ));
     }
 
