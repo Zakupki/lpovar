@@ -194,6 +194,20 @@
     background-position:0 -80px;
 }
 
+
+#nav .blogmenu {
+    background: url(/images/nav-bg.png) no-repeat 100% -360px;
+}
+#nav .blogmenu span {
+    background: url(/images/nav-bg.png) no-repeat 0 -320px;
+}
+#nav .blogmenu:hover {
+    background: url(/images/nav-bg.png) no-repeat 100% -440px;
+}
+#nav .blogmenu:hover span{
+    background: url(/images/nav-bg.png) no-repeat 0 -400px;
+}
+
 /*newyearpopup close*/
 #newyear-popup2 .popup {
     position: absolute;
