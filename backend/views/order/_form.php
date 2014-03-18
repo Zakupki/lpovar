@@ -88,7 +88,7 @@
             <?php foreach($OrderDish as $i => $item) { /** @var $item ProductInfo */?>
 
                 <div class="controls controls-multiple-row">
-                    <?php echo $form->dropDownList($item, "[{$i}]dish_id", Dish::model()->listData(), array(
+                    <?php echo $form->dropDownList($item, "[{$i}]dish_id", Dish::model()->sort('status DESC')->listData(), array(
                         'class' => 'span6 validate-unique',
                         'placeholder' => Yii::t('backend', 'Dish'),
                         'empty'=>''
@@ -129,7 +129,7 @@
             <?php foreach($OrderDrink as $i => $item) { /** @var $item ProductInfo */?>
 
                 <div rel="sjstpl2" class="controls controls-multiple-row">
-                    <?php echo $form->dropDownList($item, "[{$i}]drink_id", Drink::model()->listData(), array(
+                    <?php echo $form->dropDownList($item, "[{$i}]drink_id", Drink::model()->sort('status DESC')->listData(), array(
                         'class' => 'span6 validate-unique',
                         'placeholder' => Yii::t('backend', 'Dish'),
                         'empty'=>''
@@ -158,7 +158,7 @@
 </div>
 <?php $this->endWidget(); ?>
 <script type="text/html" id="sjstpl">
-    <?php echo $form->dropDownList($OrderDish[0], "[<%=idx%>]dish_id", Dish::model()->listData(), array(
+    <?php echo $form->dropDownList($OrderDish[0], "[<%=idx%>]dish_id", Dish::model()->sort('status DESC')->listData(), array(
         'quantity' => '',
         'encode' => false,
         'class' => 'span6 validate-unique',
@@ -183,7 +183,7 @@
     <?php echo $form->error($OrderDish[0], '[<%=idx%>]quantity', array('encode' => false)); ?>
 </script>
 <script type="text/html" id="sjstpl2">
-    <?php echo $form->dropDownList($OrderDrink[0], "[<%=idx%>]drink_id", Drink::model()->listData(), array(
+    <?php echo $form->dropDownList($OrderDrink[0], "[<%=idx%>]drink_id", Drink::model()->sort('status DESC')->listData(), array(
         'quantity' => '',
         'encode' => false,
         'class' => 'span6 validate-unique',
