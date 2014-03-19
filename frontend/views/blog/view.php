@@ -33,7 +33,7 @@
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
                                     <? if(yii::app()->user->getId()){?>
-                                        <span class="blog-likes informer" rel=""><a class="make-like" rel="<?=$item->id;?>" href="#"><?=$item->blogLikes;?></a></span>
+                                        <a class="make-like" rel="<?=$item->id;?>" href="#"><span class="blog-likes informer" rel=""><?=$item->blogLikes;?></span></a>
                                     <?}?>
                                     <!--<span class="blog-comments informer">0</span>-->
                                 </div>
