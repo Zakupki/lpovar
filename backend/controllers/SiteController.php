@@ -4,7 +4,10 @@ class SiteController extends BackController
 {
     public function actionAdmin()
     {
-        $this->redirect(array('/order'));
+        if(user()->checkAccess('Order.*'))
+            $this->redirect(array('/order'));
+        elseif(user()->checkAccess('Blog.*'))
+            $this->redirect(array('/blog'));
     }
 
     /**
