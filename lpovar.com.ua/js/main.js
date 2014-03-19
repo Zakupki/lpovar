@@ -551,7 +551,7 @@ function makelikeAction(){
             if(data.error){
                 //alert(data.error);
             } else {
-                lin.html(data.likes);
+                lin.find('.blog-like-num').html(data.likes);
             }
         });
         e.preventDefault();

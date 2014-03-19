@@ -388,7 +388,11 @@ ul.tisers-list li:hover > ul {
     background: url(/images/blog-views.png) no-repeat;
 }
 #blog .blog-likes{
+    padding: 0 7px 0 17px;
     background: url(/images/blog-likes.png) no-repeat;
+}
+#blog .blog-likes:hover{
+    background: url(/images/blog-likes-tr.png) no-repeat;
 }
 #blog .blog-comments{
     background: url(/images/blog-comments.png) no-repeat;
