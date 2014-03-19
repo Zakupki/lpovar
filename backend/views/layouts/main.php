@@ -25,7 +25,6 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
 </head>
 
 <body>
-
 <?php if(!user()->isGuest) { ?>
     <?php $this->widget('TbNavbar', array(
         'collapse' => true,
@@ -100,6 +99,12 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                             ),
                         ),
                     ),
+                    array('label' => Yii::t('backend', 'Blog'),
+                        'url' => array('/blog'),
+                        'visible' => user()->checkAccess('Blog.*'),
+                        'active' => $this->getId() === 'blog',
+                    ),
+
                     array('label' => Yii::t('backend', 'Other'),
                         'url' => array('/tools'),
                         'visible' => user()->checkAccess('Other.Admin'),
@@ -120,11 +125,7 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'visible' => user()->checkAccess('Tools.Admin'),
                                 'active' => $this->getId() === 'tools',
                             ),
-                            array('label' => Yii::t('backend', 'Blog'),
-                                'url' => array('/blog'),
-                                'visible' => user()->checkAccess('Blog.Admin'),
-                                'active' => $this->getId() === 'blog',
-                            ),
+
                         )
                     ),
                     array('label' => Yii::t('backend', 'Shop'),
