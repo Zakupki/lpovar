@@ -1,6 +1,14 @@
 <?php
 class BlogController extends BackController
 {
+    public function filters()
+    {
+        return array(
+            'rights',
+        );
+    }
+
+
     protected function afterActionDone($model)
     {
         if(isset($_POST['BlogDish']))

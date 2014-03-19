@@ -102,6 +102,7 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                     ),
                     array('label' => Yii::t('backend', 'Other'),
                         'url' => array('/tools'),
+                        'visible' => user()->checkAccess('Other.Admin'),
                         'active' => in_array($this->getId(), array('producttype', 'product','tools')),
                         'items' => array(
                             array('label' => Yii::t('backend', 'Product Types'),
