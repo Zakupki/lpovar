@@ -168,7 +168,7 @@
 					<li><a href="/howitworks/"><span>Как это работает</span></a></li>
 					<li><a href="/site/delivery/"><span>Оплата и доставка</span></a></li>
                     <li><a href="/site/team/"><span>Команда</span></a></li>
-                    <li><a class="blogmenu" href="/recipe/"><span>Рецепты</span></a></li>
+                    <li><a href="/recipe/"><span>Рецепты</span></a></li>
                     <li><a class="blogmenu" href="/blog/"><span>Блог</span></a></li>
                     <!--<li><a class="redmenu" href="/dish/category/17"><span>Новый Год</span></a></li>-->
                     <? if(Yii::app()->user->getId()>0){?>
@@ -543,5 +543,22 @@ if(isset($_GET['banner']) || $this->display_popup){
         <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/988716451/?value=0&amp;label=GlwWCP3gzQQQo7u61wM&amp;guid=ON&amp;script=0"/>
     </div>
 </noscript>
+<script type="text/javascript">
+    adroll_adv_id = "Q2Z2F3LO3BFXFKKFYPS4L2";
+    adroll_pix_id = "BHUIVDTT7FBXDD34P3GCNI";
+    (function () {
+        var oldonload = window.onload;
+        window.onload = function(){
+            __adroll_loaded=true;
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+            if(oldonload){oldonload()}};
+    }());
+</script>
 </body>
 </html>
