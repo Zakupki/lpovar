@@ -69,7 +69,7 @@ class DishController extends FrontController
 		
 		
 		$course=Course::model()->with(array('image','coursetype'=>array('with'=>'dishtypeimage'),'courseIngredients'=>array('with'=>array('ingredient'=>array('with'=>'image')))))->sort()->active()->findAll('t.dish_id=:id', array(':id'=>$id));
-		$otherdishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$dish->id);
+		$otherdishes=DishSimilar::model()->with(array('similar'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$dish->id.' AND similar.status=1');
         $tools=DishTool::model()->with(array('tool'=>array('with'=>'dishImages')))->limit(4,0)->findAll('t.dish_id='.$dish->id);
 
 		$steps=array();
