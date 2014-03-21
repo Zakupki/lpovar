@@ -54,7 +54,7 @@
 							</div>
 							<div class="row">
 								<div class="label-holder">
-									<label>Адрес достаки</label>
+									<label>Адрес доставки</label>
 								</div>
 								<span class="req">&nbsp;</span>
 								<label class="textarea-holder">
