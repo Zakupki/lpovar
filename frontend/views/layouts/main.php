@@ -16,7 +16,7 @@
 	<meta property="fb:admins" content="alexander.interio"/>
 	<meta property="fb:admins" content="prorokartem"/>
 	<meta property="fb:admins" content="andrei.denisenko.58"/>
-	<link rel="stylesheet" href="/css/all.css?v=4" type="text/css" />
+	<link rel="stylesheet" href="/css/all.css?v=04042014" type="text/css" />
 	<link rel="stylesheet" href="/css/opacity.css?v=2" type="text/css" />
 	<link rel="stylesheet" href="/css/main.css?v=04042014" type="text/css" />
 	<link rel="stylesheet" href="/css/jquery.powertip.css" type="text/css" />

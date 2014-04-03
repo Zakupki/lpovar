@@ -15,6 +15,7 @@ abstract class BaseActiveRecord extends CActiveRecord
 		    "+"=>"",
 			"'"=>"",
 			"`"=>"",
+            "?"=>"",
 			"а"=>"a","А"=>"a",
 			"б"=>"b","Б"=>"b",
 			"в"=>"v","В"=>"v",
