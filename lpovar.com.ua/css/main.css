@@ -480,15 +480,16 @@ ul.tisers-list li:hover > ul {
 #diet-button{
     float:right;
     background: url(/images/diet-button.gif) no-repeat;
-    width:110px;
-    height:17px;
-    padding: 0 0 0 3px;
+    width: 114px;
+    height: 17px;
+    padding: 0 0 0 2px;
     line-height: 14px;
+    padding: 0 0 0 5px;
 }
 #diet-button a{
     color: #ffffff;
     text-decoration: none;
-    font: 11px/12px Georgia, Georgia, serif;
+    font: 10px/11px Georgia, Georgia, serif;
     line-height: 14px;
 }
 #diet .popup {

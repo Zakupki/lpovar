@@ -20,12 +20,12 @@
 	<link rel="stylesheet" href="/css/opacity.css?v=2" type="text/css" />
 	<link rel="stylesheet" href="/css/main.css?v=11032014" type="text/css" />
 	<link rel="stylesheet" href="/css/jquery.powertip.css" type="text/css" />
-	
-	
+
+
 	<link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" />
 	<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css" type="text/css" />
 	<link rel="shortcut icon" href="/images/favicon2.ico" type="image/x-icon" />
-	
+
 	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen"/><![endif]-->
 	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen"/><![endif]-->
 	<!--<script type="text/javascript" src="/js/clear-form-fields.js"></script>-->
@@ -64,17 +64,17 @@
 		});
 	</script>
 	<script type="text/javascript">
-	
+
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-38580543-1']);
 	  _gaq.push(['_trackPageview']);
-	
+
 	  (function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-	
+
 	</script>
 	<? if($this->id=='cart' && $this->action->id=='order'){?>
 	<script type="text/javascript">
@@ -89,7 +89,7 @@
 	  ref.parentNode.insertBefore(fpw, ref);
 	})();
 	</script>
-	
+
 	<!-- Google Code for confirm_order Conversion Page -->
 	<script type="text/javascript">
 	/* <![CDATA[ */
@@ -109,10 +109,10 @@
 	</div>
 	</noscript>
 	<?}?>
-	
-	
-	
-	
+
+
+
+
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6008206237109&amp;value=0" /></noscript>
 </head>
 <body>
@@ -245,7 +245,7 @@
 					<li><a target="_blank" href="https://twitter.com/lichnyipovar"><img src="/images/tw.png" width="40" height="40" alt="Twitter" /></a></li>
 					<li><a target="_blank" href="http://instagram.com/lpovar"><img src="/images/ig.png" width="40" height="40" alt="Instagram" /></a></li>
 					<li><a target="_blank" href="https://plus.google.com/116299644278391831816" rel="publisher"><img src="/images/gp.png" width="40" height="40" alt="Google+" /></a></li>
-					
+
 				</ul>
 			</div>
 		</div>
@@ -309,7 +309,7 @@
             <form action="/site/diet/" method="post" id="diet-form">
                 <fieldset>
                     <div class="description">
-                        Наш шеф-повар обязательно ответит вам в течении 24 часов на ваш email</div>
+                        Наш Шеф-повар ответит вам в ближайшее время на ваш email</div>
                     <div class="row">
                         <label class="input-holder"><!--class="error"-->
                             <input type="text" name="DietForm[title]" placeholder="Вашe имя" value="" />
@@ -328,7 +328,7 @@
                     </div>
                     <div class="row">
                         <div class="btn-holder right">
-                            <img src="/images/diet-logo.png"/>
+                            <!--<img src="/images/diet-logo.png"/>-->
                             <div class="green-btn">
                                 <span>Отправить</span>
                                 <input type="submit" value="Отправить" />
