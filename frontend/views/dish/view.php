@@ -261,7 +261,7 @@
 		</div><!--main end-->
         <div class="recommend-box">
             <? if(count($otherdishes)>0){?>
-                <div class="head">C этим блюдом Личный Повар рекомендует...</div>
+                <div class="head">Также вас может заинтересовать...</div>
                 <ul class="recommend-list">
                     <? foreach($otherdishes as $od){?>
                         <li>
