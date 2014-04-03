@@ -129,7 +129,7 @@
 		<div class="header-holder<?=(($this->id=='site' && $this->action->id=='index') || $this->id=='blog')?' '.$this->id.'-holder':' small';?>">
 			<div id="header"><!--header start-->
 				<div class="row">
-                    <div id="diet-button"><a href="">Вопрос диетологу</a></div>
+                    <div id="diet-button"><a href="">Вопрос шеф-повару</a></div>
                     <h1 class="logo"><a href="/">Личный повар</a></h1>
 					<div class="head-contacts">
 						<p>c 10.00 до 21.00 ежедневно</p>
@@ -309,7 +309,7 @@
             <form action="/site/diet/" method="post" id="diet-form">
                 <fieldset>
                     <div class="description">
-                        Наш диетолог обязательно ответит вам в течении 24 часов на ваш email</div>
+                        Наш шеф-повар обязательно ответит вам в течении 24 часов на ваш email</div>
                     <div class="row">
                         <label class="input-holder"><!--class="error"-->
                             <input type="text" name="DietForm[title]" placeholder="Вашe имя" value="" />
