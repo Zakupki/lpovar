@@ -29,12 +29,12 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
     <?php $this->widget('TbNavbar', array(
         'collapse' => true,
         'brand' => CHtml::encode(Yii::app()->name),
-        'brandUrl' => array('/page/admin'),
+        'brandUrl' => array('/order'),
         'items' => array(
             array(
                 'class' => 'TbMenu',
                 'items' => array(
-                    array('label' => Yii::t('backend', 'Pages'),
+                    /*array('label' => Yii::t('backend', 'Pages'),
                         'url' => '#',
                         'visible' => user()->checkAccess('Page.Admin'),
                         'active' => in_array($this->getId(), array('page', 'About')),
@@ -50,7 +50,7 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'active' => $this->getId() === 'about',
                             ),
                         )
-                    ),
+                    ),*/
 
                     array('label' => Yii::t('backend', 'Kitchen'),
                         'url' => array('#'),
@@ -124,6 +124,16 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'url' => array('/tools'),
                                 'visible' => user()->checkAccess('Tools.Admin'),
                                 'active' => $this->getId() === 'tools',
+                            ),
+                            array('label' => Yii::t('backend', 'Pages'),
+                                'url' => array('/page'),
+                                'visible' => user()->checkAccess('Page.Admin'),
+                                'active' => $this->getId() === 'page',
+                            ),
+                            array('label' => Yii::t('backend', 'About'),
+                                'url' => array('/about'),
+                                'visible' => user()->checkAccess('About'),
+                                'active' => $this->getId() === 'about',
                             ),
 
                         )

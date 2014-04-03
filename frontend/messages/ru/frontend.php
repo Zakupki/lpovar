@@ -26,6 +26,6 @@ return array (
     'Site not found.' => 'Сайт не найден',
     'Unknown' => 'Неизвестно',
     'Password' => 'Пароль',
-    'Actualdish' => 'Смотреть меню этой недели'
+    'Actualdish' => 'Смотреть вкусное меню'
 
 );
