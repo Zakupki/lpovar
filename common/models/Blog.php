@@ -34,6 +34,8 @@ class Blog extends BaseActiveRecord
     public function behaviors()
     {
         return array(
+            'e' => array('class' => 'common.models.Entity'),
+            'seo' => array('class' => 'common.components.SeoBehavior'),
             'attach' => array(
                 'class' => 'common.components.FileAttachBehavior',
                 'imageAttributes' => array(
