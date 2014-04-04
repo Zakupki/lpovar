@@ -29,7 +29,14 @@ class DietForm extends CFormModel
                         ';
         $message->setBody($message_body, 'text/html');
         $message->subject = 'Новый вопрос диетологу';
+        $emails=explode(',',Option::getOpt('diet_email'));
+        if(count($emails)>0){
+            foreach($emails as $email){
+                $message->addTo($email);
+            }
+        }else
         $message->addTo(Option::getOpt('diet_email'));
+
         $message->from = Yii::app()->params['adminEmail'];
         return Yii::app()->mail->send($message);
 
