@@ -4,6 +4,9 @@ class BlogController extends FrontController
 {
 	public function actionIndex()
 	{
+        $likes = isset(Yii::app()->request->cookies['bloglikes']->value)?Yii::app()->request->cookies['bloglikes']->value:'';
+
+
         $items=Blog::model()->with('blogDishes')->sort('t.date_create DESC')->active()->findAll();
         $dishes=Dish::model()->with('dishtype')->findAll(array(
             "condition" => "t.status=1 AND dishtype.dpid is null",
@@ -39,8 +42,34 @@ class BlogController extends FrontController
 		$this->render('view', array('item'=>$item));
 	}
     public function actionLike() {
-        if(yii::app()->user->getId()>0){
+
+
             if(isset($_POST['id'])){
+                $likes = isset(Yii::app()->request->cookies['bloglikes']->value)?Yii::app()->request->cookies['bloglikes']->value:array();
+                $blog=Blog::model()->findByPk($_POST['id']);
+                if(count($likes)>0){
+                   if(in_array($_POST['id'],$likes)){
+                       if($blog->likes>0)
+                       $blog->likes=$blog->likes-1;
+                       if(($key = array_search($_POST['id'], $likes)) !== false) {
+                           unset($likes[$key]);
+                       }
+                   }else{
+                       $blog->likes=$blog->likes+1;
+                       $likes[]=$_POST['id'];
+                   }
+                }else{
+                    $blog->likes=$blog->likes+1;
+                    $likes[]=$_POST['id'];
+                }
+                Yii::app()->request->cookies['bloglikes'] = new CHttpCookie('bloglikes', $likes);
+                $blog->save();
+                $this->sendJsonResponse(array(
+                    'likes' => $blog->likes
+                ));
+                die();
+
+            /*if(isset($_POST['id'])){
                 $blog=BlogLike::model()->findByAttributes(array('blog_id'=>$_POST['id'],'user_id'=>yii::app()->user->getId()));
             }
             if(!$blog){
@@ -60,7 +89,7 @@ class BlogController extends FrontController
                     'likes' => $b->blogLikes
                 ));
                 die();
-            }
+            }*/
         }
         $this->sendJsonResponse(array(
             'error' => true,
