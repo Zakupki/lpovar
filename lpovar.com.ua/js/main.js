@@ -118,7 +118,6 @@ function buypopupAction(){
         //alert($(this).data('cat'));
         if($(this).data('cat')==10){
             $.post('/cart/checkdesert/',10).done(function(data){
-
                 if(data.desert>1){
                     $('#buy-popup').css('left', '0').fadeIn(200);
                     $.post(carturl, 'q='+quantity).done(function(data){
@@ -131,7 +130,12 @@ function buypopupAction(){
         }else{
             $.post($(this).attr('href'), 'q='+quantity).done(function(data){
 
+
                 var basket=$('.user-tools .cart em').html();
+
+                $('.delivery-box').hide();
+                $('.user-tools-holder').show();
+
                 $('.user-tools .cart em').html(Number(basket)+Number(quantity));
 
                 $('#buy-popup').css('left', '0').hide().fadeIn(200);

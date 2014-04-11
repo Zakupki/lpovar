@@ -137,30 +137,29 @@
 						<div class="free-delivery">Бесплатная доставка <a href="#" rel='Доставка осуществляется "день в день" в удобное для вас место в Киеве.' class="ico-holder call-popup"><img src="/images/ico15.png" width="20" height="20" alt="image description" /></a></div>
 					</div>
 					<? if(Yii::app()->user->getId()>0){?>
-					<div class="user-tools-holder">
-						<div class="user"><a href="/cabinet/"><em><?=Yii::app()->user->getDisplayName();?></em></a></div>
-						<ul class="user-tools">
-							<li><a href="/cabinet/"><span><strong class="ico-holder"><img src="/images/ico06.png" width="18" height="18" alt="image description" /></strong></span></a></li>
-							<li><a href="/cabinet/settings/"><span><strong class="ico-holder"><img src="/images/ico07.png" width="18" height="18" alt="image description" /></strong></span></a></li>
-							<li class="cart"><a href="/cart/"><span><strong  class="ico-holder"><img src="/images/ico08.png" width="18" height="18" alt="image description" /></strong><em><?=(Yii::app()->controller->action->id=='order')?0:$this->cart->getItemsCount();?></em></span></a></li>
-						</ul>
-					</div>
-					<?}else{
-					if($this->cart->getItemsCount()>0){
-					?>
-					<div class="user-tools-holder">
-						<div class="user"><a><em><?=Yii::app()->user->getDisplayName();?></em></a></div>
-						<ul class="user-tools">
-							<li class="cart"><a href="/cart/"><span><strong  class="ico-holder"><img src="/images/ico08.png" width="18" height="18" alt="image description" /></strong><em><?=(Yii::app()->controller->action->id=='order')?0:$this->cart->getItemsCount();?></em></span></a></li>
-						</ul>
-					</div>
-					<?}else{?>
-					<a href="/howitworks/" class="delivery-box">
-						<strong>Доставка</strong>
-						<span>продуктов с рецептами</span>
-						<em class="deco"></em>
-					</a>
-					<?}}?>
+                        <div class="user-tools-holder">
+                            <div class="user"><a href="/cabinet/"><em><?=Yii::app()->user->getDisplayName();?></em></a></div>
+                            <ul class="user-tools">
+                                <li><a href="/cabinet/"><span><strong class="ico-holder"><img src="/images/ico06.png" width="18" height="18" alt="image description" /></strong></span></a></li>
+                                <li><a href="/cabinet/settings/"><span><strong class="ico-holder"><img src="/images/ico07.png" width="18" height="18" alt="image description" /></strong></span></a></li>
+                                <li class="cart"><a href="/cart/"><span><strong  class="ico-holder"><img src="/images/ico08.png" width="18" height="18" alt="image description" /></strong><em><?=(Yii::app()->controller->action->id=='order')?0:$this->cart->getItemsCount();?></em></span></a></li>
+                            </ul>
+                        </div>
+                    <?}else{
+                            ?>
+                            <div class="user-tools-holder"<?=($this->cart->getItemsCount()>0)?'':' style="display:none"';?>>
+                                <div class="user"><a><em><?=Yii::app()->user->getDisplayName();?></em></a></div>
+                                <ul class="user-tools">
+                                    <li class="cart"><a href="/cart/"><span><strong  class="ico-holder"><img src="/images/ico08.png" width="18" height="18" alt="image description" /></strong><em><?=(Yii::app()->controller->action->id=='order')?0:$this->cart->getItemsCount();?></em></span></a></li>
+                                </ul>
+                            </div>
+                            <a href="/howitworks/" class="delivery-box"<?=($this->cart->getItemsCount()>0)?' style="display:none"':'';?>>
+                                <strong>Доставка</strong>
+                                <span>продуктов с рецептами</span>
+                                <em class="deco"></em>
+                            </a>
+					        <?
+                    }?>
 				</div>
 				<ul id="nav">
 				    <li><a href="/dish/category/<?=$this->firstcategory_id;?>/"><span>Меню</span></a></li>
