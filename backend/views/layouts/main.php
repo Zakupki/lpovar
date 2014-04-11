@@ -108,7 +108,7 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                     array('label' => Yii::t('backend', 'Other'),
                         'url' => array('/tools'),
                         'visible' => user()->checkAccess('Other.Admin'),
-                        'active' => in_array($this->getId(), array('producttype', 'product','tools')),
+                        'active' => in_array($this->getId(), array('producttype', 'product','tools','reply')),
                         'items' => array(
                             array('label' => Yii::t('backend', 'Product Types'),
                                 'url' => array('/producttype'),
@@ -134,6 +134,11 @@ $cs->registerCssFile($baseUrl.'/backend/css/main.css?v=1', 'screen');
                                 'url' => array('/about'),
                                 'visible' => user()->checkAccess('About'),
                                 'active' => $this->getId() === 'about',
+                            ),
+                            array('label' => Yii::t('backend', 'Replies'),
+                                'url' => array('/reply'),
+                                'visible' => user()->checkAccess('Reply'),
+                                'active' => $this->getId() === 'reply',
                             ),
 
                         )

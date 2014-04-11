@@ -24,7 +24,7 @@
  */
 class Reply extends BaseActiveRecord
 {
-
+    public $title;
     public function behaviors()
     {
         return array(
