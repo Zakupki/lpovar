@@ -148,6 +148,8 @@ return array (
     'Position' => 'Должность',
     'Role' => 'Роль',
     'Recipe' => 'Рецепт',
+    'Reply' => 'Отзыв',
+    'Replies' => 'Отзывы',
     'Serialized' => 'Сериализовано',
     'Short Text' => 'Краткий текст',
     'Size' => 'Размер',
