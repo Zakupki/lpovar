@@ -32,7 +32,8 @@
                             <div class="btn-holder right">
                                 <div class="blog-info">
                                     <span class="blog-views informer"><?=$item->views;?></span>
-                                    <a class="make-like" rel="<?=$item->id;?>" href="#"><span class="blog-likes informer" rel=""><span class="blog-like-num"><?=$item->likes;?></span></span></a>
+                                    <div class="fb-like" data-href="<?=$item->getUrl();?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                                    <!--<a class="make-like" rel="<?=$item->id;?>" href="#"><span class="blog-likes informer" rel=""><span class="blog-like-num"><?=$item->likes;?></span></span></a>-->
                                     <!--<span class="blog-comments informer">0</span>-->
                                 </div>
                             </div>
