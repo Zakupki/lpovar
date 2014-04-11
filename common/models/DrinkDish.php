@@ -172,7 +172,7 @@ class DrinkDish extends BaseActiveRecord
         FROM
           `gs_drink_dish`
         INNER JOIN gs_drink
-        ON gs_drink.id=gs_drink_dish.`drink_id`
+        ON gs_drink.id=gs_drink_dish.`drink_id` AND gs_drink.status=1
         LEFT JOIN gs_file
         ON gs_drink.`image_id`=gs_file.id
         WHERE gs_drink_dish.`dish_id` IN ('.implode(',',$params['dishes']).')
