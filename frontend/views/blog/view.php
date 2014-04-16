@@ -6,10 +6,12 @@
 </div>
 <div id="blog"><!--main start-->
     <div class="blogger">
+        <? if(isset($item->user->image)){?>
         <div class="blogger-logo">
             <div class="blogger-round"></div>
-            <?=$item->user->image->asHtmlImage();?>
+            <? echo $item->user->image->asHtmlImage();?>
         </div>
+        <?}?>
         <div class="blogger-text">
             <h3>Ваш Личный Блоггер</h3>
             <h2><?=$item->user->name;?></h2>

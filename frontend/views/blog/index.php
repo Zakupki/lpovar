@@ -8,7 +8,7 @@
     <!--<div class="blogger">
         <div class="blogger-logo">
             <div class="blogger-round"></div>
-            <?=$items[0]->user->image->asHtmlImage();?>
+            <?//$items[0]->user->image->asHtmlImage();?>
         </div>
         <div class="blogger-text">
             <h3>Ваш Личный Блоггер</h3>
