@@ -529,3 +529,25 @@ iframe[name='google_conversion_frame'] {
     margin-top: -13px;
     float: left;
 }
+.replies {
+    background: white;
+    margin: 0 0 20px;
+    overflow: hidden;
+}
+
+.replies .reply-list {
+    margin: 5px 0px 5px 5px;
+    padding: 0;
+    overflow: hidden;
+}
+.replies .reply-list li{
+    width: 213px;
+    float: left;
+    list-style: none;
+    margin: 0 14px 0 0;
+    padding: 0 4px 0 0;
+    border: 1px dashed #85c324;
+}
+.replies .reply-list .reply-image{
+    padding: 11px;
+}

@@ -181,7 +181,7 @@
 		</div>
 		<?=$content;?>
 		<!-- end catalog-list -->
-			<? if(yii::app()->controller->id!='blog'){?>
+        	<? if(yii::app()->controller->id!='blog'){?>
             <div class="like-row">
 				<div class="ico-frame">
 					<img src="/images/ico24.png" width="76" height="70" alt="image description" />

@@ -149,4 +149,17 @@
 			<?
 			$cnt++;
 			}?>
+            <? if($_SERVER['REMOTE_ADDR']=='193.93.78.106'){?>
+                <div class="replies">
+                    <div class="replies-header">
+                        header
+                    </div>
+                    <ul class="reply-list">
+                        <li><div class="reply-image"><img src="/upload/reply/45/chrysanthemum.jpg"/></div></li>
+                        <li><div class="reply-image"><img src="/upload/reply/45/chrysanthemum.jpg"/></div></li>
+                        <li><div class="reply-image"><img src="/upload/reply/45/chrysanthemum.jpg"/></div></li>
+                        <li><div class="reply-image"><img src="/upload/reply/45/chrysanthemum.jpg"/></div></li>
+                    </ul>
+                </div>
+            <?}?>
 		</div><!--main end-->
