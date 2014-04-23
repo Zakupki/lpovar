@@ -1,4 +1,7 @@
 		<div id="main"><!--main start-->
+            <div class="recipe-teaser">
+                <div class="recipe-image"></div>
+            </div>
             <ul class="recipe-list"><!--recipe-list start-->
                 <? foreach($topdishes as $tdish){?>
                     <li>

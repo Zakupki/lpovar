@@ -1,4 +1,7 @@
 <div id="main"><!--main start-->
+<div class="recipe-teaser">
+    <div class="recipe-image"></div>
+</div>
 <div class="content-box recipe-box">
     <div class="item-box">
         <div class="item-row">

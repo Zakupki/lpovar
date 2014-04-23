@@ -581,3 +581,14 @@ iframe[name='google_conversion_frame'] {
 .replies .reply-list .reply-last{
     margin: 5px 0 0;
 }
+.recipe-teaser{
+    background: white;
+    padding: 5px;
+    margin: 0 0 10px;
+}
+.recipe-image{
+    background: url(/images/recipe-teaser.jpg) no-repeat;
+    width: 930px;
+    height: 116px;
+    display: block;
+}
