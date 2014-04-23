@@ -535,8 +535,19 @@ iframe[name='google_conversion_frame'] {
     overflow: hidden;
 }
 
+.replies .replies-header{
+    background: url(/images/reply-header.png) no-repeat;
+    height: 58px;
+    width: 930px;
+    margin: 5px;
+}
+.replies .replies-header a{
+    height: 58px;
+    width: 930px;
+    display: block;
+}
 .replies .reply-list {
-    margin: 5px 0px 5px 5px;
+    margin: 0 0px 15px 5px;
     padding: 0;
     overflow: hidden;
 }
@@ -544,10 +555,29 @@ iframe[name='google_conversion_frame'] {
     width: 213px;
     float: left;
     list-style: none;
-    margin: 0 14px 0 0;
+    margin: 5px 18px 0 0;
     padding: 0 4px 0 0;
     border: 1px dashed #85c324;
 }
 .replies .reply-list .reply-image{
     padding: 11px;
+}
+.replies .reply-list .reply-desc{
+    padding: 0 11px 11px;
+}
+.replies .reply-list .replier{
+    width: 100%;
+    display: block;
+    text-align: right;
+    color: #a91e16;
+    font-weight: bold;
+    font-size: 16px;
+}
+.replies .reply-list .reply-test{
+    color: #64795a;
+    padding: 10px 0 0;
+    display: block;
+}
+.replies .reply-list .reply-last{
+    margin: 5px 0 0;
 }
