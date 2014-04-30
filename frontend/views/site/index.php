@@ -149,7 +149,6 @@
 			<?
 			$cnt++;
 			}?>
-            <? if(isset($_GET['reply'])){?>
                 <? if(isset($replies)){?>
                 <div class="replies">
                     <div class="replies-header">
@@ -172,5 +171,4 @@
                     </ul>
                 </div>
                 <?}?>
-            <?}?>
 		</div><!--main end-->
