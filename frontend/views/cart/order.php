@@ -198,6 +198,25 @@
 			</div>
 		</div><!--main end-->
 
+<!-- Google Code for &#1047;&#1072;&#1082;&#1072;&#1079; &#1095;&#1077;&#1088;&#1077;&#1079; &#1082;&#1086;&#1088;&#1079;&#1080;&#1085;&#1091; Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 972037926;
+    var google_conversion_language = "en";
+    var google_conversion_format = "2";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "ovYDCJrLyQgQpr7AzwM";
+    var google_remarketing_only = false;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/972037926/?label=ovYDCJrLyQgQpr7AzwM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
 <!-- Google Code for &#1059;&#1089;&#1087;&#1077;&#1096;&#1085;&#1099;&#1081; &#1079;&#1072;&#1082;&#1072;&#1079; Conversion Page -->
 <script type="text/javascript">
     /* <![CDATA[ */
