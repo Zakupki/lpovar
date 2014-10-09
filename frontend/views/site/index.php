@@ -1,5 +1,4 @@
-   
-    <div class="promo-gallery-holder">
+<div class="promo-gallery-holder">
 			<ul class="promo-gallery">
 				<?
 				$cnt=1;
@@ -152,7 +151,7 @@
                 <? if(isset($replies)){?>
                 <div class="replies">
                     <div class="replies-header">
-                        <a href="/replies/">&nbsp;</a>
+                        <a href="/reply/">&nbsp;</a>
                     </div>
                     <ul class="reply-list">
                         <?
@@ -170,5 +169,5 @@
                         }?>
                     </ul>
                 </div>
-                <?}?>
+            <?}?>
 		</div><!--main end-->

@@ -431,9 +431,8 @@
     <div class="bg">&nbsp;</div>
     <div class="popup">
         <div class="popup-frame">
-            <p>Друзья, всех с праздником!<br>
-                У нас сегодня ооочень много доставок, так что пока мы не принимаем заказы!<br>
-                Следите за обновлениями!
+            <p>
+                <?=Option::getOpt('buy_text');?>
             </p>
             <div class="btn-holder" >
                 <a href="#" class="green-btn close-popup">
